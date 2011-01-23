@@ -1,2 +1,3 @@
+*.pyc
 .vim/.netrwhist
 .vim/.VimballRecord
