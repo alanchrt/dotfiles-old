@@ -8,6 +8,10 @@ HISTCONTROL=ignoredups:ignorespace
 export HISTSIZE=1000
 export HISTFILESIZE=1000
 
+# Individually append lines to history
+shopt -s histappend
+PROMPT_COMMAND='history -a'
+
 # Use vim keybindings
 set -o vi
 
