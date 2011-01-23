@@ -11,6 +11,7 @@ set nowrap
 syntax enable
 filetype plugin indent on
 colorscheme delek
+let mapleader = ","
 let python_highlight_all=1
 match BadWhitespace /^\t\+/
 match BadWhitespace /\s\+$/
