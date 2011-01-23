@@ -1,7 +1,7 @@
+source ~/.vim/.vimrc.python
 set softtabstop=4
 set shiftwidth=4
 set tabstop=4
-set textwidth=79
 set expandtab
 set nobackup
 set nowritebackup
@@ -10,13 +10,22 @@ set nohls
 set autoindent
 set smartindent
 set nowrap
+let python_highlight_all=1
 syntax on
 colorscheme delek
-filetype plugin indent on
+match BadWhitespace /^\t\+/
+match BadWhitespace /\s\+$/
+highlight BadWhitespace ctermbg=red guibg=red"
 
-let g:delimitMate_expand_space = 1
-let g:delimitMate_expand_cr = 1
-
-" Map Ctrl+\ to Shift+Backspace for delimitMate in terminal.
-" The ^\ character may not be visible in some text editors.
-imap  <S-BS>
+let g:user_zen_settings = {
+\  'indentation' : '    ',
+\  'perl' : {
+\    'aliases' : {
+\      'req' : 'require '
+\    },
+\    'snippets' : {
+\      'use' : "use strict\nuse warnings\n\n",
+\      'warn' : "warn \"|\";",
+\    }
+\  }
+\}
