@@ -1,6 +1,7 @@
 source ~/.vim/.vimrc.python
 runtime macros/matchit.vim
 
+set completeopt=menu
 set expandtab
 set nobackup
 set nohls
