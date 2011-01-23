@@ -22,7 +22,8 @@ let mapleader = ","
 let python_highlight_all=1
 match BadWhitespace /^\t\+/
 match BadWhitespace /\s\+$/
-highlight BadWhitespace ctermbg=green guibg=green"
+highlight BadWhitespace ctermbg=darkgray guibg=darkgray
+highlight SpellBad term=reverse ctermbg=darkgray guibg=darkgray
 
 let g:user_zen_settings = {
 \  'indentation' : '    ',
