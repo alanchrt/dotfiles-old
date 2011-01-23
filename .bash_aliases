@@ -5,7 +5,6 @@
 alias ls='ls --color=auto'
 alias ll='ls -al'
 alias la='ls -A'
-alias l='ls -C'
 
 # git aliases
 alias gs='git status'
