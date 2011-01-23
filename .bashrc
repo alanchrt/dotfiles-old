@@ -22,6 +22,9 @@ export VISUAL=vim
 # Enable programmable completion
 source /etc/bash_completion
 
+# Enable django bash completion
+. ~/.bash_scripts/django_bash_completion
+
 # Include alias definitions
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
