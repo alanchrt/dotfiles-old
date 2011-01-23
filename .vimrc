@@ -10,12 +10,13 @@ set nohls
 set autoindent
 set smartindent
 set nowrap
-let python_highlight_all=1
 syntax on
+filetype plugin on
 colorscheme delek
+let python_highlight_all=1
 match BadWhitespace /^\t\+/
 match BadWhitespace /\s\+$/
-highlight BadWhitespace ctermbg=red guibg=red"
+highlight BadWhitespace ctermbg=green guibg=green"
 
 let g:user_zen_settings = {
 \  'indentation' : '    ',
