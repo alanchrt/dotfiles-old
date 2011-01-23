@@ -7,11 +7,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 set nohls
-set autoindent
-set smartindent
 set nowrap
-syntax on
-filetype plugin on
+syntax enable
+filetype plugin indent on
 colorscheme delek
 let python_highlight_all=1
 match BadWhitespace /^\t\+/
