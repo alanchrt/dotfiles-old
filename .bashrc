@@ -19,6 +19,9 @@ set -o vi
 export EDITOR=vim
 export VISUAL=vim
 
+# Enable programmable completion
+source /etc/bash_completion
+
 # Include alias definitions
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
