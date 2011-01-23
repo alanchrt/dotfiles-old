@@ -1,15 +1,17 @@
 source ~/.vim/.vimrc.python
 runtime macros/matchit.vim
 
-set softtabstop=4
-set shiftwidth=4
-set tabstop=4
 set expandtab
 set nobackup
-set nowritebackup
-set noswapfile
 set nohls
+set noswapfile
 set nowrap
+set nowritebackup
+set ruler
+set shiftwidth=4
+set shortmess=atI
+set softtabstop=4
+set tabstop=4
 
 syntax enable
 colorscheme delek
