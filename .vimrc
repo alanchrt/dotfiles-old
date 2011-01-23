@@ -1,4 +1,6 @@
 source ~/.vim/.vimrc.python
+runtime macros/matchit.vim
+
 set softtabstop=4
 set shiftwidth=4
 set tabstop=4
@@ -8,9 +10,11 @@ set nowritebackup
 set noswapfile
 set nohls
 set nowrap
+
 syntax enable
-filetype plugin indent on
 colorscheme delek
+filetype plugin indent on
+
 let mapleader = ","
 let python_highlight_all=1
 match BadWhitespace /^\t\+/
