@@ -13,3 +13,8 @@ alias gb='git branch'
 alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout'
+
+# Remotely add authorized ssh key
+function rkey {
+    ssh $1 'mkdir -p ~/.ssh && echo '`cat $2`' >> ~/.ssh/authorized_keys'
+}
