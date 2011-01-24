@@ -19,21 +19,20 @@ alias tn='tmux new-session -s'
 alias ta='tmux -2 attach-session -t'
 alias tl='tmux list-sessions'
 
-# Start tmux session for django project
-function tdj {
+# Start tmux session for coding
+function to {
     if [ $# == 1 ]
         then
             tmux new-session -d -s $1 -n 'vim' 'vim'
-            tmux split-window -t $1:0 -v -l 4 './manage.py runserver'
             tmux new-window -t $1:1 -n 'bash'
             tmux last-window
             tmux select-pane -t $1:0.0
             tmux -2 attach-session -t $1
         elif [ $# == 0 ]
             then
-                tdj $(basename $(pwd))
+                to $(basename $(pwd))
         else
-            echo "tdj takes only one argument: tdj [sessionname]"
+            echo "to takes only one argument: to [sessionname]"
     fi
 }
 
