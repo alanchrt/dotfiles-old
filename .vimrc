@@ -54,6 +54,9 @@ let python_highlight_all=1
 match BadWhitespace /^\t\+/
 match BadWhitespace /\s\+$/
 
+" Remap new tab
+nmap <Leader>t <Esc>:tabnew<CR>
+
 " Display bad white space and syntax errors in dark gray
 highlight BadWhitespace ctermbg=darkgray guibg=darkgray
 highlight SpellBad ctermbg=darkgray guibg=darkgray
