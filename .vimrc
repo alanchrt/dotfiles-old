@@ -41,6 +41,7 @@ syntax enable
 colorscheme delek
 
 " Use filetype-specific plugins and indentation
+set nosmartindent
 filetype plugin indent on
 
 " Use comma as leader instead of default '\'
