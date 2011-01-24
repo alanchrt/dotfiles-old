@@ -16,7 +16,7 @@ alias go='git checkout'
 
 # tmux aliases
 alias tn='tmux new-session -s'
-alias ta='tmux attach-session -t'
+alias ta='tmux -2 attach-session -t'
 alias tl='tmux list-sessions'
 
 # Start tmux session for django project
@@ -28,7 +28,7 @@ function tdj {
             tmux new-window -t $1:1 -n 'bash'
             tmux last-window
             tmux select-pane -t $1:0.0
-            tmux attach-session -t $1
+            tmux -2 attach-session -t $1
         elif [ $# == 0 ]
             then
                 tdj $(basename $(pwd))
