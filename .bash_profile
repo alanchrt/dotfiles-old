@@ -3,5 +3,5 @@
 
 # Execute .bashrc
 if [ -f ~/.bashrc ]; then
-    source ~/.bashrc
+    . ~/.bashrc
 fi

@@ -20,7 +20,9 @@ export EDITOR=vim
 export VISUAL=vim
 
 # Enable programmable completion
-source /etc/bash_completion
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
 
 # Enable django bash completion
 . ~/.bash_scripts/django_bash_completion
