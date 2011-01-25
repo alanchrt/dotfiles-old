@@ -47,15 +47,18 @@ filetype plugin indent on
 " Use comma as leader instead of default '\'
 let mapleader = ","
 
+" Remap new tab
+nmap <Leader>t <Esc>:tabnew<CR>
+
+" Turn off automatic line breaking in html and css
+au BufRead,BufNewFile *.html,*.css set textwidth=0
+
 " Advanced python syntax highlighting
 let python_highlight_all=1
 
 " Tabs and trailing whitespace are considered bad
 match BadWhitespace /^\t\+/
 match BadWhitespace /\s\+$/
-
-" Remap new tab
-nmap <Leader>t <Esc>:tabnew<CR>
 
 " Display bad white space and syntax errors in dark gray
 highlight BadWhitespace ctermbg=darkgray guibg=darkgray
