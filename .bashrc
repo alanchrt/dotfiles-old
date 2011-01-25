@@ -8,9 +8,9 @@ HISTCONTROL=ignoredups:ignorespace
 export HISTSIZE=1000
 export HISTFILESIZE=1000
 
-# Individually append lines to history
+# Individually append lines to history and set window title
 shopt -s histappend
-PROMPT_COMMAND='history -a'
+PROMPT_COMMAND='history -a; echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 
 # Use vim keybindings
 set -o vi
