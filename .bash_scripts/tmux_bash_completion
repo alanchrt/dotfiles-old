@@ -4,7 +4,7 @@
 _ta() {
     local word opts
     word="${COMP_WORDS[COMP_CWORD])}"
-    opts="`tmux list-sessions | awk -F':' '{ORS=\" \"; print $1}'`"
+    opts="`tmux list-sessions 2> /dev/null | awk -F':' '{ORS=\" \"; print $1}'`"
     COMPREPLY=($(compgen -W "${opts}" -- ${word}))
     return 0
 }
