@@ -12,9 +12,13 @@
 user_pref("app.update.lastUpdateTime.places-maintenance-timer", 1296076666);
 user_pref("app.update.lastUpdateTime.search-engine-update-timer", 1296076734);
 user_pref("browser.bookmarks.restore_default_bookmarks", false);
+user_pref("browser.download.manager.showWhenStarting", false);
+user_pref("browser.download.useDownloadDir", false);
 user_pref("browser.migration.version", 1);
 user_pref("browser.places.smartBookmarksVersion", 2);
+user_pref("browser.startup.homepage", "http://localhost:8000/");
 user_pref("browser.startup.homepage_override.mstone", "rv:1.9.2.13");
+user_pref("browser.startup.page", 0);
 user_pref("distribution.canonical.bookmarksProcessed", true);
 user_pref("extensions.enabledItems", "langpack-en-GB@firefox-3.6.ubuntu.com:3.6,ubufox@ubuntu.com:0.9rc2,{972ce4c6-7e08-4474-a285-3208198ce6fd}:3.6.13");
 user_pref("extensions.lastAppVersion", "3.6.13");

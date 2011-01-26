@@ -30,3 +30,5 @@
 .firefox_profile/xpti.dat
 .firefox_profile/lock
 .firefox_profile/sessionstore.js
+.firefox_profile/mimeTypes.rdf
+.firefox_profile/pluginreg.dat
