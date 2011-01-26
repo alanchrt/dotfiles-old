@@ -32,3 +32,4 @@
 .firefox_profile/sessionstore.js
 .firefox_profile/mimeTypes.rdf
 .firefox_profile/pluginreg.dat
+.firefox_profile/OfflineCache/*
