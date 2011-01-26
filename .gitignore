@@ -28,3 +28,5 @@
 .firefox_profile/urlclassifier3.sqlite
 .firefox_profile/urlclassifierkey3.txt
 .firefox_profile/xpti.dat
+.firefox_profile/lock
+.firefox_profile/sessionstore.js
