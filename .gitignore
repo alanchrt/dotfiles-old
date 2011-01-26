@@ -36,3 +36,4 @@
 .firefox_profile/.autoreg
 .firefox_profile/sessionstore.bak
 .firefox_profile/webappsstore.sqlite
+.firefox_profile/viddownloadtb.sqlite
