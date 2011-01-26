@@ -1,0 +1,22 @@
+GIMP Palette
+Name: W3C Named Colors
+Columns: 2
+#
+# ColorZilla W3C Named Colors
+#
+255 255 255 	White
+255 255 0 	Yellow	
+255 0 255 	Fuchsia
+255 0 0		Red
+192 192 192	Silver
+128 128 128 	Gray
+128 128 0	Olive	
+128 0 128	Purple
+128 0 0		Maroon
+0 255 255	Aqua
+0 255 0		Lime
+0 128 128	Teal
+0 128 0		Green
+0 0 255		Blue
+0 0 128		Navy
+0 0 0 		Black 

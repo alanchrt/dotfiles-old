@@ -1,0 +1,42 @@
+interfaces components/ColorZilla.xpt
+binary-component platform/WINNT/components/ColorZilla.dll ABI=WINNT_x86-msvc
+binary-component platform/Darwin/components/ColorZilla.dylib ABI=Darwin_x86-gcc3
+binary-component platform/Darwin/components/ColorZilla.dylib ABI=Darwin_ppc-gcc3
+binary-component platform/Linux/components/ColorZilla.so ABI=Linux_x86-gcc3
+binary-component platform/Linux/components/ColorZilla.gcc4.so ABI=Linux_x86-gcc3
+binary-component platform/Linux/components/ColorZilla.x86_64.so ABI=Linux_x86_64-gcc3
+
+overlay	chrome://browser/content/browser.xul	chrome://colorzilla/content/colorzillaOverlay.xul
+overlay	chrome://navigator/content/navigator.xul	chrome://colorzilla/content/colorzillaOverlay.xul
+content	colorzilla	jar:chrome/colorzilla.jar!/content/
+
+skin	colorzilla	classic/1.0	jar:chrome/colorzilla.jar!/skin/classic/
+
+locale	colorzilla	en-US	jar:chrome/colorzilla.jar!/content/locale/en-US/
+
+locale	colorzilla	cs-CZ	jar:chrome/colorzilla.jar!/locale/cs-CZ/
+locale	colorzilla	de-DE	jar:chrome/colorzilla.jar!/locale/de-DE/
+locale	colorzilla	fr-FR	jar:chrome/colorzilla.jar!/locale/fr-FR/
+locale	colorzilla	ja-JP	jar:chrome/colorzilla.jar!/locale/ja-JP/
+locale	colorzilla	pt-BR	jar:chrome/colorzilla.jar!/locale/pt-BR/
+locale	colorzilla	sk-SK	jar:chrome/colorzilla.jar!/locale/sk-SK/
+locale	colorzilla	pl-PL	jar:chrome/colorzilla.jar!/locale/pl-PL/
+locale	colorzilla	tr-TR	jar:chrome/colorzilla.jar!/locale/tr-TR/
+locale	colorzilla	ca-AD	jar:chrome/colorzilla.jar!/locale/ca-AD/
+locale	colorzilla	da-DK	jar:chrome/colorzilla.jar!/locale/da-DK/
+locale	colorzilla	de-DE	jar:chrome/colorzilla.jar!/locale/de-CH/
+locale	colorzilla	es-AR	jar:chrome/colorzilla.jar!/locale/es-AR/
+locale	colorzilla	es-ES	jar:chrome/colorzilla.jar!/locale/es-ES/
+locale	colorzilla	fi-FI	jar:chrome/colorzilla.jar!/locale/fi-FI/
+locale	colorzilla	hu-HU	jar:chrome/colorzilla.jar!/locale/hu-HU/
+locale	colorzilla	it-IT	jar:chrome/colorzilla.jar!/locale/it-IT/
+locale	colorzilla	nl-NL	jar:chrome/colorzilla.jar!/locale/nl-NL/
+locale	colorzilla	pt-PT	jar:chrome/colorzilla.jar!/locale/pt-PT/
+locale	colorzilla	ro-RO	jar:chrome/colorzilla.jar!/locale/ro-RO/
+locale	colorzilla	ru-RU	jar:chrome/colorzilla.jar!/locale/ru-RU/
+locale	colorzilla	uk-UA	jar:chrome/colorzilla.jar!/locale/uk-UA/
+locale	colorzilla	zh-CN	jar:chrome/colorzilla.jar!/locale/zh-CN/
+locale	colorzilla	zh-TW	jar:chrome/colorzilla.jar!/locale/zh-TW/
+locale	colorzilla	id-ID	jar:chrome/colorzilla.jar!/locale/id-ID/
+locale	colorzilla	ko-KR	jar:chrome/colorzilla.jar!/locale/ko-KR/
+locale	colorzilla	nb-NO	jar:chrome/colorzilla.jar!/locale/nb-NO/

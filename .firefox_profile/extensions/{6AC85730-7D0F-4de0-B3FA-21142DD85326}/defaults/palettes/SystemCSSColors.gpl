@@ -1,0 +1,35 @@
+GIMP Palette
+Name: System CSS Colors
+Columns: 2
+#
+# ColorZilla System CSS Colors Palette
+# CZMetaPalette
+#
+# CZ ActiveBorder Active window border
+# CZ ActiveCaption Active window caption
+# CZ AppWorkspace Background color of multiple document interface
+# CZ Background Desktop background
+# CZ ButtonFace Face color for 3D elements
+# CZ ButtonHighlight Dark shadow for 3D elements
+# CZ ButtonShadow Shadow color for 3D elements
+# CZ ButtonText Text on push buttons 
+# CZ CaptionText Text in caption, size box, and scrollbar arrow box
+# CZ GrayText Grayed (disabled) text
+# CZ Highlight Item(s) selected in a control
+# CZ HighlightText Text of item(s) selected in a control
+# CZ InactiveBorder Inactive window border
+# CZ InactiveCaption Inactive window caption
+# CZ InactiveCaptionText Color of text in an inactive caption
+# CZ InfoBackground Background color for tooltip controls
+# CZ InfoText Text color for tooltip controls
+# CZ Menu Menu background
+# CZ MenuText Text in menus
+# CZ Scrollbar Scroll bar gray area
+# CZ ThreeDDarkShadow Dark shadow for 3D elements
+# CZ ThreeDFace Face color for 3D elements
+# CZ ThreeDHighlight Highlight color for 3D elements
+# CZ ThreeDLightShadow Light color for 3D elements 
+# CZ ThreeDShadow Dark shadow for 3D elements
+# CZ Window Window background
+# CZ WindowFrame Window frame
+# CZ WindowText Text in windows

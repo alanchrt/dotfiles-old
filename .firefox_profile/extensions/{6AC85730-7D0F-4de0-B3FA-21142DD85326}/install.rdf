@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>{6AC85730-7D0F-4de0-B3FA-21142DD85326}</em:id>
+    <em:version>2.2.2</em:version>
+    
+    <!-- Target Application - Firefox -->
+    <em:targetApplication>
+       <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+		<em:minVersion>3.0</em:minVersion>
+        <em:maxVersion>4.0b6pre</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+    <!-- Front End MetaData -->
+    <em:name>ColorZilla</em:name>
+    <em:description>Advanced Eyedropper, ColorPicker, Page Zoomer and other colorful goodies</em:description>
+    <em:creator>Alex Sirota</em:creator>
+    <em:homepageURL>http://www.colorzilla.com/</em:homepageURL>
+    <em:iconURL>chrome://colorzilla/skin/logo.png</em:iconURL>
+    <em:aboutURL>chrome://colorzilla/content/about.xul</em:aboutURL>
+    <em:optionsURL>chrome://colorzilla/content/about.xul</em:optionsURL>
+
+    <em:contributor>Fernando Pereira Silveira (Portuguese translation)</em:contributor>
+    <em:contributor>Jojaba (French translation)</em:contributor>
+    <em:contributor>Tomas Brabenec (Czech translation)</em:contributor>
+    <em:contributor>Norah Marinkovic (Japanese translation)</em:contributor>
+    <em:contributor>Reiner Hess (German translation)</em:contributor>
+    <em:contributor>Wladow (Slovak translation)</em:contributor>
+    <em:contributor>Jakub Bobrowski (Polish translation)</em:contributor>
+    <em:contributor>Erkan Kaplan (Turkish translation)</em:contributor>
+
+    <em:contributor>The BabelZilla Team (babelzilla.org)</em:contributor>
+  
+  </Description>      
+</RDF>
