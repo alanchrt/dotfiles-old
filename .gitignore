@@ -34,3 +34,5 @@
 .firefox_profile/pluginreg.dat
 .firefox_profile/OfflineCache/*
 .firefox_profile/.autoreg
+.firefox_profile/sessionstore.bak
+.firefox_profile/webappsstore.sqlite
