@@ -1,0 +1,6 @@
+content vidbar				jar:chrome/ScreenshotPimp.jar!/content/
+skin    vidbar classic/1.0	jar:chrome/ScreenshotPimp.jar!/skin/classic/
+
+overlay chrome://browser/content/browser.xul 			chrome://vidbar/content/vid.xul
+style   chrome://global/content/customizeToolbar.xul    chrome://vidbar/skin/classic/vid.css
+
