@@ -4,7 +4,7 @@
 _sk() {
     local word opts
     word="${COMP_WORDS[COMP_CWORD])}"
-    opts="`sl`"
+    opts=$(ps ax -o pid,cmd | awk '$2 == "python" && $4 == "runserver" && $3 ~ /^\.\.\/[a-zA-Z]+\/manage\.py/ {print $3}' | cut -d'/' -f 2)
     COMPREPLY=($(compgen -W "${opts}" -- ${word}))
     return 0
 }
