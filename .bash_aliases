@@ -20,6 +20,9 @@ alias tn='tmux new-session -s'
 alias ta='tmux -2 attach-session -t'
 alias tl='tmux list-sessions'
 
+# development server aliases
+alias runs='../$(basename $(pwd))/manage.py runserver'
+
 # Start tmux session for coding
 function to {
     if [ $# == 1 ]
