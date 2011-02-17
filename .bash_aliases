@@ -13,6 +13,7 @@ alias gb='git branch'
 alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout'
+alias gh='git hist'
 
 # tmux aliases
 alias tn='tmux new-session -s'
@@ -33,6 +34,31 @@ function to {
                 to $(basename $(pwd))
         else
             echo "to takes only one argument: to [sessionname]"
+    fi
+}
+
+# List running development servers
+function sl {
+    if [ $# == 0 ]
+        then
+            ps ax -o pid,cmd | awk '$2 == "python" && $4 == "runserver" && $3 ~ /^\.\.\/[a-zA-Z]+\/manage\.py/ {print $3}' | cut -d'/' -f 2
+        else
+          echo "sl does not take any arguments: sl"
+    fi
+}
+
+# Kill development servers
+function sk {
+    if [ $# -gt 0 ]
+        then
+            for session in $@
+                do
+            cmd="ps ax -o pid,cmd | awk '\$2 == \"python\" && \$4 == \"runserver\" && \$3 ~ /^\.\.\/${session}\/manage\.py/ {print \$1}'"
+            pid=$(eval $cmd)
+            kill $pid
+            done
+        else
+          echo "sk takes at least one argument: sk [sessionname]"
     fi
 }
 

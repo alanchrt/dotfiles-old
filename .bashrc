@@ -27,6 +27,9 @@ fi
 # Enable tmux bash completion
 . ~/.bash_scripts/tmux_bash_completion
 
+# Enable sk bash completion
+. ~/.bash_scripts/sk_bash_completion
+
 # Enable django bash completion
 . ~/.bash_scripts/django_bash_completion
 

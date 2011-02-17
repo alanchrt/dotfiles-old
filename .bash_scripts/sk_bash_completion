@@ -1,0 +1,11 @@
+# sk_bash_completion - Alan Christopher Thomas
+# http://alanchristopherthomas.com/
+
+_sk() {
+    local word opts
+    word="${COMP_WORDS[COMP_CWORD])}"
+    opts="`sl`"
+    COMPREPLY=($(compgen -W "${opts}" -- ${word}))
+    return 0
+}
+complete -F _sk sk
