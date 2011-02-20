@@ -37,3 +37,8 @@ fi
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# Execute .bash_local
+if [ -f ~/.bash_local ]; then
+    . ~/.bash_local
+fi
