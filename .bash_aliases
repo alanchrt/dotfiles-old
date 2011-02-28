@@ -44,7 +44,7 @@ function to {
 function sl {
     if [ $# == 0 ]
         then
-            ps ax -o pid,cmd | awk '$2 == "python" && $4 == "runserver" && $3 ~ /^\.\.\/[a-zA-Z]+\/manage\.py/ {print $3, " ", $5}' | sed -rn 's/^[\.\/]+([a-zA-Z]+)\/manage\.py/\1/p'
+            ps ax -o pid,cmd | awk '$2 == "python" && $4 == "runserver" && $3 ~ /^\.\.\/[a-zA-Z0-9]+\/manage\.py/ {print $3, " ", $5}' | sed -rn 's/^[\.\/]+([a-zA-Z0-9]+)\/manage\.py/\1/p'
         else
           echo "sl does not take any arguments: sl"
     fi
