@@ -63,8 +63,6 @@ match BadWhitespace /\s\+$/
 " Display bad white space,syntax errors, and long lines in dark gray
 highlight BadWhitespace ctermbg=darkgray guibg=darkgray
 highlight SpellBad ctermbg=darkgray guibg=darkgray
-highlight OverLength ctermbg=darkgray guibg=darkgray
-au BufRead,BufNewFile *.py,*.js match OverLength /\%80v.\+/
 
 " Use four spaces for zen coding indentation
 let g:user_zen_settings = {
