@@ -60,9 +60,11 @@ let python_highlight_all=1
 match BadWhitespace /^\t\+/
 match BadWhitespace /\s\+$/
 
-" Display bad white space and syntax errors in dark gray
+" Display bad white space,syntax errors, and long lines in dark gray
 highlight BadWhitespace ctermbg=darkgray guibg=darkgray
 highlight SpellBad ctermbg=darkgray guibg=darkgray
+highlight OverLength ctermbg=darkgray guibg=darkgray
+au BufRead,BufNewFile *.py match OverLength /\%80v.\+/
 
 " Use four spaces for zen coding indentation
 let g:user_zen_settings = {
