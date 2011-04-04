@@ -1,6 +1,9 @@
 # .bash_aliases - Alan Christopher Thomas
 # http://alanchristopherthomas.com/
 
+# text aliases
+alias xc='xclip -selection clipboard'
+
 # ls aliases
 alias ls='ls --color=auto'
 alias ll='ls -al'
