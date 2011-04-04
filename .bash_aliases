@@ -3,6 +3,8 @@
 
 # text aliases
 alias xc='xclip -selection clipboard'
+alias lip='lorem-ipsum-generator -p'
+alias lis='lorem-ipsum-generator -s'
 
 # ls aliases
 alias ls='ls --color=auto'
