@@ -1,5 +1,5 @@
 # .bash_profile - Alan Christopher Thomas
-# http://alanchristopherthomas.com/
+# http://alanct.com/
 
 # Execute .bashrc
 if [ -f ~/.bashrc ]; then
