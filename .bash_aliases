@@ -1,5 +1,5 @@
 # .bash_aliases - Alan Christopher Thomas
-# http://alanchristopherthomas.com/
+# http://alanct.com/
 
 # ls aliases
 alias ls='ls -G'
