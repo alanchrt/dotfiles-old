@@ -62,11 +62,21 @@ let g:syntastic_python_checker="flake8"
 " Set bad spelling highlight color
 highlight SpellBad term=reverse ctermbg=8
 
-" Set diff highlight colors
-highlight DiffAdd term=reverse ctermbg=7
-highlight DiffDelete ctermfg=0 ctermbg=7
-highlight DiffChange term=reverse ctermbg=8
-highlight DiffText ctermfg=7 ctermbg=8
+" Set diff highlight colors blah
+highlight DiffAdd ctermfg=15 ctermbg=4
+highlight DiffDelete ctermfg=8 ctermbg=0
+highlight DiffChange ctermfg=7 ctermbg=4
+highlight DiffText ctermfg=3 ctermbg=4
+
+" Set error and todo highlight colors
+highlight Error ctermfg=0 ctermbg=7
+highlight Todo ctermfg=0 ctermbg=7
+
+" Set syntastic highlight colors
+highlight SyntasticErrorSign ctermfg=0 ctermbg=7
+highlight SyntasticWarningSign ctermfg=0 ctermbg=7
+highlight SyntasticStyleErrorSign ctermfg=0 ctermbg=7
+highlight SyntasticStyleWarningSign ctermfg=0 ctermbg=7
 
 " Set omnicomplete menu color
 highlight Pmenu ctermfg=7 ctermbg=8
