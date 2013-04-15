@@ -41,7 +41,7 @@ set nosmartindent
 filetype plugin indent on
 
 " Use comma as leader instead of default '\'
-let mapleader = ","
+let mapleader = ','
 
 " Remap new tab
 nmap <Leader>t <Esc>:tabnew<CR>
@@ -57,7 +57,7 @@ execute pathogen#infect()
 
 " Use syntastic for flake8
 let g:syntastic_check_on_open=1
-let g:syntastic_python_checker="flake8"
+let g:syntastic_python_checker='flake8'
 
 " Set bad spelling highlight color
 highlight SpellBad term=reverse ctermbg=8
