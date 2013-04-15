@@ -55,6 +55,9 @@ set t_Co=256
 " Use pathogen for plugins
 execute pathogen#infect()
 
+" Key binding for flake8
+autocmd FileType python map <Leader>f :call Flake8()<CR>
+
 " Set pyflakes highlight color
 highlight SpellBad term=reverse ctermbg=8
 
