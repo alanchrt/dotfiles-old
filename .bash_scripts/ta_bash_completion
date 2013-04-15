@@ -1,5 +1,5 @@
 # ta_bash_completion - Alan Christopher Thomas
-# http://alanchristopherthomas.com/
+# http://alanct.com/
 
 _ta() {
     local word opts
