@@ -24,8 +24,8 @@ alias tl='tmux list-sessions'
 # tree colorization
 alias tree='tree -C'
 
-# flake8 command
-alias f8='flake8'
+# Run flake8 and ignore convenience imports
+alias qa='flake8 | grep -v "__init__.py:[0-9]*:1: F401"'
 
 # Start tmux session for coding
 function to {
