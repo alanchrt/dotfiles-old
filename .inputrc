@@ -1,6 +1,0 @@
-# .inputrc - Alan Christopher Thomas
-# http://alanchristopherthomas.com/
-
-# Use up and down arrows for incremental history search
-"\e[A": history-search-backward
-"\e[B": history-search-forward
