@@ -55,9 +55,6 @@ set t_Co=256
 " Use pathogen for plugins
 execute pathogen#infect()
 
-" Run flake8 on write
-autocmd BufWritePost *.py call Flake8()
-
 " Set pyflakes highlight color
 highlight SpellBad term=reverse ctermbg=8
 
