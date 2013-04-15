@@ -49,8 +49,20 @@ nmap <Leader>t <Esc>:tabnew<CR>
 " Turn off automatic line breaking in html and css
 au BufRead,BufNewFile *.html,*.css set textwidth=0
 
-" Advanced python syntax highlighting
-let python_highlight_all=1
-
 " Use 256 colors in color schemes
 set t_Co=256
+
+" Use pathogen for plugins
+execute pathogen#infect()
+
+" Run flake8 on write
+autocmd BufWritePost *.py call Flake8()
+
+" Set pyflakes highlight color
+highlight SpellBad term=reverse ctermbg=8
+
+" Set diff highlight colors
+highlight DiffAdd term=reverse ctermbg=7
+highlight DiffDelete ctermfg=0 ctermbg=7
+highlight DiffChange term=reverse ctermbg=8
+highlight DiffText ctermfg=7 ctermbg=8
