@@ -1,9 +1,5 @@
 " .vimrc - Alan Christopher Thomas
-" http://alanchristopherthomas.com/
-
-" Python vimrc to adhere to PEP 7 & 8
-" From http://svn.python.org/projects/python/trunk/Misc/Vim/vimrc
-source ~/.vim/.vimrc.python
+" http://alanct.com/
 
 " Import built-in matchit plugin
 runtime macros/matchit.vim
@@ -38,7 +34,7 @@ set shortmess=atI
 
 " Use syntax highlighting and color scheme
 syntax enable
-colorscheme delek
+colorscheme darkblue
 
 " Use filetype-specific plugins and indentation
 set nosmartindent
@@ -56,24 +52,5 @@ au BufRead,BufNewFile *.html,*.css set textwidth=0
 " Advanced python syntax highlighting
 let python_highlight_all=1
 
-" Tabs and trailing whitespace are considered bad
-match BadWhitespace /^\t\+/
-match BadWhitespace /\s\+$/
-
-" Display bad white space,syntax errors, and long lines in dark gray
-highlight BadWhitespace ctermbg=darkgray guibg=darkgray
-highlight SpellBad ctermbg=darkgray guibg=darkgray
-
-" Use four spaces for zen coding indentation
-let g:user_zen_settings = {
-\  'indentation' : '    ',
-\  'perl' : {
-\    'aliases' : {
-\      'req' : 'require '
-\    },
-\    'snippets' : {
-\      'use' : "use strict\nuse warnings\n\n",
-\      'warn' : "warn \"|\";",
-\    }
-\  }
-\}
+" Use 256 colors in color schemes
+set t_Co=256
