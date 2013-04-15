@@ -1,0 +1,14 @@
+# .gitconfig - Alan Christopher Thomas
+# http://alanct.com/
+
+[user]
+    name = Alan Christopher Thomas
+    email = alan@alanct.com
+[color]
+    ui = true
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[alias]
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph
