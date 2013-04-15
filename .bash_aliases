@@ -24,6 +24,9 @@ alias tl='tmux list-sessions'
 # tree colorization
 alias tree='tree -C'
 
+# flake8 command
+alias f8='flake8'
+
 # Start tmux session for coding
 function to {
     if [ $# == 1 ]
