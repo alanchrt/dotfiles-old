@@ -55,10 +55,11 @@ set t_Co=256
 " Use pathogen for plugins
 execute pathogen#infect()
 
-" Key binding for flake8
-autocmd FileType python map <Leader>f :call Flake8()<CR>
+" Use syntastic for flake8
+let g:syntastic_check_on_open=1
+let g:syntastic_python_checker="flake8"
 
-" Set pyflakes highlight color
+" Set bad spelling highlight color
 highlight SpellBad term=reverse ctermbg=8
 
 " Set diff highlight colors
