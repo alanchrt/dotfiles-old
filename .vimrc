@@ -67,3 +67,6 @@ highlight DiffAdd term=reverse ctermbg=7
 highlight DiffDelete ctermfg=0 ctermbg=7
 highlight DiffChange term=reverse ctermbg=8
 highlight DiffText ctermfg=7 ctermbg=8
+
+" Set omnicomplete menu color
+highlight Pmenu ctermfg=7 ctermbg=8
