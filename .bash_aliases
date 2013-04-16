@@ -16,7 +16,7 @@ alias gt='git difftool'
 alias go='git checkout'
 alias gh='git hist'
 
-# Git bash completion
+# git bash completion
 __git_complete ga _git_add
 __git_complete gb _git_branch
 __git_complete gc _git_commit
@@ -29,11 +29,14 @@ alias tn='tmux new-session -s'
 alias ta='tmux -2 attach-session -t'
 alias tl='tmux list-sessions'
 
+# python shorthand
+alias py='python'
+
 # tree colorization
 alias tree='tree -C'
 
 # Run flake8 and ignore convenience imports
-alias qa='flake8 | grep -v "__init__.py:[0-9]*:1: F401"'
+alias fl='flake8 | grep -v "__init__.py:[0-9]*:1: F401"'
 
 # Start tmux session for coding
 function to {
