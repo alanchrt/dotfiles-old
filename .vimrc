@@ -53,6 +53,9 @@ nmap <Leader>t <Esc>:tabnew<CR>
 " Toggle paste keybinding
 set pastetoggle=<Leader>p
 
+" Remap Command-T
+nmap <Leader>f <Esc>:CommandT<CR>
+
 " NERDTree key binding
 map <C-n> :NERDTreeToggle<CR>
 
