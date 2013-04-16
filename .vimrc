@@ -80,3 +80,6 @@ highlight SyntasticStyleWarningSign ctermfg=0 ctermbg=7
 
 " Set omnicomplete menu color
 highlight Pmenu ctermfg=7 ctermbg=8
+
+" NERDTree key binding
+map <C-n> :NERDTreeToggle<CR>
