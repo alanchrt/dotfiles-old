@@ -46,6 +46,9 @@ let mapleader = ','
 " Remap new tab
 nmap <Leader>t <Esc>:tabnew<CR>
 
+" Toggle paste keybinding
+set pastetoggle=<Leader>p
+
 " Turn off automatic line breaking in html and css
 au BufRead,BufNewFile *.html,*.css set textwidth=0
 
