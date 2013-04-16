@@ -22,6 +22,9 @@ export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
 
+# Remove default Ctrl-S behavior
+stty -ixon -ixoff
+
 # Enable programmable completion
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
