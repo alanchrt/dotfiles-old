@@ -16,6 +16,14 @@ alias gt='git difftool'
 alias go='git checkout'
 alias gh='git hist'
 
+# Git bash completion
+__git_complete ga _git_add
+__git_complete gb _git_branch
+__git_complete gc _git_commit
+__git_complete gd _git_diff
+__git_complete gt _git_difftool
+__git_complete go _git_checkout
+
 # tmux aliases
 alias tn='tmux new-session -s'
 alias ta='tmux -2 attach-session -t'

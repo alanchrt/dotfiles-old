@@ -30,8 +30,11 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+# Enable git bash completion
+. ~/.bash_scripts/git-completion.bash
+
 # Enable ta bash completion
-. ~/.bash_scripts/ta_bash_completion
+. ~/.bash_scripts/ta-completion.bash
 
 # Include alias definitions
 if [ -f ~/.bash_aliases ]; then
