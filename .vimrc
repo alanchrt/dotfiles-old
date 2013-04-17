@@ -40,9 +40,6 @@ filetype plugin indent on
 " Turn off automatic line breaking in html and css
 au BufRead,BufNewFile *.html,*.css set textwidth=0
 
-" Automatically generate ctags when saving python files in git repos
-au BufWritePost *.py call system('~/.bash_scripts/generate-python-ctags.bash')
-
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ============= Custom Key Bindings ==============
