@@ -70,6 +70,18 @@ execute pathogen#infect()
 let g:syntastic_check_on_open=1
 let g:syntastic_python_checkers=['flake8']
 
+" Prevent run code plugin loading
+let g:pymode_run = 0
+
+" Prevent pylint plugin loading
+let g:pymode_lint = 0
+
+" Disable python folding
+let g:pymode_folding = 0
+
+" Disable default pymode python options
+let g:pymode_options = 0
+
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ==================== Colors ====================
