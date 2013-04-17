@@ -82,6 +82,9 @@ let g:pymode_folding = 0
 " Disable default pymode python options
 let g:pymode_options = 0
 
+" Set powerline location
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
+
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ==================== Colors ====================

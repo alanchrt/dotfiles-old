@@ -8,6 +8,8 @@ Mac OS X
 
 Import development colors.
 
+**Install patched Inconsolata:** [https://github.com/Lokaltog/powerline-fonts](https://github.com/Lokaltog/powerline-fonts)
+
 **Install Homebrew:** [http://mxcl.github.io/homebrew/](http://mxcl.github.io/homebrew/)
 
 Add Homebrew local paths to `PATH` if necessary.
@@ -26,3 +28,5 @@ Add Homebrew local paths to `PATH` if necessary.
 **Symlink configs:** ie. `ln -s ~/.config/dotfiles/.vimrc ~/.vimrc`
 
 **Install virtualenvwrapper:** [http://virtualenvwrapper.readthedocs.org/en/latest/install.html](http://virtualenvwrapper.readthedocs.org/en/latest/install.html)
+
+**Install powerline:** `pip install --user git+git://github.com/Lokaltog/powerline`
