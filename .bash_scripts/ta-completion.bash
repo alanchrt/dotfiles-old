@@ -1,4 +1,4 @@
-# ta_bash_completion - Alan Christopher Thomas
+# ta-completion.bash - Alan Christopher Thomas
 # http://alanct.com/
 
 _ta() {
