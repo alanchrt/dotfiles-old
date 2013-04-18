@@ -29,4 +29,6 @@ Add Homebrew local paths to `PATH` if necessary.
 
 **Install virtualenvwrapper:** [http://virtualenvwrapper.readthedocs.org/en/latest/install.html](http://virtualenvwrapper.readthedocs.org/en/latest/install.html)
 
+**Install IPython:** `pip install ipython`
+
 **Install powerline:** `pip install --user git+git://github.com/Lokaltog/powerline`
