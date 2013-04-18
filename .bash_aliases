@@ -31,6 +31,7 @@ alias tl='tmux list-sessions'
 
 # python shorthand
 alias py='python'
+alias ipy='ipython'
 
 # tree colorization
 alias tree='tree -C'
