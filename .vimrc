@@ -124,4 +124,8 @@ autocmd FileType python match Excess /\%80v.*/
 autocmd FileType python set nowrap
 
 " Omnicomplete menu color
-highlight Pmenu ctermfg=7 ctermbg=8
+highlight Pmenu ctermfg=7 ctermbg=4
+highlight PmenuSel ctermfg=15 ctermbg=8
+
+" Use menu color for command-t selections
+let g:CommandTHighlightColor = 'Pmenu'
