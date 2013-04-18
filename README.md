@@ -31,4 +31,4 @@ Add Homebrew local paths to `PATH` if necessary.
 
 **Install IPython:** `pip install ipython`
 
-**Install powerline:** `pip install --user git+git://github.com/Lokaltog/powerline`
+**Install Powerline:** `pip install --user git+git://github.com/Lokaltog/powerline`
