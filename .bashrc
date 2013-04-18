@@ -25,6 +25,9 @@ export PIP_RESPECT_VIRTUALENV=true
 # Remove default Ctrl-S behavior
 stty -ixon -ixoff
 
+# Show powerline
+source /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+
 # Enable programmable completion
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
