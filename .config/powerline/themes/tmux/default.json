@@ -1,0 +1,16 @@
+{
+	"default_module": "powerline.segments.common",
+	"segment_data": {
+	},
+	"segments": {
+		"right": [
+			{
+				"name": "external_ip",
+				"priority": 50
+			},
+			{
+				"name": "hostname"
+			}
+		]
+	}
+}
