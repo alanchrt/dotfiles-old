@@ -6,12 +6,6 @@ README
 Mac OS X
 --------
 
-**Install iTerm 2:** [http://www.iterm2.com/#/section/home](http://www.iterm2.com/#/section/home)
-
-Import development colors.
-
-**Install patched Inconsolata:** [https://github.com/Lokaltog/powerline-fonts](https://github.com/Lokaltog/powerline-fonts)
-
 **Install Homebrew:** [http://mxcl.github.io/homebrew/](http://mxcl.github.io/homebrew/)
 
 Add Homebrew local paths to `PATH` if necessary.
@@ -32,5 +26,11 @@ Add Homebrew local paths to `PATH` if necessary.
 **Install virtualenvwrapper:** [http://virtualenvwrapper.readthedocs.org/en/latest/install.html](http://virtualenvwrapper.readthedocs.org/en/latest/install.html)
 
 **Install IPython:** `pip install ipython`
+
+**Install iTerm 2:** [http://www.iterm2.com/#/section/home](http://www.iterm2.com/#/section/home)
+
+Import development colors.
+
+**Install patched Inconsolata:** [https://github.com/Lokaltog/powerline-fonts](https://github.com/Lokaltog/powerline-fonts)
 
 **Install Powerline:** `pip install --user git+git://github.com/Lokaltog/powerline`
