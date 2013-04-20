@@ -33,6 +33,13 @@ alias tl='tmux list-sessions'
 alias py='python'
 alias ipy='ipython'
 
+# virtualenv shortcuts
+alias mkv='mkvirtualenv'
+alias wo='workon'
+
+# virtualenv bash completion
+complete -o default -o nospace -F _virtualenvs wo
+
 # tree colorization
 alias tree='tree -C'
 

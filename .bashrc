@@ -16,11 +16,21 @@ PROMPT_COMMAND='history -a; echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 export EDITOR=vim
 export VISUAL=vim
 
+# Add homebrew binaries to path
+homebrew=/usr/local/share/python:/usr/local/bin:/usr/local/sbin
+export PATH=$homebrew:$PATH
+
 # Set up virtualenv paths and settings
-export WORKON_HOME=$HOME/.envs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+export WORKON_HOME=$HOME/.envs
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
+if [[ -r /usr/local/share/python/virtualenvwrapper.sh ]]; then
+    source /usr/local/share/python/virtualenvwrapper.sh
+else
+    echo "WARNING: Can't find virtualenvwrapper.sh"
+fi
 
 # Remove default Ctrl-S behavior
 stty -ixon -ixoff
