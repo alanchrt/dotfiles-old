@@ -29,7 +29,7 @@ Add Homebrew local paths to `PATH` if necessary.
 
 **Install iTerm 2:** [http://www.iterm2.com/#/section/home](http://www.iterm2.com/#/section/home)
 
-Import development colors.
+Import development colors. Map Command-r to ignore
 
 **Install patched Inconsolata:** [https://github.com/Lokaltog/powerline-fonts](https://github.com/Lokaltog/powerline-fonts)
 
