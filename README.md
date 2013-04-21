@@ -1,6 +1,3 @@
-README
-======
-
 ![alanctkc dev environment](https://raw.github.com/alanctkc/dotfiles/master/screenshot.png)
 
 Mac OS X
