@@ -34,7 +34,7 @@ alias py='python'
 alias ipy='ipython'
 
 # virtualenv shortcuts
-alias mkv='mkvirtualenv'
+alias mkve='mkvirtualenv'
 alias wo='workon'
 
 # virtualenv bash completion
