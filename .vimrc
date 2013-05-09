@@ -94,7 +94,7 @@ set laststatus=2
 
 " Use syntax highlighting and color scheme
 syntax enable
-colorscheme darkblue
+colorscheme delek
 
 " Use 256 colors in color schemes
 set t_Co=256
