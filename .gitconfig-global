@@ -13,4 +13,4 @@
 [alias]
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph
 [core]
-    excludesfile = /Users/athomas/.gitignore
+    excludesfile = /home/alan/.gitignore

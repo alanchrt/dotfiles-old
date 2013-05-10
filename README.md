@@ -31,3 +31,15 @@ Import development colors. Map Command-r to ignore.
 **Install patched Inconsolata:** [https://github.com/Lokaltog/powerline-fonts](https://github.com/Lokaltog/powerline-fonts)
 
 **Install Powerline:** `pip install --user git+git://github.com/Lokaltog/powerline`
+
+
+Xubuntu
+-------
+
+http://superuser.com/a/442691
+
+Google Drive: Insync
+
+sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt-get update
+sudo apt-get install thunarx-python
