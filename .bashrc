@@ -31,9 +31,6 @@ fi
 # Remove default Ctrl-S behavior
 stty -ixon -ixoff
 
-# Use Gnome keyring management
-export $(gnome-keyring-daemon --daemonize --start)
-
 # Show powerline
 export PATH=$PATH:~/.local/bin
 source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh

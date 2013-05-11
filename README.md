@@ -33,13 +33,15 @@ Import development colors. Map Command-r to ignore.
 **Install Powerline:** `pip install --user git+git://github.com/Lokaltog/powerline`
 
 
-Xubuntu
--------
+Ubuntu
+------
 
-http://superuser.com/a/442691
+Use fontconfig for Powerline: https://powerline.readthedocs.org/en/latest/installation/linux.html#fontconfig
 
-Google Drive: Insync
+Install vim-nox
 
-sudo add-apt-repository ppa:nilarimogard/webupd8
-sudo apt-get update
-sudo apt-get install thunarx-python
+Install ruby1.9.1 and ruby1.9.1-dev
+
+Command-T: ruby extconf.rb; make;
+
+Delete .config/ipython and replace with .ipython
