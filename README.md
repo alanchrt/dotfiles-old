@@ -36,6 +36,8 @@ Import development colors. Map Command-r to ignore.
 Ubuntu
 ------
 
+Install Powerline as non-admin user
+
 Use fontconfig for Powerline: https://powerline.readthedocs.org/en/latest/installation/linux.html#fontconfig
 
 Install vim-nox
