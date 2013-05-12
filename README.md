@@ -40,6 +40,8 @@ Install Powerline as non-admin user
 
 Use fontconfig for Powerline: https://powerline.readthedocs.org/en/latest/installation/linux.html#fontconfig
 
+Use ~/.config/fontconfig/conf.d/ for fontconfig
+
 Install vim-nox
 
 Install ruby1.9.1 and ruby1.9.1-dev

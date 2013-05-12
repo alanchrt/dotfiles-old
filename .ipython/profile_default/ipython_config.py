@@ -223,7 +223,7 @@ c.InteractiveShellApp.extensions = [
 # Set to confirm when you try to exit IPython with an EOF (Control-D in Unix,
 # Control-Z/Enter in Windows). By typing 'exit' or 'quit', you can force a
 # direct exit without any confirmation.
-# c.TerminalInteractiveShell.confirm_exit = True
+c.TerminalInteractiveShell.confirm_exit = False
 
 #
 # c.TerminalInteractiveShell.ipython_dir = ''
