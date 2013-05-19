@@ -35,6 +35,9 @@ stty -ixon -ixoff
 export PATH=$PATH:~/.local/bin
 source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 
+# Use full color
+export TERM=xterm-256color
+
 # Enable programmable completion
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
