@@ -36,6 +36,7 @@ alias ipy='ipython'
 # virtualenv shortcuts
 alias mkve='mkvirtualenv'
 alias wo='workon'
+alias conf='cat $VIRTUAL_ENV/bin/postactivate'
 
 # virtualenv bash completion
 complete -o default -o nospace -F _virtualenvs wo
