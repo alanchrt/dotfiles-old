@@ -10,7 +10,6 @@ export HISTFILESIZE=1000
 
 # Individually append lines to history and set window title
 shopt -s histappend
-PROMPT_COMMAND='history -a; echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 
 # Use vim as default editor
 export EDITOR=vim
@@ -58,3 +57,6 @@ fi
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
