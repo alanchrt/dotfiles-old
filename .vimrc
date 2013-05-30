@@ -40,6 +40,9 @@ filetype plugin indent on
 " Turn off automatic line breaking in html and css
 au BufRead,BufNewFile *.html,*.css set textwidth=0
 
+" Ignore compiled python
+set wildignore+=*.pyc
+
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ============= Custom Key Bindings ==============
