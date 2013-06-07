@@ -14,7 +14,7 @@ alias gc='git commit'
 alias gd='git diff --color'
 alias gt='git difftool'
 alias go='git checkout'
-alias gh='git hist'
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %C(cyan)(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 
 # git bash completion
 __git_complete ga _git_add
