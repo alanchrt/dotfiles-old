@@ -88,6 +88,12 @@ set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
 " Show powerline for single windows
 set laststatus=2
 
+" Don't use slash for self-closing html tags
+let g:user_zen_settings = {
+\  'html' : {
+\    'empty_element_suffix' : '>',
+\  }
+\}
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ==================== Colors ====================
