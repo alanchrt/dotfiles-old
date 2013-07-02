@@ -50,6 +50,9 @@ let mapleader = ','
 " Remap new tab
 nmap <Leader>t <Esc>:tabnew<CR>
 
+" Expand into multiple lines and focus the center line
+imap <C-E> <Esc>a<Enter><Esc>O
+
 " Toggle paste keybinding
 set pastetoggle=<Leader>p
 
