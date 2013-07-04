@@ -53,6 +53,9 @@ let mapleader = ','
 " Remap new tab
 nmap <Leader>t <Esc>:tabnew<CR>
 
+" Expand into multiple lines and focus the center line
+imap <C-E> <Esc>a<Enter><Esc>O
+
 " Toggle paste keybinding
 set pastetoggle=<Leader>p
 
@@ -91,6 +94,12 @@ set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
 " Show powerline for single windows
 set laststatus=2
 
+" Don't use slash for self-closing html tags
+let g:user_zen_settings = {
+\  'html' : {
+\    'empty_element_suffix' : '>',
+\  }
+\}
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ==================== Colors ====================
