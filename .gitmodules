@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/python-mode"]
 	path = .vim/bundle/python-mode
 	url = git://github.com/klen/python-mode.git
+[submodule ".vim/bundle/handlebars"]
+	path = .vim/bundle/handlebars
+	url = git://github.com/nono/vim-handlebars.git
