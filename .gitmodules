@@ -31,3 +31,6 @@
 [submodule ".vim/bundle/handlebars"]
 	path = .vim/bundle/handlebars
 	url = git://github.com/nono/vim-handlebars.git
+[submodule ".vim/bundle/jinja2"]
+	path = .vim/bundle/jinja2
+	url = git://github.com/Glench/Vim-Jinja2-Syntax.git
