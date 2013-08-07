@@ -39,9 +39,6 @@ c = get_config()
 
 # A list of dotted module names of IPython extensions to load.
 # c.InteractiveShellApp.extensions = []
-c.InteractiveShellApp.extensions = [
-    'powerline.bindings.ipython.post_0_11'
-]
 
 # Run the module as a script.
 # c.InteractiveShellApp.module_to_run = ''
