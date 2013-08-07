@@ -30,9 +30,8 @@ fi
 # Remove default Ctrl-S behavior
 stty -ixon -ixoff
 
-# Show powerline
+# Use local binaries
 export PATH=$PATH:~/.local/bin
-source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 
 # Use full color
 export TERM=xterm-256color
