@@ -7,7 +7,7 @@
 
 ### Ubuntu
 
-    $ apt-get install vim-nox tmux git python python-dev
+    $ apt-get install vim-nox tmux git python python-dev python-setuptools
 
 ### Mac OS X
 

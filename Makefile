@@ -21,9 +21,8 @@ endef
 linux:
 	git submodule init
 	git submodule update
-	easy_install pip
-	pip install virtualenvwrapper
-	pip install ipython
+	easy_install virtualenvwrapper
+	easy_install ipython
 	$(call backup)
 	ln -s `pwd`/.bash_scripts ~/.bash_scripts
 	mkdir -p ~/.config
