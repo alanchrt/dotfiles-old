@@ -28,3 +28,5 @@
     $ make
 
 **Environment-specific:** `make linux` or `make mac`
+
+**Remove backups:** `find ~ -name '*.backup' -delete`
