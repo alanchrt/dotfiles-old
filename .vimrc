@@ -40,6 +40,9 @@ filetype plugin indent on
 " Turn off automatic line breaking in html and css
 au BufRead,BufNewFile *.html,*.css set textwidth=0
 
+" Ignore compiled python
+set wildignore+=*.pyc
+
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ============= Custom Key Bindings ==============
@@ -55,9 +58,6 @@ imap <C-E> <Esc>a<Enter><Esc>O
 
 " Toggle paste keybinding
 set pastetoggle=<Leader>p
-
-" Remap Command-T
-nmap <Leader>f <Esc>:CommandT<CR>
 
 " NERDTree key binding
 map <C-n> :NERDTreeToggle<CR>
@@ -85,9 +85,6 @@ let g:pymode_folding = 0
 " Disable default pymode python options
 let g:pymode_options = 0
 
-" Set powerline location
-set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
-
 " Show powerline for single windows
 set laststatus=2
 
@@ -103,7 +100,7 @@ let g:user_zen_settings = {
 
 " Use syntax highlighting and color scheme
 syntax enable
-colorscheme darkblue
+colorscheme delek
 
 " Use 256 colors in color schemes
 set t_Co=256
