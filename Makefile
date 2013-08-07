@@ -17,7 +17,7 @@ define backup
 	-mv -i ~/.vimrc ~/.vimrc.backup
 endef
 
-# Initialize environment on linux
+# Initialize environment on Linux
 linux:
 	git submodule init
 	git submodule update
@@ -30,6 +30,27 @@ linux:
 	ln -s `pwd`/.vim ~/.vim
 	ln -s `pwd`/.bash_aliases ~/.bash_aliases
 	cp `pwd`/.bash_local-linux ~/.bash_local
+	ln -s `pwd`/.bash_profile ~/.bash_profile
+	ln -s `pwd`/.bash_prompt ~/.bash_prompt
+	ln -s `pwd`/.bashrc ~/.bashrc
+	ln -s `pwd`/.gitconfig-global ~/.gitconfig
+	ln -s `pwd`/.gitignore-global ~/.gitignore
+	ln -s `pwd`/.tmux.conf ~/.tmux.conf
+	ln -s `pwd`/.vimrc ~/.vimrc
+
+# Initialize environment on Mac
+mac:
+	git submodule init
+	git submodule update
+	easy_install virtualenvwrapper
+	easy_install ipython
+	$(call backup)
+	ln -s `pwd`/.bash_scripts ~/.bash_scripts
+	mkdir -p ~/.config
+	ln -s `pwd`/.ipython ~/.ipython
+	ln -s `pwd`/.vim ~/.vim
+	ln -s `pwd`/.bash_aliases ~/.bash_aliases
+	cp `pwd`/.bash_local-mac ~/.bash_local
 	ln -s `pwd`/.bash_profile ~/.bash_profile
 	ln -s `pwd`/.bash_prompt ~/.bash_prompt
 	ln -s `pwd`/.bashrc ~/.bashrc
