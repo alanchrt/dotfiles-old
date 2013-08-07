@@ -35,6 +35,9 @@ fi
 # Enable git bash completion
 . ~/.bash_scripts/git-completion.bash
 
+# Enable git prompt
+. ~/.bash_scripts/git-prompt.bash
+
 # Enable ta bash completion
 . ~/.bash_scripts/ta-completion.bash
 
