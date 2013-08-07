@@ -1,4 +1,4 @@
-## Install Dependencies
+## Dependencies
 
 * Vim
 * Tmux
@@ -21,7 +21,7 @@
     $ sudo mv Current Current.bak
     $ sudo ln -s /usr/local/Cellar/python/2.7.3/Frameworks/Python.framework/Versions/2.7 Current
 
-## Initialize Environment
+## Install
 
     $ git clone git@github.com:alanctkc/dotfiles.git
     $ cd dotfiles
