@@ -31,7 +31,7 @@ fi
 stty -ixon -ixoff
 
 # Use local binaries
-export PATH=$PATH:~/.local/bin
+export PATH=~/.local/bin:$PATH
 
 # Use full color
 export TERM=xterm-256color
