@@ -1,49 +1,30 @@
-Mac OS X
---------
+## Install Dependencies
 
-**Install Homebrew:** [http://mxcl.github.io/homebrew/](http://mxcl.github.io/homebrew/)
+    * Vim
+    * Tmux
+    * Git
+    * Python
 
-Add Homebrew local paths to `PATH` if necessary.
+### Ubuntu
 
-**Install brewed software:** `brew install python mercurial vim tmux git`
+    $ apt-get install vim-nox tmux git python python-dev
 
-**Replace system Python framework:** [http://stackoverflow.com/a/12697440/359287](http://stackoverflow.com/a/12697440/359287)
+### Mac OS X
 
-**Clone configs:** `git clone git@github.com:alanctkc/dotfiles.git ~/.config/dotfiles`
+**Homebrew:** [http://mxcl.github.io/homebrew/](http://mxcl.github.io/homebrew/)
 
-**Update submodules:**
+    brew install python vim tmux git
 
-	git submodule init  
-	git submodule update
-	
-**Symlink configs:** ie. `ln -s ~/.config/dotfiles/.vimrc ~/.vimrc`
+**Override System Python:**
 
-**Install virtualenvwrapper:** [http://virtualenvwrapper.readthedocs.org/en/latest/install.html](http://virtualenvwrapper.readthedocs.org/en/latest/install.html)
+    $ cd /System/Library/Frameworks/Python.framework/Versions
+    $ sudo mv Current Current.bak
+    $ sudo ln -s /usr/local/Cellar/python/2.7.3/Frameworks/Python.framework/Versions/2.7 Current
 
-**Install IPython:** `pip install ipython`
+## Initialize Environment
 
-**Install iTerm 2:** [http://www.iterm2.com/#/section/home](http://www.iterm2.com/#/section/home)
+    $ git clone git@github.com:alanctkc/dotfiles.git
+    $ cd dotfiles
+    $ make
 
-Import development colors. Map Command-r to ignore.
-
-**Install patched Inconsolata:** [https://github.com/Lokaltog/powerline-fonts](https://github.com/Lokaltog/powerline-fonts)
-
-**Install Powerline:** `pip install --user git+git://github.com/Lokaltog/powerline`
-
-
-Ubuntu
-------
-
-Install Powerline as non-admin user
-
-Use fontconfig for Powerline: https://powerline.readthedocs.org/en/latest/installation/linux.html#fontconfig
-
-Use ~/.config/fontconfig/conf.d/ for fontconfig
-
-Install vim-nox
-
-Install ruby1.9.1 and ruby1.9.1-dev
-
-Command-T: ruby extconf.rb; make;
-
-Delete .config/ipython and replace with .ipython
+**Environment-specific:** `make linux` or `make mac`
