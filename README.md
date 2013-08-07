@@ -1,9 +1,9 @@
 ## Install Dependencies
 
-    * Vim
-    * Tmux
-    * Git
-    * Python
+* Vim
+* Tmux
+* Git
+* Python
 
 ### Ubuntu
 
@@ -13,7 +13,7 @@
 
 **Homebrew:** [http://mxcl.github.io/homebrew/](http://mxcl.github.io/homebrew/)
 
-    brew install python vim tmux git
+    $ brew install python vim tmux git
 
 **Override System Python:**
 
