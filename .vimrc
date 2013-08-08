@@ -128,3 +128,6 @@ set t_Co=256
 autocmd FileType python highlight Excess ctermbg=8
 autocmd FileType python match Excess /\%80v.*/
 autocmd FileType python set nowrap
+
+" Use slightly dimmer text for the normal group
+highlight Normal ctermfg=248 ctermbg=0
