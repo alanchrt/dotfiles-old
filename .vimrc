@@ -54,10 +54,16 @@ let mapleader = ','
 nmap <Leader>t <Esc>:tabnew<CR>
 
 " Remap movement between windows
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" Remap window rearrangement
+nmap <C-m>h <C-w>H
+nmap <C-m>j <C-w>J
+nmap <C-m>k <C-w>K
+nmap <C-m>l <C-w>L
 
 " Expand into multiple lines and focus the center line
 imap <C-E> <Esc>a<Enter><Esc>O
