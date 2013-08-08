@@ -100,6 +100,10 @@ let g:pymode_options = 0
 " Show powerline for single windows
 set laststatus=2
 
+" Disable airline separators
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+
 " Don't use slash for self-closing html tags
 let g:user_zen_settings = {
 \  'html' : {
