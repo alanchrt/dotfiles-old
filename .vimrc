@@ -112,7 +112,7 @@ let g:user_zen_settings = {
 
 " Use syntax highlighting and color scheme
 syntax enable
-colorscheme noctu
+colorscheme darkblue
 
 " Use 256 colors in color schemes
 set t_Co=256

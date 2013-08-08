@@ -37,6 +37,3 @@
 [submodule ".vim/bundle/ctrlp"]
 	path = .vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim
-[submodule ".vim/bundle/vim-noctu"]
-	path = .vim/bundle/vim-noctu
-	url = https://github.com/noahfrederick/vim-noctu.git
