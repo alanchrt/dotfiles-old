@@ -74,7 +74,6 @@ set pastetoggle=<Leader>p
 " NERDTree key binding
 map <C-n> :NERDTreeToggle<CR>
 
-
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " =============== Plugin Settings ================
 
@@ -123,6 +122,7 @@ colorscheme lodestone
 
 " Use 256 colors in color schemes
 set t_Co=256
+set term=screen-256color
 
 " Highlight excess line length in python
 autocmd FileType python highlight Excess ctermbg=8
