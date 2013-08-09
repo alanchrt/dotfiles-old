@@ -130,4 +130,4 @@ autocmd FileType python match Excess /\%80v.*/
 autocmd FileType python set nowrap
 
 " Use slightly dimmer text for the normal group
-highlight Normal ctermfg=250 ctermbg=0
+highlight Normal ctermfg=254 ctermbg=0
