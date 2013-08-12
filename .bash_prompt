@@ -1,10 +1,6 @@
 #  Customize BASH PS1 prompt to show current GIT repository and branch.
 #  by Mike Stewart - http://MediaDoneRight.com
 
-#  SETUP CONSTANTS
-#  Bunch-o-predefined colors.  Makes reading code easier than escape sequences.
-#  I don't remember where I found this.  o_O
-
 # Reset
 Color_Off="\[\033[0m\]"       # Text Reset
 
@@ -81,8 +77,8 @@ On_IWhite="\[\033[0;107m\]"   # White
 # Various variables you might want for your PS1 prompt instead
 Time12h="\T"
 Time12a="\@"
-PathShort="\w"
-PathFull="\W"
+PathBasename="\W"
+PathFull="\w"
 NewLine="\n"
 Jobs="\j"
 
@@ -96,8 +92,8 @@ if [ $? -eq 0 ]; then \
   else \
     # @5 - Changes to working tree
     echo "'$IRed'"$(__git_ps1 " {%s}"); \
-  fi) '$BYellow$PathFull$Color_Off'\$ "; \
+  fi) '$BYellow$PathBasename$Color_Off'\$ "; \
 else \
   # @2 - Prompt when not in GIT repo
-  echo " '$Yellow$PathShort$Color_Off'\$ "; \
+  echo " '$Yellow$PathBasename$Color_Off'\$ "; \
 fi)'
