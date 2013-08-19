@@ -21,9 +21,6 @@ endef
 linux:
 	git submodule init
 	git submodule update
-	easy_install virtualenvwrapper
-	easy_install ipython
-	easy_install flake8
 	$(call backup)
 	ln -s `pwd`/.bash_scripts ~/.bash_scripts
 	mkdir -p ~/.config
@@ -60,3 +57,9 @@ mac:
 	ln -s `pwd`/.gitignore-global ~/.gitignore
 	ln -s `pwd`/.tmux.conf ~/.tmux.conf
 	ln -s `pwd`/.vimrc ~/.vimrc
+
+# Install python dependencies
+deps:
+	easy_install virtualenvwrapper
+	easy_install ipython
+	easy_install flake8

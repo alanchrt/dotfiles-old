@@ -25,6 +25,7 @@
 
     $ git clone git@github.com:alanctkc/dotfiles.git
     $ cd dotfiles
+    $ make deps # optional
     $ make
 
 **Environment-specific:** `make linux` or `make mac`
