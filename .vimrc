@@ -13,6 +13,9 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 
+" Use expected backspace behavior
+set backspace=indent,eol,start
+
 " Turn off search highlighting
 set nohls
 
