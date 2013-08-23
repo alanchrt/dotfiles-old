@@ -99,7 +99,7 @@ let g:pymode_folding = 0
 " Disable default pymode python options
 let g:pymode_options = 0
 
-" Show powerline for single windows
+" Show status line for single windows
 set laststatus=2
 
 " Disable airline separators
