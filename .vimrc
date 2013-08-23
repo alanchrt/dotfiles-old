@@ -74,8 +74,8 @@ imap <C-E> <Esc>a<Enter><Esc>O
 " Toggle paste keybinding
 set pastetoggle=<Leader>p
 
-" NERDTree key binding
-map <C-n> :NERDTreeToggle<CR>
+" Ctrl-P rebinding
+map <Leader>f :CtrlP<CR>
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " =============== Plugin Settings ================
