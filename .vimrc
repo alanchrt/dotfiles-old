@@ -109,13 +109,6 @@ let g:airline_right_sep=''
 " Set airline theme
 let g:airline_theme='powerlineish'
 
-" Don't use slash for self-closing html tags
-let g:user_zen_settings = {
-\  'html' : {
-\    'empty_element_suffix' : '>',
-\  }
-\}
-
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ==================== Colors ====================
 
