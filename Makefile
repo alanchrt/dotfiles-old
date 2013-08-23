@@ -40,9 +40,6 @@ linux:
 mac:
 	git submodule init
 	git submodule update
-	easy_install virtualenvwrapper
-	easy_install ipython
-	easy_install flake8
 	$(call backup)
 	ln -s `pwd`/.bash_scripts ~/.bash_scripts
 	mkdir -p ~/.config
