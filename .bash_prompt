@@ -94,7 +94,7 @@ if [ $? -eq 0 ]; then \
   else \
     # @5 - Changes to working tree
     echo "'$IRed'"$(__git_ps1 " {%s}"); \
-  fi) '$BYellow$PathBasename$Color_Off'\$ "; \
+  fi) '$BYellow'$(__pwd_ps1 " (%s)")'$Color_Off'\$ "; \
 else \
   # @2 - Prompt when not in GIT repo
   echo " '$Yellow$PathBasename$Color_Off'\$ "; \

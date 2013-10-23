@@ -38,6 +38,9 @@ fi
 # Enable git prompt
 . ~/.bash_scripts/git-prompt.bash
 
+# Enable pwd prompt
+. ~/.bash_scripts/pwd-prompt.bash
+
 # Enable ta bash completion
 . ~/.bash_scripts/ta-completion.bash
 
