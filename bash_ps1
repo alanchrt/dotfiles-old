@@ -1,44 +1,44 @@
 #!/bin/bash
 # Modified from http://stackoverflow.com/a/1617048/359287
+# By Alan Christopher Thomas (http://alanct.com)
 
-begin="" # The unshortened beginning of the path.
-homebegin="" # The unshortened beginning of the path.
-shortbegin="" # The shortened beginning of the path.
-current="" # The section of the path we're currently working on.
+begin=""
+homebegin=""
+shortbegin=""
+current=""
 end="${2:-$(pwd)}/" # The unmodified rest of the path.
 end="${end#/}" # Strip the first /
-shortenedpath="$end" # The whole path, to check the length.
+shortenedpath="$end"
 
-shopt -q nullglob && NGV="-s" || NGV="-u" # Store the value for later.
-shopt -s nullglob    # Without this, anything that doesn't exist in the filesystem turns into */*/*/...
+shopt -q nullglob && NGV="-s" || NGV="-u"
+shopt -s nullglob
 
 while [[ "$end" ]]
 do
-  current="${end%%/*}" # everything before the first /
-  end="${end#*/}"    # everything after the first /
+  current="${end%%/*}" # Everything before the first /
+  end="${end#*/}" # Everything after the first /
 
   shortcur="$current"
-
   for ((i=${#current}-2; i>=0; i--))
   do
     [[ ${#current} -le 20 ]] && [[ -z "$end" ]] && break
     subcurrent="${current:0:i}"
-    matching=("$begin/$subcurrent"*) # Array of all files that start with $subcurrent. 
-    (( ${#matching[*]} != 1 )) && break # Stop shortening if more than one file matches.
+    matching=("$begin/$subcurrent"*) # Array of all files that start with $subcurrent
+    (( ${#matching[*]} != 1 )) && break # Stop shortening if more than one file matches
     [[ -z "$end" ]] && shortcur="$subcurrent..." # Add character filler at the end of this string
     [[ -n "$end" ]] && shortcur="$subcurrent+" # Add character filler at the end of this string
   done
 
   begin="$begin/$current"
   homebegin="$homebegin/$current"
-  [[ "$homebegin" =~ ^"$HOME"(/|$) ]] && homebegin="~${homebegin#$HOME}"
+  [[ "$homebegin" =~ ^"$HOME"(/|$) ]] && homebegin="~${homebegin#$HOME}" # Convert HOME to ~
   shortbegin="$shortbegin/$shortcur"
-  [[ "$homebegin" == "~" ]] && shortbegin="~"
+  [[ "$homebegin" == "~" ]] && shortbegin="~" # Use ~ for home
   shortenedpath="$shortbegin/$end"
 done
 
-shortenedpath="${shortenedpath%/}" # strip trailing /
-shortenedpath="${shortenedpath#/}" # strip leading /
+shortenedpath="${shortenedpath%/}" # Strip trailing /
+shortenedpath="${shortenedpath#/}" # Strip leading /
 
 [[ ! "$shortenedpath" =~ ^"~" ]] && echo "/$shortenedpath" # Make sure it starts with /
 [[ "$shortenedpath" =~ ^"~" ]] && echo "$shortenedpath" # Don't use / for home dir
