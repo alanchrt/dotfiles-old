@@ -97,5 +97,5 @@ if [ $? -eq 0 ]; then \
   fi) '$BYellow'$(__pwd_ps1 " (%s)")'$Color_Off'\$ "; \
 else \
   # @2 - Prompt when not in GIT repo
-  echo " '$Yellow"$(__pwd_ps1 " (%s)")"$Color_Off'\$ "; \
+  echo " '$Yellow'$(__pwd_ps1 " (%s)")'$Color_Off'\$ "; \
 fi)'
