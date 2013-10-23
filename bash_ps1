@@ -17,15 +17,16 @@ do
   current="${end%%/*}" # everything before the first /
   end="${end#*/}"    # everything after the first /
 
-  shortcur="$current" # No star if we don't shorten it.
+  shortcur="$current"
 
   for ((i=${#current}-2; i>=0; i--))
   do
-    [[ -z "$end" ]] && break
+    [[ ${#current} -le 20 ]] && [[ -z "$end" ]] && break
     subcurrent="${current:0:i}"
     matching=("$begin/$subcurrent"*) # Array of all files that start with $subcurrent. 
     (( ${#matching[*]} != 1 )) && break # Stop shortening if more than one file matches.
-    shortcur="$subcurrent" # Add character filler at the end of this string
+    [[ -z "$end" ]] && shortcur="$subcurrent..." # Add character filler at the end of this string
+    [[ -n "$end" ]] && shortcur="$subcurrent+" # Add character filler at the end of this string
   done
 
   begin="$begin/$current"
