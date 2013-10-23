@@ -1,5 +1,6 @@
 #  Customize BASH PS1 prompt to show current GIT repository and branch.
-#  by Mike Stewart - http://MediaDoneRight.com
+#  Original by Mike Stewart - http://MediaDoneRight.com
+#  Modified by Alan Christopher Thomas - http://alanct.com
 
 # Reset
 Color_Off="\[\033[0m\]"       # Text Reset
