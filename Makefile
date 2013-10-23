@@ -57,6 +57,7 @@ mac:
 
 # Install python dependencies
 deps:
-	easy_install virtualenvwrapper
+	easy_install pip
 	easy_install ipython
 	easy_install flake8
+	pip install virtualenvwrapper
