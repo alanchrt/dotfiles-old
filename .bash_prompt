@@ -1,5 +1,6 @@
 #  Customize BASH PS1 prompt to show current GIT repository and branch.
-#  by Mike Stewart - http://MediaDoneRight.com
+#  Original by Mike Stewart - http://MediaDoneRight.com
+#  Modified by Alan Christopher Thomas - http://alanct.com
 
 # Reset
 Color_Off="\[\033[0m\]"       # Text Reset
@@ -81,9 +82,10 @@ PathBasename="\W"
 PathFull="\w"
 NewLine="\n"
 Jobs="\j"
+Hostname="\h"
 
 # Export the prompt
-export PS1=$IBlack$Time12h$Color_Off'$(git branch &>/dev/null;\
+export PS1=$IBlack$Hostname$Color_Off'$(git branch &>/dev/null;\
 if [ $? -eq 0 ]; then \
   echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
   if [ "$?" -eq "0" ]; then \
@@ -92,8 +94,8 @@ if [ $? -eq 0 ]; then \
   else \
     # @5 - Changes to working tree
     echo "'$IRed'"$(__git_ps1 " {%s}"); \
-  fi) '$BYellow$PathBasename$Color_Off'\$ "; \
+  fi) '$BYellow'$(__pwd_ps1 " (%s)")'$Color_Off'\$ "; \
 else \
   # @2 - Prompt when not in GIT repo
-  echo " '$Yellow$PathBasename$Color_Off'\$ "; \
+  echo " '$Yellow'$(__pwd_ps1 " (%s)")'$Color_Off'\$ "; \
 fi)'
