@@ -27,6 +27,16 @@ export PATH=~/.local/bin:$PATH
 # Use full color
 export TERM=xterm-256color
 
+# Predictable SSH authentication socket location.
+# From http://unix.stackexchange.com/a/76256
+SOCK="/tmp/ssh-agent-$USER-screen"
+if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
+then
+    rm -f /tmp/ssh-agent-$USER-screen
+    ln -sf $SSH_AUTH_SOCK $SOCK
+    export SSH_AUTH_SOCK=$SOCK
+fi
+
 # Enable programmable completion
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
