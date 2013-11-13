@@ -37,6 +37,9 @@ then
     export SSH_AUTH_SOCK=$SOCK
 fi
 
+# Import smartcd config
+[ -r "$HOME/.smartcd_config" ] && ( [ -n $BASH_VERSION ] || [ -n $ZSH_VERSION ] ) && source ~/.smartcd_config
+
 # Enable programmable completion
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
