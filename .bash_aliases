@@ -30,6 +30,9 @@ alias tn='tmux new-session -s'
 alias ta='tmux -2 attach-session -t'
 alias tl='tmux list-sessions'
 
+# ssh aliases
+alias dv='ssh alan@dv.alanct.com'
+
 # python shorthand
 alias py='python'
 alias ipy='ipython'
