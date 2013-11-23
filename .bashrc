@@ -27,6 +27,9 @@ export PATH=~/.local/bin:$PATH
 # Use full color
 export TERM=xterm-256color
 
+# Store Go code in home directory
+export GOPATH=$HOME/.gocode
+
 # Predictable SSH authentication socket location.
 # From http://unix.stackexchange.com/a/76256
 SOCK="/tmp/ssh-agent-$USER-screen"
