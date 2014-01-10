@@ -52,6 +52,7 @@ mac:
 	ln -s `pwd`/.bashrc ~/.bashrc
 	ln -s `pwd`/.gitconfig-global ~/.gitconfig
 	ln -s `pwd`/.gitignore-global ~/.gitignore
+	ln -s `pwd`/.slate ~/.slate
 	ln -s `pwd`/.tmux.conf ~/.tmux.conf
 	ln -s `pwd`/.vimrc ~/.vimrc
 

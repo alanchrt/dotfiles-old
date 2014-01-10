@@ -1,0 +1,54 @@
+# Default to the current screen when unspecified
+config defaultToCurrentScreen true
+
+# Use screen size as base
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+# Position aliases
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias tophalf move screenOriginX;screenOriginY screenSizeX;screenSizeY/2
+alias bottomhalf move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY/2
+
+# Position bindings
+bind return:ctrl;alt;cmd ${full}
+bind h:ctrl;alt;cmd ${lefthalf}
+bind l:ctrl;alt;cmd ${righthalf}
+bind k:ctrl;alt;cmd ${tophalf}
+bind j:ctrl;alt;cmd ${bottomhalf}
+
+# Resize bindings
+bind h:alt;cmd resize -1% +0
+bind l:alt;cmd resize +1% +0
+bind j:alt;cmd resize +0 +1%
+bind k:alt;cmd resize +0 -1%
+bind y:alt;cmd resize -1% -1%
+bind .:alt;cmd resize +1% +1%
+bind h:shift;alt;cmd resize -10% +0
+bind l:shift;alt;cmd resize +10% +0
+bind j:shift;alt;cmd resize +0 +10%
+bind k:shift;alt;cmd resize +0 -10%
+bind y:shift;alt;cmd resize -10% -10%
+bind .:shift;alt;cmd resize +10% +10%
+
+# Movement bindings
+bind h:ctrl;cmd nudge -1% +0
+bind l:ctrl;cmd nudge +1% +0
+bind j:ctrl;cmd nudge +0 +1%
+bind k:ctrl;cmd nudge +0 -1%
+bind y:ctrl;cmd nudge -1% -1%
+bind .:ctrl;cmd nudge +1% +1%
+bind h:shift;ctrl;cmd nudge -10% +0
+bind l:shift;ctrl;cmd nudge +10% +0
+bind j:shift;ctrl;cmd nudge +0 +10%
+bind k:shift;ctrl;cmd nudge +0 -10%
+bind y:shift;ctrl;cmd nudge -10% -10%
+bind .:shift;ctrl;cmd nudge +10% +10%
+
+# Focus bindings
+bind h:ctrl;alt focus left
+bind l:ctrl;alt focus right
+bind j:ctrl;alt focus down
+bind k:ctrl;alt focus up
