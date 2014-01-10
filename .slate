@@ -52,3 +52,4 @@ bind h:ctrl;alt focus left
 bind l:ctrl;alt focus right
 bind j:ctrl;alt focus down
 bind k:ctrl;alt focus up
+bind .:ctrl;alt focus behind
