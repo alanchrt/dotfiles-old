@@ -87,6 +87,9 @@ execute pathogen#infect()
 let g:syntastic_check_on_open=1
 let g:syntastic_python_checkers=['flake8']
 
+" Ignore angular directive errors
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+
 " Prevent run code plugin loading
 let g:pymode_run = 0
 
