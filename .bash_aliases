@@ -7,15 +7,15 @@ alias ll='ls -al'
 alias la='ls -A'
 
 # git aliases
-alias gs='git status'
-alias ga='git add'
-alias gb='git branch'
-alias gc='git commit'
-alias gd='git diff --color'
-alias gt='git difftool'
+alias gst='git status'
+alias gad='git add'
+alias gbr='git branch'
+alias gcm='git commit'
+alias gdi='git diff --color'
+alias gdt='git difftool'
 alias gco='git checkout'
-alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %C(cyan)(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
-alias gp='git checkout $(git reflog | grep checkout: -m 2 | tail -n1 | cut -d " " -f 8-)'
+alias glo='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %C(cyan)(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+alias gpv='git checkout $(git reflog | grep checkout: -m 2 | tail -n1 | cut -d " " -f 8-)'
 
 # git bash completion
 __git_complete gad _git_add
