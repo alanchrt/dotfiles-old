@@ -18,11 +18,11 @@ alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %
 alias gp='git checkout $(git reflog | grep checkout: -m 2 | tail -n1 | cut -d " " -f 8-)'
 
 # git bash completion
-__git_complete ga _git_add
-__git_complete gb _git_branch
-__git_complete gc _git_commit
-__git_complete gd _git_diff
-__git_complete gt _git_difftool
+__git_complete gad _git_add
+__git_complete gbr _git_branch
+__git_complete gcm _git_commit
+__git_complete gdi _git_diff
+__git_complete gdt _git_difftool
 __git_complete gco _git_checkout
 
 # tmux aliases
