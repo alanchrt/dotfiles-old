@@ -3,6 +3,7 @@ SHELL := /bin/bash
 
 define backup
 	-mv -i ~/.bash_scripts ~/.bash_scripts.backup
+	-mv -i ~/.i3 ~/.i3.backup
 	-mv -i ~/.ipython ~/.ipython.backup
 	-mv -i ~/.config/ipython ~/.config/ipython.backup
 	-mv -i ~/.vim ~/.vim.backup
@@ -24,6 +25,8 @@ linux:
 	$(call backup)
 	ln -s `pwd`/.bash_scripts ~/.bash_scripts
 	mkdir -p ~/.config
+	mkdir -p ~/.i3
+	ln -s `pwd`/.i3/config ~/.i3/config
 	ln -s `pwd`/.ipython ~/.config/ipython
 	ln -s `pwd`/.vim ~/.vim
 	ln -s `pwd`/.bash_aliases ~/.bash_aliases
