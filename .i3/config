@@ -1,3 +1,6 @@
+# .i3/config - Alan Christopher Thomas
+# http://alanct.com/
+
 # Modifier (Win)
 set $mod Mod4
 
