@@ -6,18 +6,18 @@ set $mod Mod4
 
 # Borders
 new_window none
-new_float 1pixel
+new_float normal
 
 # Font
 font pango:DejaVu Sans Mono 10
 
 # Software
-bindsym $mod+d exec dmenu_run
+bindsym $mod+space exec dmenu_run
 bindsym $mod+Return exec i3-sensible-terminal
 
 # State
 bindsym $mod+Shift+q kill
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+grave floating toggle
 bindsym $mod+equal border none
 bindsym $mod+minus border normal
 
@@ -26,7 +26,7 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-bindsym $mod+space focus mode_toggle
+bindsym $mod+grave focus mode_toggle
 
 # Move
 bindsym $mod+Shift+h move left
@@ -70,6 +70,6 @@ bar {
     status_command i3status
 }
 
-# Start gnome settings
+# Desktop niceties
 exec /usr/bin/gnome-settings-daemon
 exec /usr/bin/nm-applet
