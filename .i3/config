@@ -10,8 +10,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # State
 bindsym $mod+Shift+q kill
-bindsym $mod+f fullscreen
 bindsym $mod+Shift+space floating toggle
+bindsym $mod+equal border none
+bindsym $mod+minus border normal
 
 # Focus
 bindsym $mod+h focus left
