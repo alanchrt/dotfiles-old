@@ -7,7 +7,7 @@
 
 ### Ubuntu
 
-    $ apt-get install vim-nox tmux git python python-dev python-setuptools
+    $ apt-get install i3 vim-nox tmux git python python-dev python-setuptools
 
 ### Mac OS X
 
@@ -25,7 +25,7 @@
 
     $ git clone git@github.com:alanctkc/dotfiles.git
     $ cd dotfiles
-    $ make deps # optional
+    $ sudo make deps # optional
     $ make
 
 **Environment-specific:** `make linux` or `make mac`
