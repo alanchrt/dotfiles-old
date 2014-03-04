@@ -4,6 +4,10 @@
 # Modifier (Win)
 set $mod Mod4
 
+# Borders
+new_window none
+new_float 1pixel
+
 # Font
 font pango:DejaVu Sans Mono 10
 
