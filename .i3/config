@@ -18,8 +18,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # State
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+grave floating toggle
-bindsym $mod+equal border none
-bindsym $mod+minus border normal
+bindsym $mod+equal border normal
+bindsym $mod+minus border 1pixel
 
 # Focus
 bindsym $mod+h focus left
@@ -73,3 +73,4 @@ bar {
 # Desktop niceties
 exec /usr/bin/gnome-settings-daemon
 exec /usr/bin/nm-applet
+# TODO: Add pa-applet for volume control
