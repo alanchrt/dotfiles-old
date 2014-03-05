@@ -65,12 +65,17 @@ bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shut down your computer?' -b 'Yes, shutdown' 'shutdown -hP now'"
 #bindsym $mod+Shift+r exec "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your computer?' -b 'Yes, reboot' 'reboot'"
 
+# Volume keys
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -3%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +3%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
 # Workspace bar
 bar {
     status_command i3status
 }
 
 # Desktop niceties
-exec /usr/bin/gnome-settings-daemon
-exec /usr/bin/nm-applet
-# TODO: Add pa-applet for volume control
+exec --no-startup-id /usr/bin/gnome-settings-daemon
+exec --no-startup-id /usr/bin/gnome-sound-applet
+exec --no-startup-id /usr/bin/nm-applet
