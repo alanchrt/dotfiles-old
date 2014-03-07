@@ -14,3 +14,5 @@
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph
 [core]
     excludesfile = ~/.gitignore
+[push]
+	default = current
