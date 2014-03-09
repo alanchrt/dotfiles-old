@@ -35,6 +35,8 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # Workspaces
+bindsym $mod+comma workspace prev
+bindsym $mod+period workspace next
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
@@ -65,17 +67,13 @@ bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shut down your computer?' -b 'Yes, shutdown' 'shutdown -hP now'"
 #bindsym $mod+Shift+r exec "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your computer?' -b 'Yes, reboot' 'reboot'"
 
-# Volume keys
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -3%
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +3%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-
 # Workspace bar
 bar {
     status_command i3status
 }
 
 # Desktop niceties
+exec --no-startup-id /usr/bin/xsetroot -solid '#0c0c0c'
 exec --no-startup-id /usr/bin/gnome-settings-daemon
-exec --no-startup-id /usr/bin/gnome-sound-applet
+exec --no-startup-id /usr/local/bin/pa-applet
 exec --no-startup-id /usr/bin/nm-applet
