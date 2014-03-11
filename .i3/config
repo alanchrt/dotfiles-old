@@ -84,8 +84,8 @@ exec --no-startup-id /usr/local/bin/pa-applet # https://github.com/fernandotcl/p
 exec --no-startup-id /usr/bin/padevchooser # sudo apt-get install padevchooser
 
 # Resize mode
-bindsym $mod+r mode "resize"
-mode "resize" {
+bindsym $mod+r mode "RESIZE"
+mode "RESIZE" {
     bindsym l resize shrink left 10 px or 10 ppt
     bindsym Shift+H resize grow left 10 px or 10 ppt
     bindsym k resize shrink down 10 px or 10 ppt
