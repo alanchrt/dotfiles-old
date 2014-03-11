@@ -12,8 +12,8 @@ new_float normal
 font pango:DejaVu Sans Mono 10
 
 # Software
-bindsym $mod+space exec dmenu_run
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+space exec --no-startup-id dmenu_run
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 
 # State
 bindsym $mod+Shift+q kill
@@ -64,10 +64,10 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # i3 control
 bindsym $mod+Shift+i restart
-bindsym $mod+Shift+z exec i3lock -c 000000
-bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-#bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shut down your computer?' -b 'Yes, shutdown' 'shutdown -hP now'"
-#bindsym $mod+Shift+r exec "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your computer?' -b 'Yes, reboot' 'reboot'"
+bindsym $mod+Shift+Up exec --no-startup-id i3lock -c 000000
+bindsym $mod+Shift+Left exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+Down exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shut down your computer?' -b 'Yes, shutdown' 'sudo poweroff'" # visudo shutdown and poweroff permissions
+bindsym $mod+Shift+Right exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your computer?' -b 'Yes, reboot' 'sudo reboot'" # visudo reboot permissions
 
 # Workspace bar
 bar {
