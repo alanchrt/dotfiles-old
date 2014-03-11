@@ -37,6 +37,8 @@ bindsym $mod+Shift+l move right
 # Workspaces
 bindsym $mod+comma workspace prev
 bindsym $mod+period workspace next
+bindsym $mod+Control+comma move workspace to output left
+bindsym $mod+Control+period move workspace to output right
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
@@ -47,8 +49,6 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
-bindsym $mod+Shift+comma move workspace to output left
-bindsym $mod+Shift+period move workspace to output right
 
 # Move to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -61,13 +61,15 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+comma move container to workspace prev, workspace prev, focus
+bindsym $mod+Shift+period move container to workspace next, workspace next, focus
 
 # i3 control
-bindsym $mod+Shift+i restart
-bindsym $mod+Shift+Up exec --no-startup-id i3lock -c 000000
-bindsym $mod+Shift+Left exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+Down exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shut down your computer?' -b 'Yes, shutdown' 'sudo poweroff'" # visudo shutdown and poweroff permissions
-bindsym $mod+Shift+Right exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your computer?' -b 'Yes, reboot' 'sudo reboot'" # visudo reboot permissions
+bindsym $mod+Control+i restart
+bindsym $mod+Control+Up exec --no-startup-id i3lock -c 000000
+bindsym $mod+Control+Left exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Control+Down exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shut down your computer?' -b 'Yes, shutdown' 'sudo poweroff'" # visudo shutdown and poweroff permissions
+bindsym $mod+Control+Right exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your computer?' -b 'Yes, reboot' 'sudo reboot'" # visudo reboot permissions
 
 # Workspace bar
 bar {
