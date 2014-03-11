@@ -47,6 +47,8 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+bindsym $mod+Shift+comma move workspace to output left
+bindsym $mod+Shift+period move workspace to output right
 
 # Move to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -75,5 +77,6 @@ bar {
 # Desktop niceties
 exec --no-startup-id /usr/bin/xsetroot -solid '#0c0c0c'
 exec --no-startup-id /usr/bin/gnome-settings-daemon
-exec --no-startup-id /usr/local/bin/pa-applet # https://github.com/fernandotcl/pa-applet/blob/master/INSTALL
 exec --no-startup-id /usr/bin/nm-applet
+exec --no-startup-id /usr/local/bin/pa-applet # https://github.com/fernandotcl/pa-applet/blob/master/INSTALL
+exec --no-startup-id /usr/bin/padevchooser # sudo apt-get install padevchooser
