@@ -82,3 +82,17 @@ exec --no-startup-id /usr/bin/gnome-settings-daemon
 exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id /usr/local/bin/pa-applet # https://github.com/fernandotcl/pa-applet/blob/master/INSTALL
 exec --no-startup-id /usr/bin/padevchooser # sudo apt-get install padevchooser
+
+# Resize mode
+bindsym $mod+r mode "resize"
+mode "resize" {
+    bindsym l resize shrink left 10 px or 10 ppt
+    bindsym Shift+H resize grow left 10 px or 10 ppt
+    bindsym k resize shrink down 10 px or 10 ppt
+    bindsym Shift+J resize grow down 10 px or 10 ppt
+    bindsym j resize shrink up 10 px or 10 ppt
+    bindsym Shift+K resize grow up 10 px or 10 ppt
+    bindsym h resize shrink right 10 px or 10 ppt
+    bindsym Shift+L resize grow right 10 px or 10 ppt
+    bindsym Escape mode "default"
+}
