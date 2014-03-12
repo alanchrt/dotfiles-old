@@ -34,6 +34,24 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
+# Resize
+bindsym $mod+r mode "RESIZE"
+mode "RESIZE" {
+    bindsym l resize shrink left 10 px or 10 ppt
+    bindsym Shift+H resize grow left 10 px or 10 ppt
+    bindsym k resize shrink down 10 px or 10 ppt
+    bindsym Shift+J resize grow down 10 px or 10 ppt
+    bindsym j resize shrink up 10 px or 10 ppt
+    bindsym Shift+K resize grow up 10 px or 10 ppt
+    bindsym h resize shrink right 10 px or 10 ppt
+    bindsym Shift+L resize grow right 10 px or 10 ppt
+    bindsym Escape mode "default"
+}
+
+# Layout
+bindsym $mod+s layout stacking
+bindsym $mod+d layout default
+
 # Workspaces
 bindsym $mod+comma workspace prev
 bindsym $mod+period workspace next
@@ -68,8 +86,8 @@ bindsym $mod+Shift+period move container to workspace next, workspace next, focu
 bindsym $mod+Control+i restart
 bindsym $mod+Control+Up exec --no-startup-id i3lock -c 000000
 bindsym $mod+Control+Left exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Control+Down exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shut down your computer?' -b 'Yes, shutdown' 'sudo poweroff'" # visudo shutdown and poweroff permissions
-bindsym $mod+Control+Right exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your computer?' -b 'Yes, reboot' 'sudo reboot'" # visudo reboot permissions
+bindsym $mod+Control+Down exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shut down your computer?' -b 'Yes, shutdown' 'sudo poweroff'"
+bindsym $mod+Control+Right exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your computer?' -b 'Yes, reboot' 'sudo reboot'"
 
 # Workspace bar
 bar {
@@ -82,17 +100,3 @@ exec --no-startup-id /usr/bin/gnome-settings-daemon
 exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id /usr/local/bin/pa-applet # https://github.com/fernandotcl/pa-applet/blob/master/INSTALL
 exec --no-startup-id /usr/bin/padevchooser # sudo apt-get install padevchooser
-
-# Resize mode
-bindsym $mod+r mode "RESIZE"
-mode "RESIZE" {
-    bindsym l resize shrink left 10 px or 10 ppt
-    bindsym Shift+H resize grow left 10 px or 10 ppt
-    bindsym k resize shrink down 10 px or 10 ppt
-    bindsym Shift+J resize grow down 10 px or 10 ppt
-    bindsym j resize shrink up 10 px or 10 ppt
-    bindsym Shift+K resize grow up 10 px or 10 ppt
-    bindsym h resize shrink right 10 px or 10 ppt
-    bindsym Shift+L resize grow right 10 px or 10 ppt
-    bindsym Escape mode "default"
-}
