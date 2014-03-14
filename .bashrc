@@ -16,7 +16,9 @@ export EDITOR=vim
 export VISUAL=vim
 
 # Remove default Ctrl-S behavior
-stty -ixon -ixoff
+if [ -t 0 ]; then
+    stty -ixon -ixoff
+fi
 
 # Add Heroku toolkit to path
 export PATH="/usr/local/heroku/bin:$PATH"
