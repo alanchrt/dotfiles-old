@@ -85,9 +85,9 @@ bindsym $mod+Shift+period move container to workspace next, workspace next, focu
 # i3 control
 bindsym $mod+Control+i restart
 bindsym $mod+Control+Up exec --no-startup-id i3lock -c 000000
-bindsym $mod+Control+Left exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Control+Down exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shut down your computer?' -b 'Yes, shutdown' 'sudo poweroff'"
-bindsym $mod+Control+Right exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your computer?' -b 'Yes, reboot' 'sudo reboot'"
+bindsym $mod+Control+Left exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to log out?' -b '   Log Out   ' 'i3-msg exit'"
+bindsym $mod+Control+Down exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shut down your computer?' -b '  Shut Down  ' 'sudo poweroff'"
+bindsym $mod+Control+Right exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your computer?' -b '   Reboot   ' 'sudo reboot'"
 
 # Workspace bar
 bar {
