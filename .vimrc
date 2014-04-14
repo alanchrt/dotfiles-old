@@ -83,6 +83,9 @@ map <Leader>f :CtrlP<CR>
 " Use pathogen for plugins
 execute pathogen#infect()
 
+" Always populate loclists with syntastic
+let g:syntastic_always_populate_loc_list = 1
+
 " Use syntastic for flake8
 let g:syntastic_check_on_open=1
 let g:syntastic_python_checkers=['flake8']
