@@ -56,6 +56,9 @@ let mapleader = ','
 " Remap new tab
 nmap <Leader>t <Esc>:tabnew<CR>
 
+" Remap toggle line numbering
+nmap <Leader>n :set number!<CR>
+
 " Remap movement between windows
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
