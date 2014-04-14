@@ -7,13 +7,13 @@
 
 ### Ubuntu
 
-    $ apt-get install i3 vim-nox tmux git python python-dev python-setuptools
+    $ apt-get install i3 vim-nox tmux git python python-dev python-setuptools ranger
 
 ### Mac OS X
 
 **Homebrew:** [http://mxcl.github.io/homebrew/](http://mxcl.github.io/homebrew/)
 
-    $ brew install python vim tmux git
+    $ brew install python vim tmux git ranger
 
 **Override System Python:**
 
@@ -30,4 +30,4 @@
 
 **Environment-specific:** `make linux` or `make mac`
 
-**Remove backups:** `find ~ -name '*.backup' -delete`
+**Remove backups:** `rm ~/*.backup`
