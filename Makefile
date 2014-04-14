@@ -76,4 +76,18 @@ deps:
 
 # Remove backups
 nobackups:
-	find ~ -name '*.dotbackup' | xargs rm -rf
+	rm -f ~/.bash_scripts.dotbackup
+	rm -f ~/.i3.dotbackup
+	rm -f ~/.i3status.conf.dotbackup
+	rm -f ~/.ipython.dotbackup
+	rm -f ~/.config/ipython.dotbackup
+	rm -f ~/.vim.dotbackup
+	rm -f ~/.bash_aliases.dotbackup
+	rm -f ~/.bash_local.dotbackup
+	rm -f ~/.bash_profile.dotbackup
+	rm -f ~/.bash_prompt.dotbackup
+	rm -f ~/.bashrc.dotbackup
+	rm -f ~/.gitconfig.dotbackup
+	rm -f ~/.gitignore.dotbackup
+	rm -f ~/.tmux.conf.dotbackup
+	rm -f ~/.vimrc.dotbackup
