@@ -5,6 +5,9 @@
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " =============== General Settings ===============
 
+" vIM
+set nocompatible
+
 " Automatically expand tabs into spaces
 set expandtab
 
@@ -38,7 +41,6 @@ set completeopt=menu
 
 " Use filetype-specific plugins and indentation
 set nosmartindent
-filetype plugin indent on
 
 " Turn off automatic line breaking in html and css
 au BufRead,BufNewFile *.html,*.css set textwidth=0
@@ -48,43 +50,45 @@ set wildignore+=*.pyc
 
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
-" ============= Custom Key Bindings ==============
+" =============== Plugin Mangement ===============
 
-" Use comma as leader
-let mapleader = ','
+" Initialize Vundle
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-" Remap new tab
-nmap <Leader>t <Esc>:tabnew<CR>
+" Plugins
+Plugin 'gmarik/vundle'
+Plugin 'kien/ctrlp.vim'
+Plugin 'nono/vim-handlebars'
+Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'klen/python-mode'
+Plugin 'scrooloose/syntastic'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'bling/vim-airline'
+Plugin 'sophacles/vim-bundle-mako'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'tpope/vim-fugitive'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tmhedberg/matchit'
+Plugin 'voithos/vim-python-matchit'
+Plugin 'justinmk/vim-sneak'
+Plugin 'mattn/emmet-vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'Valloric/YouCompleteMe'
 
-" Remap toggle line numbering
-nmap <Leader>n :set number!<CR>
+" Turn filetype back on
+filetype plugin indent on
 
-" Remap movement between windows
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
-
-" Remap window rearrangement
-nmap <C-m>h <C-w>H
-nmap <C-m>j <C-w>J
-nmap <C-m>k <C-w>K
-nmap <C-m>l <C-w>L
-
-" Expand into multiple lines and focus the center line
-imap <C-E> <Esc>a<Enter><Esc>O
-
-" Toggle paste keybinding
-set pastetoggle=<Leader>p
-
-" Ctrl-P rebinding
-map <Leader>f :CtrlP<CR>
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " =============== Plugin Settings ================
 
-" Use pathogen for plugins
-execute pathogen#infect()
+" Always populate loclists with syntastic
+let g:syntastic_always_populate_loc_list = 1
 
 " Use syntastic for flake8
 let g:syntastic_check_on_open=1
@@ -115,12 +119,44 @@ let g:airline_right_sep=''
 " Set airline theme
 let g:airline_theme='powerlineish'
 
+
+" """"""""""""""""""""""""""""""""""""""""""""""""
+" ============= Custom Key Bindings ==============
+
+" Use comma as leader
+let mapleader = ','
+
+" Remap new tab
+nmap <Leader>t <Esc>:tabnew<CR>
+
+" Remap movement between windows
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" Remap window rearrangement
+nmap <C-m>h <C-w>H
+nmap <C-m>j <C-w>J
+nmap <C-m>k <C-w>K
+nmap <C-m>l <C-w>L
+
+" Expand into multiple lines and focus the center line
+imap <C-E> <Esc>a<Enter><Esc>O
+
+" Toggle paste keybinding
+set pastetoggle=<Leader>p
+
+" Ctrl-P rebinding
+map <Leader>f :CtrlP<CR>
+
+
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ==================== Colors ====================
 
 " Use syntax highlighting and color scheme
 syntax enable
-colorscheme lodestone
+silent! colorscheme lodestone
 
 " Use 256 colors in color schemes
 set t_Co=256

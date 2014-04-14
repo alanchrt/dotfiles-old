@@ -1,22 +1,22 @@
 SHELL := /bin/bash
-.PHONY: linux mac
+.PHONY: linux mac deps nobackups
 
 define backup
-	-mv -i ~/.bash_scripts ~/.bash_scripts.backup
-	-mv -i ~/.i3 ~/.i3.backup
-	-mv -i ~/.i3status.conf ~/.i3status.conf.backup
-	-mv -i ~/.ipython ~/.ipython.backup
-	-mv -i ~/.config/ipython ~/.config/ipython.backup
-	-mv -i ~/.vim ~/.vim.backup
-	-mv -i ~/.bash_aliases ~/.bash_aliases.backup
-	-mv -i ~/.bash_local ~/.bash_local.backup
-	-mv -i ~/.bash_profile ~/.bash_profile.backup
-	-mv -i ~/.bash_prompt ~/.bash_prompt.backup
-	-mv -i ~/.bashrc ~/.bashrc.backup
-	-mv -i ~/.gitconfig ~/.gitconfig.backup
-	-mv -i ~/.gitignore ~/.gitignore.backup
-	-mv -i ~/.tmux.conf ~/.tmux.conf.backup
-	-mv -i ~/.vimrc ~/.vimrc.backup
+	-mv -i ~/.bash_scripts ~/.bash_scripts.dotbackup
+	-mv -i ~/.i3 ~/.i3.dotbackup
+	-mv -i ~/.i3status.conf ~/.i3status.conf.dotbackup
+	-mv -i ~/.ipython ~/.ipython.dotbackup
+	-mv -i ~/.config/ipython ~/.config/ipython.dotbackup
+	-mv -i ~/.vim ~/.vim.dotbackup
+	-mv -i ~/.bash_aliases ~/.bash_aliases.dotbackup
+	-mv -i ~/.bash_local ~/.bash_local.dotbackup
+	-mv -i ~/.bash_profile ~/.bash_profile.dotbackup
+	-mv -i ~/.bash_prompt ~/.bash_prompt.dotbackup
+	-mv -i ~/.bashrc ~/.bashrc.dotbackup
+	-mv -i ~/.gitconfig ~/.gitconfig.dotbackup
+	-mv -i ~/.gitignore ~/.gitignore.dotbackup
+	-mv -i ~/.tmux.conf ~/.tmux.conf.dotbackup
+	-mv -i ~/.vimrc ~/.vimrc.dotbackup
 endef
 
 # Initialize environment on Linux
@@ -40,6 +40,9 @@ linux:
 	ln -s `pwd`/.gitignore-global ~/.gitignore
 	ln -s `pwd`/.tmux.conf ~/.tmux.conf
 	ln -s `pwd`/.vimrc ~/.vimrc
+	if [[ ! -f ~/.vim/bundle/vundle/README.md ]]; then git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle; fi
+	vim +PluginInstall +qall
+	cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
 
 # Initialize environment on Mac
 mac:
@@ -60,6 +63,9 @@ mac:
 	ln -s `pwd`/.slate ~/.slate
 	ln -s `pwd`/.tmux.conf ~/.tmux.conf
 	ln -s `pwd`/.vimrc ~/.vimrc
+	if [[ ! -f ~/.vim/bundle/vundle/README.md ]]; then git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle; fi
+	vim +PluginInstall +qall
+	cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
 
 # Install python dependencies
 deps:
@@ -67,3 +73,7 @@ deps:
 	easy_install ipython
 	easy_install flake8
 	pip install virtualenvwrapper
+
+# Remove backups
+nobackups:
+	find ~ -name '*.dotbackup' | xargs rm -rf
