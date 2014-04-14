@@ -1,4 +1,5 @@
 .vim/.netrwhist
+.vim/bundle
 .ipython/profile_default/db
 .ipython/profile_default/history.sqlite
 .ipython/profile_default/log

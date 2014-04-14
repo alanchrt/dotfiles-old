@@ -40,6 +40,8 @@ linux:
 	ln -s `pwd`/.gitignore-global ~/.gitignore
 	ln -s `pwd`/.tmux.conf ~/.tmux.conf
 	ln -s `pwd`/.vimrc ~/.vimrc
+	if [[ ! -f ~/.vim/bundle/vundle/README.md ]]; then git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle; fi
+	vim +PluginInstall +qall
 
 # Initialize environment on Mac
 mac:
@@ -60,6 +62,8 @@ mac:
 	ln -s `pwd`/.slate ~/.slate
 	ln -s `pwd`/.tmux.conf ~/.tmux.conf
 	ln -s `pwd`/.vimrc ~/.vimrc
+	if [[ ! -f ~/.vim/bundle/vundle/README.md ]]; then git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle; fi
+	vim +PluginInstall +qall
 
 # Install python dependencies
 deps:
@@ -70,4 +74,4 @@ deps:
 
 # Remove backups
 nobackups:
-	find ~ -name '*.dotbackup' -exec rm -rf {} \;
+	find ~ -name '*.dotbackup' | xargs rm -rf
