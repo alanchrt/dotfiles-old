@@ -36,9 +36,15 @@ alias is='TERM=screen-256color irssi'
 # ssh aliases
 alias dv='ssh alan@dv.alanct.com'
 
-# python shorthand
+# python
 alias py='python'
 alias ipy='ipython'
+
+# map vi
+alias vi='vim'
+
+# ranger
+alias rn='ranger'
 
 # virtualenv shortcuts
 alias mkve='mkvirtualenv'
