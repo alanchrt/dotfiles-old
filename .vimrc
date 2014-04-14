@@ -71,6 +71,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-surround'
 
 " Turn filetype back on
 filetype plugin indent on
