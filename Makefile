@@ -1,22 +1,22 @@
 SHELL := /bin/bash
-.PHONY: linux mac
+.PHONY: linux mac deps nobackups
 
 define backup
-	-mv -i ~/.bash_scripts ~/.bash_scripts.backup
-	-mv -i ~/.i3 ~/.i3.backup
-	-mv -i ~/.i3status.conf ~/.i3status.conf.backup
-	-mv -i ~/.ipython ~/.ipython.backup
-	-mv -i ~/.config/ipython ~/.config/ipython.backup
-	-mv -i ~/.vim ~/.vim.backup
-	-mv -i ~/.bash_aliases ~/.bash_aliases.backup
-	-mv -i ~/.bash_local ~/.bash_local.backup
-	-mv -i ~/.bash_profile ~/.bash_profile.backup
-	-mv -i ~/.bash_prompt ~/.bash_prompt.backup
-	-mv -i ~/.bashrc ~/.bashrc.backup
-	-mv -i ~/.gitconfig ~/.gitconfig.backup
-	-mv -i ~/.gitignore ~/.gitignore.backup
-	-mv -i ~/.tmux.conf ~/.tmux.conf.backup
-	-mv -i ~/.vimrc ~/.vimrc.backup
+	-mv -i ~/.bash_scripts ~/.bash_scripts.dotbackup
+	-mv -i ~/.i3 ~/.i3.dotbackup
+	-mv -i ~/.i3status.conf ~/.i3status.conf.dotbackup
+	-mv -i ~/.ipython ~/.ipython.dotbackup
+	-mv -i ~/.config/ipython ~/.config/ipython.dotbackup
+	-mv -i ~/.vim ~/.vim.dotbackup
+	-mv -i ~/.bash_aliases ~/.bash_aliases.dotbackup
+	-mv -i ~/.bash_local ~/.bash_local.dotbackup
+	-mv -i ~/.bash_profile ~/.bash_profile.dotbackup
+	-mv -i ~/.bash_prompt ~/.bash_prompt.dotbackup
+	-mv -i ~/.bashrc ~/.bashrc.dotbackup
+	-mv -i ~/.gitconfig ~/.gitconfig.dotbackup
+	-mv -i ~/.gitignore ~/.gitignore.dotbackup
+	-mv -i ~/.tmux.conf ~/.tmux.conf.dotbackup
+	-mv -i ~/.vimrc ~/.vimrc.dotbackup
 endef
 
 # Initialize environment on Linux
@@ -67,3 +67,7 @@ deps:
 	easy_install ipython
 	easy_install flake8
 	pip install virtualenvwrapper
+
+# Remove backups
+nobackups:
+	find ~ -name '*.dotbackup' -exec rm -rf {} \;

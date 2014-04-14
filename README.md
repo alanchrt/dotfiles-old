@@ -30,4 +30,4 @@
 
 **Environment-specific:** `make linux` or `make mac`
 
-**Remove backups:** `rm ~/*.backup`
+**Remove backups:** `make nobackups`
