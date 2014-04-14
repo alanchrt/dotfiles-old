@@ -76,6 +76,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tmhedberg/matchit'
 Plugin 'voithos/vim-python-matchit'
 Plugin 'justinmk/vim-sneak'
+Plugin 'mattn/emmet-vim'
 
 " Turn filetype back on
 filetype plugin indent on
