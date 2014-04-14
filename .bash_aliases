@@ -31,7 +31,7 @@ alias ta='tmux -2 attach-session -t'
 alias tl='tmux list-sessions'
 
 # use proper terminal for irssi
-alias is='TERM=screen-256color irssi'
+alias wee='TERM=screen-256color weechat'
 
 # ssh aliases
 alias dv='ssh alan@dv.alanct.com'
