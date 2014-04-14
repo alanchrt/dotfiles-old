@@ -40,9 +40,6 @@ alias dv='ssh alan@dv.alanct.com'
 alias py='python'
 alias ipy='ipython'
 
-# map vi
-alias vi='vim'
-
 # ranger
 alias rn='ranger'
 
