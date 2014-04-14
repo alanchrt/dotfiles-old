@@ -7,13 +7,13 @@
 
 ### Ubuntu
 
-    $ apt-get install i3 vim-nox tmux git python python-dev python-setuptools ranger
+    $ apt-get install i3 vim-nox tmux git python python-dev python-setuptools ranger build-essential cmake
 
 ### Mac OS X
 
 **Homebrew:** [http://mxcl.github.io/homebrew/](http://mxcl.github.io/homebrew/)
 
-    $ brew install python vim tmux git ranger
+    $ brew install python vim tmux git ranger cmake
 
 **Override System Python:**
 

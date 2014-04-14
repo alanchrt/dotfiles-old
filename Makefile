@@ -42,6 +42,7 @@ linux:
 	ln -s `pwd`/.vimrc ~/.vimrc
 	if [[ ! -f ~/.vim/bundle/vundle/README.md ]]; then git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle; fi
 	vim +PluginInstall +qall
+	cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
 
 # Initialize environment on Mac
 mac:
@@ -64,6 +65,7 @@ mac:
 	ln -s `pwd`/.vimrc ~/.vimrc
 	if [[ ! -f ~/.vim/bundle/vundle/README.md ]]; then git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle; fi
 	vim +PluginInstall +qall
+	cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
 
 # Install python dependencies
 deps:

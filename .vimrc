@@ -77,6 +77,8 @@ Plugin 'tmhedberg/matchit'
 Plugin 'voithos/vim-python-matchit'
 Plugin 'justinmk/vim-sneak'
 Plugin 'mattn/emmet-vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'Valloric/YouCompleteMe'
 
 " Turn filetype back on
 filetype plugin indent on
