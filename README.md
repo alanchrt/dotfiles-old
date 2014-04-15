@@ -1,19 +1,16 @@
 ## Dependencies
 
-* Vim
-* Tmux
-* Git
-* Python
-
 ### Ubuntu
 
-    $ apt-get install i3 vim-nox tmux git python python-dev python-setuptools ranger build-essential cmake
+    $ sudo apt-get install build-essential git
 
 ### Mac OS X
 
+**Xcode** - Install command line tools
+
 **Homebrew:** [http://mxcl.github.io/homebrew/](http://mxcl.github.io/homebrew/)
 
-    $ brew install python vim tmux git ranger cmake
+    $ brew install git
 
 **Override System Python:**
 
@@ -25,8 +22,7 @@
 
     $ git clone git@github.com:alanctkc/dotfiles.git
     $ cd dotfiles
-    $ sudo make deps # optional
-    $ make
+    $ make linux
 
 **Environment-specific:** `make linux` or `make mac`
 

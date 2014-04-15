@@ -21,8 +21,11 @@ endef
 
 # Initialize environment on Linux
 linux:
-	git submodule init
-	git submodule update
+	sudo apt-get install i3 vim-nox tmux python python-dev python-setuptools ranger cmake
+	sudo easy_install pip
+	sudo easy_install ipython
+	sudo easy_install flake8
+	sudo pip install virtualenvwrapper
 	$(call backup)
 	ln -s `pwd`/.bash_scripts ~/.bash_scripts
 	mkdir -p ~/.config
@@ -46,8 +49,11 @@ linux:
 
 # Initialize environment on Mac
 mac:
-	git submodule init
-	git submodule update
+	brew install python vim tmux git ranger cmake
+	sudo easy_install pip
+	sudo easy_install ipython
+	sudo easy_install flake8
+	sudo pip install virtualenvwrapper
 	$(call backup)
 	ln -s `pwd`/.bash_scripts ~/.bash_scripts
 	mkdir -p ~/.config
@@ -67,27 +73,20 @@ mac:
 	vim +PluginInstall +qall
 	cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
 
-# Install python dependencies
-deps:
-	easy_install pip
-	easy_install ipython
-	easy_install flake8
-	pip install virtualenvwrapper
-
 # Remove backups
 nobackups:
-	rm -f ~/.bash_scripts.dotbackup
-	rm -f ~/.i3.dotbackup
-	rm -f ~/.i3status.conf.dotbackup
-	rm -f ~/.ipython.dotbackup
-	rm -f ~/.config/ipython.dotbackup
-	rm -f ~/.vim.dotbackup
-	rm -f ~/.bash_aliases.dotbackup
-	rm -f ~/.bash_local.dotbackup
-	rm -f ~/.bash_profile.dotbackup
-	rm -f ~/.bash_prompt.dotbackup
-	rm -f ~/.bashrc.dotbackup
-	rm -f ~/.gitconfig.dotbackup
-	rm -f ~/.gitignore.dotbackup
-	rm -f ~/.tmux.conf.dotbackup
-	rm -f ~/.vimrc.dotbackup
+	rm -rf ~/.bash_scripts.dotbackup
+	rm -rf ~/.i3.dotbackup
+	rm -rf ~/.i3status.conf.dotbackup
+	rm -rf ~/.ipython.dotbackup
+	rm -rf ~/.config/ipython.dotbackup
+	rm -rf ~/.vim.dotbackup
+	rm -rf ~/.bash_aliases.dotbackup
+	rm -rf ~/.bash_local.dotbackup
+	rm -rf ~/.bash_profile.dotbackup
+	rm -rf ~/.bash_prompt.dotbackup
+	rm -rf ~/.bashrc.dotbackup
+	rm -rf ~/.gitconfig.dotbackup
+	rm -rf ~/.gitignore.dotbackup
+	rm -rf ~/.tmux.conf.dotbackup
+	rm -rf ~/.vimrc.dotbackup
