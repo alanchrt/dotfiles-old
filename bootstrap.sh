@@ -60,7 +60,7 @@ install_python_setuptools() {
 install_python_dev() {
     if [[ "$OSTYPE" != "darwin"* ]]; then
         echo "Installing python dev libraries..."
-        sudo apt-get install python-dev
+        sudo apt-get install python-eev
     fi
 }
 
@@ -81,7 +81,7 @@ install_flake8() {
 
 install_virtualenvwrapper() {
     echo "Installing virtualenvwrapper..."
-    curl -s https://raw.github.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | exclude_profile=1 $SHELL || true
+    curl -s https://raw.github.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | exclude_profile=1 $$SHELL
 }
 
 clone_dotfiles() {
@@ -201,7 +201,6 @@ do
         --no-flake8) NO_FLAKE8=1; shift; ;;
         --no-virtualenvwrapper) NO_VIRTUALENVWRAPPER=1; shift; ;;
         --no-bash) NO_BASH=1; shift; ;;
-        --no-bash) DELETE_BACKUPS=1; shift; ;;
         --) shift; break; ;;
         -*) printf >&2 'WARNING: Unknown option (ignored): %s\n' "$1"; shift; ;;
         *) break; ;;
