@@ -135,3 +135,20 @@ configure_vim() {
     if [[ ! -f ~/.vim/bundle/vundle/README.md ]]; then git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle; fi
     vim +PluginInstall +qall
 }
+
+delete_backups() {
+    rm -rf ~/.bash_scripts.dotbackup
+    rm -rf ~/.i3.dotbackup
+    rm -rf ~/.i3status.conf.dotbackup
+    rm -rf ~/.ipython.dotbackup
+    rm -rf ~/.config/ipython.dotbackup
+    rm -rf ~/.bash_aliases.dotbackup
+    rm -rf ~/.bash_local.dotbackup
+    rm -rf ~/.bash_profile.dotbackup
+    rm -rf ~/.bash_prompt.dotbackup
+    rm -rf ~/.bashrc.dotbackup
+    rm -rf ~/.gitconfig.dotbackup
+    rm -rf ~/.gitignore.dotbackup
+    rm -rf ~/.tmux.conf.dotbackup
+    rm -rf ~/.vimrc.dotbackup
+}
