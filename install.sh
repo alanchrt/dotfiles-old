@@ -1,19 +1,19 @@
 #!/bin/bash
 
 install_homebrew() {
-    if [ "$PLATFORM" = "mac"]; then
+    if [[ "$OSTYPE" == "darwin"* ]]; then
         ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
     fi
 }
 
 install_i3() {
-    if [ "$PLATFORM" != "mac"]; then
+    if [[ "$OSTYPE" != "darwin"* ]]; then
         sudo apt-get install i3
     fi
 }
 
 install_git() {
-    if [ "$PLATFORM" = "mac"]; then
+    if [[ "$OSTYPE" == "darwin"* ]]; then
         brew install git
     else
         sudo apt-get install git
@@ -21,7 +21,7 @@ install_git() {
 }
 
 install_vim() {
-    if [ "$PLATFORM" = "mac"]; then
+    if [[ "$OSTYPE" == "darwin"* ]]; then
         brew install vim --with-lua
     else
         sudo apt-get install vim-nox
@@ -29,7 +29,7 @@ install_vim() {
 }
 
 install_tmux() {
-    if [ "$PLATFORM" = "mac"]; then
+    if [[ "$OSTYPE" == "darwin"* ]]; then
         brew install tmux
     else
         sudo apt-get install tmux
@@ -37,7 +37,7 @@ install_tmux() {
 }
 
 install_ranger() {
-    if [ "$PLATFORM" = "mac"]; then
+    if [[ "$OSTYPE" == "darwin"* ]]; then
         brew install ranger
     else
         sudo apt-get install ranger
@@ -45,13 +45,13 @@ install_ranger() {
 }
 
 install_python_setuptools() {
-    if [ "$PLATFORM" != "mac"]; then
+    if [[ "$OSTYPE" != "darwin"* ]]; then
         sudo apt-get python-setuptools
     fi  
 }
 
 install_python_dev() {
-    if [ "$PLATFORM" != "mac"]; then
+    if [[ "$OSTYPE" != "darwin"* ]]; then
         sudo apt-get python-dev
     fi  
 }
@@ -89,7 +89,7 @@ configure_bash() {
     ln -s ~/.config/dotfiles/.bash_prompt ~/.bash_prompt
     mv -i ~/.bashrc ~/.bashrc.dotbackup
     ln -s ~/.config/dotfiles/.bashrc ~/.bashrc
-    if [ "$PLATFORM" = "mac"]; then
+    if [[ "$OSTYPE" == "darwin"* ]]; then
         mv -i ~/.bash_local ~/.bash_local.dotbackup
         ln -s ~/.config/dotfiles/.bash_local-mac ~/.bash_local
     else
@@ -107,7 +107,7 @@ configure_i3() {
 }
 
 configure_ipython() {
-    if [ "$PLATFORM" = "mac"]; then
+    if [[ "$OSTYPE" == "darwin"* ]]; then
         mv -i ~/.ipython ~/.ipython.dotbackup
         ln -s ~/.config/dotfiles/.ipython ~/.ipython
     else
