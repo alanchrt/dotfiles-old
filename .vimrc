@@ -93,7 +93,7 @@ filetype plugin indent on
 let g:neocomplete#enable_at_startup = 1
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#completions_enabled = 0
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Always populate loclists with syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -169,11 +169,6 @@ silent! colorscheme lodestone
 " Use 256 colors in color schemes
 set t_Co=256
 set term=screen-256color
-
-" Highlight excess line length in python
-autocmd FileType python highlight Excess ctermbg=8
-autocmd FileType python match Excess /\%80v.*/
-autocmd FileType python set nowrap
 
 " Use slightly dimmer text for the normal group
 highlight Normal ctermfg=254 ctermbg=0
