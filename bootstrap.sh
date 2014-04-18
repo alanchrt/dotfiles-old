@@ -81,7 +81,7 @@ install_flake8() {
 
 install_virtualenvwrapper() {
     echo "Installing virtualenvwrapper..."
-    curl -s https://raw.github.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | exclude_profile=1 $SHELL
+    curl -s https://raw.github.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | exclude_profile=1 $SHELL || true
 }
 
 clone_dotfiles() {
