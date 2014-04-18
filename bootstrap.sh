@@ -60,7 +60,7 @@ install_python_setuptools() {
 install_python_dev() {
     if [[ "$OSTYPE" != "darwin"* ]]; then
         echo "Installing python dev libraries..."
-        sudo apt-get install python-eev
+        sudo apt-get install python-dev
     fi
 }
 
