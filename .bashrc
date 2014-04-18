@@ -45,6 +45,19 @@ fi
 # Import smartcd config
 [ -r "$HOME/.smartcd_config" ] && ( [ -n $BASH_VERSION ] || [ -n $ZSH_VERSION ] ) && source ~/.smartcd_config
 
+# Set up virtualenv
+if [ -n "$BASH_VERSION" ]; then
+    # startup virtualenv-burrito
+    if [ -f "$HOME/.venvburrito/startup.sh" ]; then
+        . "$HOME/.venvburrito/startup.sh"
+    fi
+fi
+
+# Virtualenv settings
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_RESPECT_VIRTUALENV=true
+
 # Enable programmable completion
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion

@@ -7,7 +7,6 @@ define backup
 	-mv -i ~/.i3status.conf ~/.i3status.conf.dotbackup
 	-mv -i ~/.ipython ~/.ipython.dotbackup
 	-mv -i ~/.config/ipython ~/.config/ipython.dotbackup
-	-mv -i ~/.vim ~/.vim.dotbackup
 	-mv -i ~/.bash_aliases ~/.bash_aliases.dotbackup
 	-mv -i ~/.bash_local ~/.bash_local.dotbackup
 	-mv -i ~/.bash_profile ~/.bash_profile.dotbackup
@@ -21,11 +20,11 @@ endef
 
 # Initialize environment on Linux
 linux:
-	sudo apt-get install i3 vim-nox tmux python python-dev python-setuptools ranger cmake
+	sudo apt-get install i3 vim-nox tmux python python-dev python-setuptools ranger
 	sudo easy_install pip
 	sudo easy_install ipython
 	sudo easy_install flake8
-	sudo pip install virtualenvwrapper
+	-curl -s https://raw.github.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | exclude_profile=1 $$SHELL
 	$(call backup)
 	ln -s `pwd`/.bash_scripts ~/.bash_scripts
 	mkdir -p ~/.config
@@ -33,7 +32,6 @@ linux:
 	ln -s `pwd`/.i3/config ~/.i3/config
 	ln -s `pwd`/.i3status.conf ~/.i3status.conf
 	ln -s `pwd`/.ipython ~/.config/ipython
-	ln -s `pwd`/.vim ~/.vim
 	ln -s `pwd`/.bash_aliases ~/.bash_aliases
 	cp `pwd`/.bash_local-linux ~/.bash_local
 	ln -s `pwd`/.bash_profile ~/.bash_profile
@@ -45,20 +43,19 @@ linux:
 	ln -s `pwd`/.vimrc ~/.vimrc
 	if [[ ! -f ~/.vim/bundle/vundle/README.md ]]; then git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle; fi
 	vim +PluginInstall +qall
-	cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
 
 # Initialize environment on Mac
 mac:
-	brew install python vim tmux git ranger cmake
+	brew install python tmux git ranger
+	brew install vim --with-lua
 	sudo easy_install pip
 	sudo easy_install ipython
 	sudo easy_install flake8
-	sudo pip install virtualenvwrapper
+	-curl -s https://raw.github.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | exclude_profile=1 $$SHELL
 	$(call backup)
 	ln -s `pwd`/.bash_scripts ~/.bash_scripts
 	mkdir -p ~/.config
 	ln -s `pwd`/.ipython ~/.ipython
-	ln -s `pwd`/.vim ~/.vim
 	ln -s `pwd`/.bash_aliases ~/.bash_aliases
 	cp `pwd`/.bash_local-mac ~/.bash_local
 	ln -s `pwd`/.bash_profile ~/.bash_profile
@@ -71,7 +68,6 @@ mac:
 	ln -s `pwd`/.vimrc ~/.vimrc
 	if [[ ! -f ~/.vim/bundle/vundle/README.md ]]; then git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle; fi
 	vim +PluginInstall +qall
-	cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
 
 # Remove backups
 nobackups:
@@ -80,7 +76,6 @@ nobackups:
 	rm -rf ~/.i3status.conf.dotbackup
 	rm -rf ~/.ipython.dotbackup
 	rm -rf ~/.config/ipython.dotbackup
-	rm -rf ~/.vim.dotbackup
 	rm -rf ~/.bash_aliases.dotbackup
 	rm -rf ~/.bash_local.dotbackup
 	rm -rf ~/.bash_profile.dotbackup

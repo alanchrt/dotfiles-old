@@ -78,7 +78,7 @@ Plugin 'voithos/vim-python-matchit'
 Plugin 'justinmk/vim-sneak'
 Plugin 'mattn/emmet-vim'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete.vim'
 
 " Turn filetype back on
 filetype plugin indent on
@@ -86,6 +86,16 @@ filetype plugin indent on
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " =============== Plugin Settings ================
+
+" Enable neocomplete
+let g:neocomplete#enable_at_startup = 1
+
+" Use omni completion
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Always populate loclists with syntastic
 let g:syntastic_always_populate_loc_list = 1
