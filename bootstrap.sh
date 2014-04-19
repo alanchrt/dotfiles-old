@@ -9,7 +9,6 @@ configure_bash() {
     echo "Configuring bash..."
     test -d $HOME/.bash_scripts && cp -Lir $HOME/.bash_scripts $HOME/.bash_scripts.dotbackup && rm -rf $HOME/.bash_scripts
     ln -s `pwd`/.bash_scripts $HOME/.bash_scripts
-    # TODO: move personal aliases
     test -e $HOME/.bash_aliases && cp -Lir $HOME/.bash_aliases $HOME/.bash_aliases.dotbackup && rm -rf $HOME/.bash_aliases
     ln -s `pwd`/.bash_aliases $HOME/.bash_aliases
     test -e $HOME/.bash_profile && cp -Lir $HOME/.bash_profile $HOME/.bash_profile.dotbackup && rm -rf $HOME/.bash_profile
@@ -29,7 +28,6 @@ configure_bash() {
 
 configure_git() {
     echo "Configuring git..."
-    # TODO: interactively enter personal details
     test -e $HOME/.gitconfig && cp -Lir $HOME/.gitconfig $HOME/.gitconfig.dotbackup && rm -rf $HOME/.gitconfig
     read -p "Git user.name: " git_name
     read -p "Git user.email: " git_email
@@ -40,7 +38,6 @@ configure_git() {
 
 configure_i3() {
     echo "Configuring i3..."
-    # TODO: move startup scripts into separate bash script
     test -d $HOME/.i3 && cp -Lir $HOME/.i3 $HOME/.i3.dotbackup && rm -rf $HOME/.i3
     mkdir -p $HOME/.i3
     ln -s `pwd`/.i3/config $HOME/.i3/config
