@@ -18,7 +18,7 @@ This is a complete development configuration using git, vim, tmux, and i3. It sh
 `--no-tmux` - Exclude tmux configuration  
 `--no-ipython` - Exclude ipython configuration  
 
-## Backups
+### Backups
 
 By default, backups of your current dotfiles are created at `~/.filename.dotbackup`.
 
