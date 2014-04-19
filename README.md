@@ -2,14 +2,29 @@
 
 This is a complete development configuration using git, vim, tmux, and i3. It should be installable in any *nix bash system, though the software tools themselves will need to be installed by your system's package manager.
 
+### Try it before you buy (err, use) it
+
+To test drive the environment (minus i3) before committing, install [Vagrant](http://www.vagrantup.com/), build an image with this repo pre-installed, and ssh in:
+
+    $ git clone https://github.com/alanctkc/dotfiles.git
+    $ cd dotfiles
+    $ vagrant up
+    $ vagrant ssh
+
+You can, of course, just keep this box installed and do your development in there. You'll just want to change your git name and email in `~/.gitconfig` to your own first.
+
 ## Install
 
-    $ git clone git@github.com:alanctkc/dotfiles.git
+Clone the repository to a permanent home (configuration files will be symlinked):
+
+    $ git clone https://github.com/alanctkc/dotfiles.git
     $ cd dotfiles
     $ ./bootstrap.sh
 
 ### Options
 
+`--git-name "[name]"` - Specify the full user.name for git configuration  
+`--git-email [email] ` - Specify the full user.email for git configuration  
 `--no-virtualenv` - Exclude virtualenvwrapper installation (using virtualenv-burrito)  
 `--no-bash` - Exclude bash configuration  
 `--no-git` - Exclude git configuration  
@@ -22,15 +37,15 @@ This is a complete development configuration using git, vim, tmux, and i3. It sh
 
 By default, backups of your current dotfiles are created at `~/.filename.dotbackup`.
 
-To delete these backups:
+To delete the backups:
 
-    $ ./bootstrap.sh --deletebackups
+    $ ./bootstrap.sh --delete-backups
 
 ## Software
 
 ### Ubuntu
 
-    $ sudo apt-get install git vim-nox tmux i3 python python-dev python-setuptools
+    $ sudo apt-get install git vim-nox tmux i3 python python-dev python-setuptools curl
 
 ### Mac OS X
 
