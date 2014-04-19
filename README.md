@@ -46,3 +46,11 @@ To delete these backups:
     $ cd /System/Library/Frameworks/Python.framework/Versions
     $ sudo mv Current Current.bak
     $ sudo ln -s /usr/local/Cellar/python/2.7.3/Frameworks/Python.framework/Versions/2.7 Current
+
+### Python tools
+
+IPython is a fantastic python interactive shell, and flake8 lets vim show you where you're not adhering to python syntax or coding style.
+
+    $ sudo easy_install pip
+    $ sudo easy_install ipython
+    $ sudo easy_install flake8
