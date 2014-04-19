@@ -31,9 +31,11 @@ configure_git() {
     echo "Configuring git..."
     # TODO: interactively enter personal details
     test -e $HOME/.gitconfig && cp -Lir $HOME/.gitconfig $HOME/.gitconfig.dotbackup && rm -rf $HOME/.gitconfig
-    ln -s `pwd`/.gitconfig-global $HOME/.gitconfig
+    read -p "Git user.name: " git_name
+    read -p "Git user.email: " git_email
+    sed -e 's/\[\[GIT_NAME\]\]/'"$git_name"'/g' -e 's/\[\[GIT_EMAIL\]\]/'"$git_email"'/g' `pwd`/.gitconfig-global > $HOME/.gitconfig
     test -e $HOME/.gitignore && cp -Lir $HOME/.gitignore $HOME/.gitignore.dotbackup && rm -rf $HOME/.gitignore
-    ln -s `pwd`/.gitignore-global $HOME/.gitignore
+    cp `pwd`/.gitignore-global $HOME/.gitignore
 }
 
 configure_i3() {

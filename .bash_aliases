@@ -33,9 +33,6 @@ alias tl='tmux list-sessions'
 # use proper terminal for irssi
 alias wee='TERM=screen-256color weechat'
 
-# ssh aliases
-alias dv='ssh alan@dv.alanct.com'
-
 # python
 alias py='python'
 alias ipy='ipython'

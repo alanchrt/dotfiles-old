@@ -94,10 +94,6 @@ bar {
     status_command i3status
 }
 
-# Desktop niceties
+# Startup scripts (in custom .i3_local)
 exec --no-startup-id /usr/bin/xsetroot -solid '#0c0c0c'
-exec --no-startup-id /usr/bin/gnome-settings-daemon
-exec --no-startup-id /usr/bin/nm-applet
-exec --no-startup-id /usr/local/bin/pa-applet # https://github.com/fernandotcl/pa-applet/blob/master/INSTALL
-exec --no-startup-id /usr/bin/padevchooser # sudo apt-get install padevchooser
-exec --no-startup-id /usr/bin/SpiderOak
+exec --no-startup-id ~/.i3_local
