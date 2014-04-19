@@ -8,22 +8,22 @@ install_virtualenvwrapper() {
 configure_bash() {
     echo "Configuring bash..."
     test -d $HOME/.bash_scripts && cp -Lir $HOME/.bash_scripts $HOME/.bash_scripts.dotbackup && rm -rf $HOME/.bash_scripts
-    ln -s $HOME/.config/dotfiles/.bash_scripts $HOME/.bash_scripts
+    ln -s `pwd`/.bash_scripts $HOME/.bash_scripts
     # TODO: move personal aliases
     test -e $HOME/.bash_aliases && cp -Lir $HOME/.bash_aliases $HOME/.bash_aliases.dotbackup && rm -rf $HOME/.bash_aliases
-    ln -s $HOME/.config/dotfiles/.bash_aliases $HOME/.bash_aliases
+    ln -s `pwd`/.bash_aliases $HOME/.bash_aliases
     test -e $HOME/.bash_profile && cp -Lir $HOME/.bash_profile $HOME/.bash_profile.dotbackup && rm -rf $HOME/.bash_profile
-    ln -s $HOME/.config/dotfiles/.bash_profile $HOME/.bash_profile
+    ln -s `pwd`/.bash_profile $HOME/.bash_profile
     test -e $HOME/.bash_prompt && cp -Lir $HOME/.bash_prompt $HOME/.bash_prompt.dotbackup && rm -rf $HOME/.bash_prompt
-    ln -s $HOME/.config/dotfiles/.bash_prompt $HOME/.bash_prompt
+    ln -s `pwd`/.bash_prompt $HOME/.bash_prompt
     test -e $HOME/.bashrc && cp -Lir $HOME/.bashrc $HOME/.bashrc.dotbackup && rm -rf $HOME/.bashrc
-    ln -s $HOME/.config/dotfiles/.bashrc $HOME/.bashrc
+    ln -s `pwd`/.bashrc $HOME/.bashrc
     if [[ "$OSTYPE" == "darwin"* ]]; then
         test -e $HOME/.bash_local && cp -Lir $HOME/.bash_local $HOME/.bash_local.dotbackup && rm -rf $HOME/.bash_local
-        cp $HOME/.config/dotfiles/.bash_local-mac $HOME/.bash_local
+        cp `pwd`/.bash_local-mac $HOME/.bash_local
     else
         test -e $HOME/.bash_local && cp -Lir $HOME/.bash_local $HOME/.bash_local.dotbackup && rm -rf $HOME/.bash_local
-        cp $HOME/.config/dotfiles/.bash_local-linux $HOME/.bash_local
+        cp `pwd`/.bash_local-linux $HOME/.bash_local
     fi
 }
 
@@ -31,9 +31,9 @@ configure_git() {
     echo "Configuring git..."
     # TODO: interactively enter personal details
     test -e $HOME/.gitconfig && cp -Lir $HOME/.gitconfig $HOME/.gitconfig.dotbackup && rm -rf $HOME/.gitconfig
-    ln -s $HOME/.config/dotfiles/.gitconfig-global $HOME/.gitconfig
+    ln -s `pwd`/.gitconfig-global $HOME/.gitconfig
     test -e $HOME/.gitignore && cp -Lir $HOME/.gitignore $HOME/.gitignore.dotbackup && rm -rf $HOME/.gitignore
-    ln -s $HOME/.config/dotfiles/.gitignore-global $HOME/.gitignore
+    ln -s `pwd`/.gitignore-global $HOME/.gitignore
 }
 
 configure_i3() {
@@ -41,15 +41,15 @@ configure_i3() {
     # TODO: move startup scripts into separate bash script
     test -d $HOME/.i3 && cp -Lir $HOME/.i3 $HOME/.i3.dotbackup && rm -rf $HOME/.i3
     mkdir -p $HOME/.i3
-    ln -s $HOME/.config/dotfiles/.i3/config $HOME/.i3/config
+    ln -s `pwd`/.i3/config $HOME/.i3/config
     test -e $HOME/.i3status.conf && cp -Lir $HOME/.i3status.conf $HOME/.i3status.conf.dotbackup && rm -rf $HOME/.i3status.conf
-    ln -s $HOME/.config/dotfiles/.i3status.conf $HOME/.i3status.conf
+    ln -s `pwd`/.i3status.conf $HOME/.i3status.conf
 }
 
 configure_vim() {
     echo "Configuring vim..."
     test -e $HOME/.vimrc && cp -Lir $HOME/.vimrc $HOME/.vimrc.dotbackup && rm -rf $HOME/.vimrc
-    ln -s $HOME/.config/dotfiles/.vimrc $HOME/.vimrc
+    ln -s `pwd`/.vimrc $HOME/.vimrc
     if [[ ! -f $HOME/.vim/bundle/vundle/README.md ]]; then git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle; fi
     vim +PluginInstall +qall
 }
@@ -57,17 +57,17 @@ configure_vim() {
 configure_tmux() {
     echo "Configuring tmux..."
     test -e $HOME/.tmux.conf && cp -Lir $HOME/.tmux.conf $HOME/.tmux.conf.dotbackup && rm -rf $HOME/.tmux.conf
-    ln -s $HOME/.config/dotfiles/.tmux.conf $HOME/.tmux.conf
+    ln -s `pwd`/.tmux.conf $HOME/.tmux.conf
 }
 
 configure_ipython() {
     echo "Configuring ipython..."
     if [[ "$OSTYPE" == "darwin"* ]]; then
         test -d $HOME/.ipython && cp -Lir $HOME/.ipython $HOME/.ipython.dotbackup && rm -rf $HOME/.ipython
-        ln -s $HOME/.config/dotfiles/.ipython $HOME/.ipython
+        ln -s `pwd`/.ipython $HOME/.ipython
     else
         test -d $HOME/.config/ipython && cp -Lir $HOME/.config/ipython $HOME/.config/ipython.dotbackup && rm -rf $HOME/.config/ipython
-        ln -s $HOME/.config/dotfiles/.ipython $HOME/.config/ipython
+        ln -s `pwd`/.ipython $HOME/.config/ipython
     fi
 }
 
