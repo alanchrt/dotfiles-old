@@ -1,6 +1,6 @@
 ## Overview
 
-This is a complete configuration for development using git, vim, tmux, and i3. It should be installable in any *nix bash system, though the software tools themselves will need to be installed by your system's package manager.
+This is a complete development configuration using git, vim, tmux, and i3. It should be installable in any *nix bash system, though the software tools themselves will need to be installed by your system's package manager.
 
 ## Install
 
@@ -11,7 +11,7 @@ This is a complete configuration for development using git, vim, tmux, and i3. I
 ### Options
 
 `--no-virtualenv` - Exclude virtualenvwrapper installation (using virtualenv-burrito)  
-`--no-bash` - Exclude bash configuration
+`--no-bash` - Exclude bash configuration  
 `--no-git` - Exclude git configuration  
 `--no-i3` - Exclude i3 configuration  
 `--no-vim` - Exclude vim configuration  
@@ -41,7 +41,7 @@ To delete these backups:
     $ brew install python git tmux
     $ brew install vim --with-lua
 
-**Override System Python:**
+**Override system Python with hombrew version if necessary:**
 
     $ cd /System/Library/Frameworks/Python.framework/Versions
     $ sudo mv Current Current.bak
