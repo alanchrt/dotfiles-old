@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 install_virtualenvwrapper() {
     echo "Installing virtualenvwrapper..."
@@ -17,7 +17,7 @@ configure_bash() {
     ln -s `pwd`/.bash_prompt $HOME/.bash_prompt
     test -e $HOME/.bashrc && cp -Lir $HOME/.bashrc $HOME/.bashrc.dotbackup && rm -rf $HOME/.bashrc
     ln -s `pwd`/.bashrc $HOME/.bashrc
-    if [[ "$OSTYPE" == "darwin"* ]]; then
+    if [ "$OSTYPE" == "darwin"* ]; then
         test -e $HOME/.bash_local && cp -Lir $HOME/.bash_local $HOME/.bash_local.dotbackup && rm -rf $HOME/.bash_local
         cp `pwd`/.bash_local-mac $HOME/.bash_local
     else
@@ -29,9 +29,13 @@ configure_bash() {
 configure_git() {
     echo "Configuring git..."
     test -e $HOME/.gitconfig && cp -Lir $HOME/.gitconfig $HOME/.gitconfig.dotbackup && rm -rf $HOME/.gitconfig
-    read -p "Git user.name: " git_name
-    read -p "Git user.email: " git_email
-    sed -e 's/\[\[GIT_NAME\]\]/'"$git_name"'/g' -e 's/\[\[GIT_EMAIL\]\]/'"$git_email"'/g' `pwd`/.gitconfig-global > $HOME/.gitconfig
+    if [ -z "$GIT_NAME" ]; then
+        read -p "Git user.name: " GIT_NAME
+    fi
+    if [ -z "$GIT_EMAIL" ]; then
+        read -p "Git user.email: " GIT_EMAIL
+    fi
+    sed -e 's/\[\[GIT_NAME\]\]/'"$GIT_NAME"'/g' -e 's/\[\[GIT_EMAIL\]\]/'"$GIT_EMAIL"'/g' `pwd`/.gitconfig-global > $HOME/.gitconfig
     test -e $HOME/.gitignore && cp -Lir $HOME/.gitignore $HOME/.gitignore.dotbackup && rm -rf $HOME/.gitignore
     cp `pwd`/.gitignore-global $HOME/.gitignore
 }
@@ -49,7 +53,7 @@ configure_vim() {
     echo "Configuring vim..."
     test -e $HOME/.vimrc && cp -Lir $HOME/.vimrc $HOME/.vimrc.dotbackup && rm -rf $HOME/.vimrc
     ln -s `pwd`/.vimrc $HOME/.vimrc
-    if [[ ! -f $HOME/.vim/bundle/vundle/README.md ]]; then git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle; fi
+    if [ ! -f $HOME/.vim/bundle/vundle/README.md ]; then git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle; fi
     vim +PluginInstall +qall
 }
 
@@ -61,7 +65,7 @@ configure_tmux() {
 
 configure_ipython() {
     echo "Configuring ipython..."
-    if [[ "$OSTYPE" == "darwin"* ]]; then
+    if [ "$OSTYPE" == "darwin"* ]; then
         test -d $HOME/.ipython && cp -Lir $HOME/.ipython $HOME/.ipython.dotbackup && rm -rf $HOME/.ipython
         ln -s `pwd`/.ipython $HOME/.ipython
     else
@@ -98,6 +102,8 @@ do
         --no-virtualenv) NO_VIRTUALENVWRAPPER=1; shift; ;;
         --no-bash) NO_BASH=1; shift; ;;
         --no-git) NO_GIT=1; shift; ;;
+        --git-name) GIT_NAME=$2; shift 2; ;;
+        --git-email) GIT_EMAIL=$2; shift 2; ;;
         --no-i3) NO_I3=1; shift; ;;
         --no-vim) NO_VIM=1; shift; ;;
         --no-tmux) NO_TMUX=1; shift; ;;
@@ -108,32 +114,32 @@ do
     esac
 done
 
-if [[ "$DELETE_BACKUPS" == 1 ]]; then
+if [ "$DELETE_BACKUPS" == 1 ]; then
     delete_backups
     echo "Done."
     exit 0
 fi
 
-if [[ "$NO_VIRTUALENVWRAPPER" != 1 ]]; then
+if [ "$NO_VIRTUALENVWRAPPER" != 1 ]; then
     install_virtualenvwrapper
 fi
-if [[ "$NO_BASH" != 1 ]]; then
+if [ "$NO_BASH" != 1 ]; then
     configure_bash
 fi
-if [[ "$NO_GIT" != 1 ]]; then
+if [ "$NO_GIT" != 1 ]; then
     configure_git
 fi
-if [[ "$NO_I3" != 1 ]]; then
+if [ "$NO_I3" != 1 ]; then
     configure_i3
 fi
-if [[ "$NO_VIM" != 1 ]]; then
-    configure_vim
-fi
-if [[ "$NO_TMUX" != 1 ]]; then
+if [ "$NO_TMUX" != 1 ]; then
     configure_tmux
 fi
-if [[ "$NO_IPYTHON" != 1 ]]; then
+if [ "$NO_IPYTHON" != 1 ]; then
     configure_ipython
+fi
+if [ "$NO_VIM" != 1 ]; then
+    configure_vim
 fi
 
 . ~/.bashrc
