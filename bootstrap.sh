@@ -96,6 +96,14 @@ delete_backups() {
     rm -rf $HOME/.vimrc.dotbackup
 }
 
+update() {
+    echo "Updating configuration..."
+    git pull origin master
+    if [ "$NO_VIM" != 1 ]; then
+        vim +PluginInstall +qall
+    fi
+}
+
 set -e
 
 while :
@@ -103,6 +111,7 @@ do
     case $1 in
         -h | --help | -\?) echo "See https://github.com/alanctkc/dotfiles/blob/master/README.md"; exit 0; ;;
         --delete-backups) DELETE_BACKUPS=1; shift; ;;
+        --update) UPDATE=1; shift; ;;
         --no-virtualenv) NO_VIRTUALENVWRAPPER=1; shift; ;;
         --no-bash) NO_BASH=1; shift; ;;
         --no-git) NO_GIT=1; shift; ;;
@@ -120,6 +129,12 @@ done
 
 if [ "$DELETE_BACKUPS" == 1 ]; then
     delete_backups
+    echo "Done."
+    exit 0
+fi
+
+if [ "$UPDATE" == 1 ]; then
+    update
     echo "Done."
     exit 0
 fi

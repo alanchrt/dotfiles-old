@@ -41,6 +41,10 @@ To delete the backups:
 
     $ ./bootstrap.sh --delete-backups
 
+### Updating
+
+    $ ./bootstrap.sh --update
+
 ## Software
 
 ### Ubuntu
