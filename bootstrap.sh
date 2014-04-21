@@ -7,7 +7,8 @@ install_virtualenvwrapper() {
 
 configure_bash() {
     echo "Configuring bash..."
-    test -d $HOME/.bash_scripts && cp -Lir $HOME/.bash_scripts $HOME/.bash_scripts.dotbackup && rm -rf $HOME/.bash_scripts
+    test -d $HOME/.bash_scripts.dotbackup && echo -n "~/.bash_scripts.dotbackup: " && rm -rI $HOME/.bash_scripts.dotbackup
+    test -d $HOME/.bash_scripts && cp -Lr $HOME/.bash_scripts $HOME/.bash_scripts.dotbackup && rm -rf $HOME/.bash_scripts
     ln -s `pwd`/.bash_scripts $HOME/.bash_scripts
     test -e $HOME/.bash_aliases && cp -Lir $HOME/.bash_aliases $HOME/.bash_aliases.dotbackup && rm -rf $HOME/.bash_aliases
     ln -s `pwd`/.bash_aliases $HOME/.bash_aliases
@@ -42,7 +43,8 @@ configure_git() {
 
 configure_i3() {
     echo "Configuring i3..."
-    test -d $HOME/.i3 && cp -Lir $HOME/.i3 $HOME/.i3.dotbackup && rm -rf $HOME/.i3
+    test -d $HOME/.i3.dotbackup && echo -n "~/.i3.dotbackup: " && rm -rI $HOME/.i3.dotbackup
+    test -d $HOME/.i3 && cp -Lr $HOME/.i3 $HOME/.i3.dotbackup && rm -rf $HOME/.i3
     mkdir -p $HOME/.i3
     ln -s `pwd`/.i3/config $HOME/.i3/config
     test -e $HOME/.i3status.conf && cp -Lir $HOME/.i3status.conf $HOME/.i3status.conf.dotbackup && rm -rf $HOME/.i3status.conf
@@ -66,10 +68,12 @@ configure_tmux() {
 configure_ipython() {
     echo "Configuring ipython..."
     if [ "$OSTYPE" == "darwin"* ]; then
-        test -d $HOME/.ipython && cp -Lir $HOME/.ipython $HOME/.ipython.dotbackup && rm -rf $HOME/.ipython
+        test -d $HOME/.ipython.dotbackup && echo -n "~/.ipython.dotbackup: " && rm -rI $HOME/.ipython.dotbackup
+        test -d $HOME/.ipython && cp -Lr $HOME/.ipython $HOME/.ipython.dotbackup && rm -rf $HOME/.ipython
         ln -s `pwd`/.ipython $HOME/.ipython
     else
-        test -d $HOME/.config/ipython && cp -Lir $HOME/.config/ipython $HOME/.config/ipython.dotbackup && rm -rf $HOME/.config/ipython
+        test -d $HOME/.config/ipython.dotbackup && echo -n "~/.config/ipython.dotbackup: " && rm -rI $HOME/.config/ipython.dotbackup
+        test -d $HOME/.config/ipython && cp -Lr $HOME/.config/ipython $HOME/.config/ipython.dotbackup && rm -rf $HOME/.config/ipython
         ln -s `pwd`/.ipython $HOME/.config/ipython
     fi
 }
