@@ -2,7 +2,7 @@
 
 This is a complete development configuration using git, vim, tmux, and i3. It should be installable in any *nix bash system, though the software tools themselves will need to be installed by your system's package manager.
 
-![Demo](http://giant.gfycat.com/RemarkableWindingHypacrosaurus.gif)
+[![Demo](http://giant.gfycat.com/RemarkableWindingHypacrosaurus.gif)](http://gfycat.com/RemarkableWindingHypacrosaurus)
 
 ### Try it before you buy (err, use) it
 
