@@ -6,6 +6,7 @@ apt-get install -y python-setuptools
 apt-get install -y git
 apt-get install -y vim-nox
 apt-get install -y tmux
+apt-get install -y ranger
 apt-get install -y curl
 
 sudo -u vagrant -H git clone https://github.com/alanctkc/dotfiles.git /home/vagrant/.config/dotfiles
