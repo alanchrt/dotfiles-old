@@ -2,6 +2,8 @@
 
 This is a complete development configuration using git, vim, tmux, and i3. It should be installable in any *nix bash system, though the software tools themselves will need to be installed by your system's package manager.
 
+![Demo](http://giant.gfycat.com/RemarkableWindingHypacrosaurus.gif)
+
 ### Try it before you buy (err, use) it
 
 To test drive the environment (minus i3) before committing, install [Vagrant](http://www.vagrantup.com/), build an image with this repo pre-installed, and ssh in:
