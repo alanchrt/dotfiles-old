@@ -163,6 +163,4 @@ if [ "$NO_VIM" != 1 ]; then
     configure_vim
 fi
 
-. ~/.bashrc
-
 echo "Done."
