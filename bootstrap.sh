@@ -101,7 +101,7 @@ update() {
     echo "Updating configuration..."
     git pull origin master
     if [ "$NO_VIM" != 1 ]; then
-        echo "Installing Vim plugins. Please wait..."
+        echo "Updating Vim plugins. Please wait..."
         vim +PluginInstall +qall > /dev/null 2>&1
     fi
 }
