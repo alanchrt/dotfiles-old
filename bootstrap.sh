@@ -29,13 +29,13 @@ configure_bash() {
 
 configure_git() {
     echo "Configuring git..."
-    test -e $HOME/.gitconfig && cp -Lir $HOME/.gitconfig $HOME/.gitconfig.dotbackup && rm -rf $HOME/.gitconfig
     if [ -z "$GIT_NAME" ]; then
         read -p "Git user.name: " GIT_NAME
     fi
     if [ -z "$GIT_EMAIL" ]; then
         read -p "Git user.email: " GIT_EMAIL
     fi
+    test -e $HOME/.gitconfig && cp -Lir $HOME/.gitconfig $HOME/.gitconfig.dotbackup && rm -rf $HOME/.gitconfig
     sed -e 's/\[\[GIT_NAME\]\]/'"$GIT_NAME"'/g' -e 's/\[\[GIT_EMAIL\]\]/'"$GIT_EMAIL"'/g' `pwd`/.gitconfig-global > $HOME/.gitconfig
     test -e $HOME/.gitignore && cp -Lir $HOME/.gitignore $HOME/.gitignore.dotbackup && rm -rf $HOME/.gitignore
     cp `pwd`/.gitignore-global $HOME/.gitignore
@@ -56,7 +56,8 @@ configure_vim() {
     test -e $HOME/.vimrc && cp -Lir $HOME/.vimrc $HOME/.vimrc.dotbackup && rm -rf $HOME/.vimrc
     ln -s `pwd`/.vimrc $HOME/.vimrc
     if [ ! -f $HOME/.vim/bundle/vundle/README.md ]; then git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle; fi
-    vim +PluginInstall +qall
+    echo "Installing Vim plugins. Please wait..."
+    vim +PluginInstall +qall > /dev/null 2>&1
 }
 
 configure_tmux() {
@@ -100,7 +101,8 @@ update() {
     echo "Updating configuration..."
     git pull origin master
     if [ "$NO_VIM" != 1 ]; then
-        vim +PluginInstall +qall
+        echo "Installing Vim plugins. Please wait..."
+        vim +PluginInstall +qall > /dev/null 2>&1
     fi
 }
 
