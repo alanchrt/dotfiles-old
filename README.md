@@ -49,7 +49,7 @@ To delete the backups:
 
 ### Ubuntu
 
-    $ sudo apt-get install git vim-nox tmux i3 python python-dev python-setuptools curl
+    $ sudo apt-get install git vim-nox tmux i3 ranger python python-dev python-setuptools curl
 
 ### Mac OS X
 
@@ -57,7 +57,7 @@ To delete the backups:
 
 **Homebrew:** [http://mxcl.github.io/homebrew/](http://mxcl.github.io/homebrew/)
 
-    $ brew install python git tmux
+    $ brew install python git tmux ranger
     $ brew install vim --with-lua
 
 **Override system Python with hombrew version if necessary:**
