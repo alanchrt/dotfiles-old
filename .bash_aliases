@@ -26,7 +26,6 @@ __git_complete gdt _git_difftool
 __git_complete gco _git_checkout
 
 # tmux aliases
-alias tn='tmux new-session -s'
 alias ta='tmux -2 attach-session -t'
 alias tl='tmux list-sessions'
 
