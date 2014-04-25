@@ -93,7 +93,7 @@ if [ $? -eq 0 ]; then \
     echo "'$White'"$(__git_ps1 " (%s)"); \
   else \
     # @5 - Changes to working tree
-    echo "'$BWhite'"$(__git_ps1 " {%s}"); \
+    echo "'$White'"$(__git_ps1 " {%s}"); \
   fi) '$Yellow'$(__pwd_ps1 " (%s)")'$Color_Off'\$ "; \
 else \
   # @2 - Prompt when not in GIT repo
