@@ -64,10 +64,10 @@ alias fl='flake8 | grep -v "__init__.py:[0-9]*:1: F401"'
 
 # Start tmux session for coding
 function to {
-    if [ "$#" == 1 ]
+    if (( $# == 1 ))
         then
             tmux new-session -s $1
-        elif [ "$#" == 0 ]
+        elif (( $# == 0 ))
             then
                 to $(basename $(pwd))
         else
@@ -77,7 +77,7 @@ function to {
 
 # Remotely add authorized ssh key
 function rkey {
-    if [ "$#" == 1 ]
+    if (( "$#" == 1 ))
         then
             ssh $1 'mkdir -p ~/.ssh && echo '`cat ~/.ssh/id_rsa.pub`' >> ~/.ssh/authorized_keys'
     else
