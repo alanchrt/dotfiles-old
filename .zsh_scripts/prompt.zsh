@@ -21,4 +21,4 @@ git_custom_prompt() {
 
 # Set prompts
 PS1='%F{240}%M%f %F{227}$(_pwd_short)%f$ '
-RPS1='$(git_custom_prompt) $EPS1'
+RPS1='%F{244}$(_current_venv)%f$(git_custom_prompt) $EPS1'
