@@ -73,14 +73,14 @@ if [ -f ~/.bash_scripts/git-prompt.bash ]; then
     . ~/.bash_scripts/git-prompt.bash
 fi
 
-# Enable pwd prompt
-if [ -f ~/.bash_scripts/pwd-prompt.bash ]; then
-    . ~/.bash_scripts/pwd-prompt.bash
-fi
-
 # Enable ta bash completion
 if [ -f ~/.bash_scripts/ta-completion.bash ]; then
     . ~/.bash_scripts/ta-completion.bash
+fi
+
+# Enable prompt
+if [ -f ~/.bash_scripts/prompt.bash ]; then
+    . ~/.bash_scripts/prompt.bash
 fi
 
 # Include alias definitions
