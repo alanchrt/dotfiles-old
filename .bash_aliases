@@ -2,7 +2,7 @@
 # http://alanct.com/
 
 # ls aliases
-alias ls='ls -G'
+alias ls='ls -G --color=auto'
 alias ll='ls -al'
 alias la='ls -A'
 
