@@ -10,7 +10,7 @@ ColorOff="\[\033[0m\]"
 Hostname="\h"
 
 # Truncate pwd
-export PROMPT_COMMAND='CurDir=`echo ${PWD/#$HOME/\~}|sed -re "s!([^/.|^/])[^/]+/!\1/!g"`'
+export PROMPT_COMMAND='CurDir=$(_pwd_short)'
 
 # Export the prompt
 export PS1=$Gray$Hostname$Color_Off'$(git branch &>/dev/null;\

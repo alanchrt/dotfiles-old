@@ -19,11 +19,6 @@ git_custom_prompt() {
   fi
 }
 
-# Truncate pwd
-pwd_short() {
-    echo ${PWD/#$HOME/\~}|sed -re "s!([^/.|^/])[^/]+/!\1/!g"
-}
-
 # Set prompts
-PS1='%F{240}%M%f %F{227}$(pwd_short)%f $ '
+PS1='%F{240}%M%f %F{227}$(_pwd_short)%f$ '
 RPS1='$(git_custom_prompt) $EPS1'

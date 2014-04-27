@@ -78,14 +78,14 @@ if [ -f ~/.bash_scripts/ta-completion.bash ]; then
     . ~/.bash_scripts/ta-completion.bash
 fi
 
-# Enable prompt
-if [ -f ~/.bash_scripts/prompt.bash ]; then
-    . ~/.bash_scripts/prompt.bash
-fi
-
 # Include alias definitions
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+# Enable prompt
+if [ -f ~/.bash_scripts/prompt.bash ]; then
+    . ~/.bash_scripts/prompt.bash
 fi
 
 # Execute .bash_local
