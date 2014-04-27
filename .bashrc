@@ -16,9 +16,6 @@ if [ -t 0 ]; then
     stty -ixon -ixoff
 fi
 
-# Use full color
-export TERM=xterm-256color
-
 # Include shell environment
 if [ -f ~/.shenv ]; then
     . ~/.shenv
