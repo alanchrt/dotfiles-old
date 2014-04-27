@@ -14,13 +14,13 @@ Hostname="\h"
 export PROMPT_COMMAND='CurDir=$(_pwd_short)'
 
 # Export the prompt
-export PS1=$Gray'$(_current_venv)'$ColorOff$DarkGray$Hostname$ColorOff' $(git branch &>/dev/null;\
+export PS1=$Gray'$(_current_venv)'$ColorOff$DarkGray$Hostname$ColorOff'$(git branch &>/dev/null;\
 if [ $? -eq 0 ]; then \
     echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
     if [ "$?" -eq "0" ]; then \
-        echo "'$LightGray'"$(__git_ps1 "[%s]"); \
+        echo "'$LightGray'"$(__git_ps1 " [%s]"); \
     else \
-        echo "'$Red'"$(__git_ps1 "{%s}"); \
+        echo "'$Red'"$(__git_ps1 " {%s}"); \
     fi) '$Yellow'$CurDir'$ColorOff'\$ "; \
 else \
     echo " '$Yellow'$CurDir'$ColorOff'\$ "; \
