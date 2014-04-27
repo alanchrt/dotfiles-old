@@ -64,25 +64,28 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Enable git bash completion
-. ~/.bash_scripts/git-completion.bash
+if [ -f ~/.bash_scripts/git-completion.bash ]; then
+    . ~/.bash_scripts/git-completion.bash
+fi
 
 # Enable git prompt
-. ~/.bash_scripts/git-prompt.bash
+if [ -f ~/.bash_scripts/git-prompt.bash ]; then
+    . ~/.bash_scripts/git-prompt.bash
+fi
 
 # Enable pwd prompt
-. ~/.bash_scripts/pwd-prompt.bash
+if [ -f ~/.bash_scripts/pwd-prompt.bash ]; then
+    . ~/.bash_scripts/pwd-prompt.bash
+fi
 
 # Enable ta bash completion
-. ~/.bash_scripts/ta-completion.bash
+if [ -f ~/.bash_scripts/ta-completion.bash ]; then
+    . ~/.bash_scripts/ta-completion.bash
+fi
 
 # Include alias definitions
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
-fi
-
-# Include custom bash prompt
-if [ -f ~/.bash_prompt ]; then
-    . ~/.bash_prompt
 fi
 
 # Execute .bash_local
