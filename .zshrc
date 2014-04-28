@@ -52,6 +52,6 @@ bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 
 # Execute .bash_local
-if [ -f ~/bash_local ]; then
+if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi

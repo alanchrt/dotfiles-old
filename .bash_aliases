@@ -72,6 +72,9 @@ alias tree='tree -C'
 # Run flake8 and ignore convenience imports
 alias fl='flake8 | grep -v "__init__.py:[0-9]*:1: F401"'
 
+# Load keys into keychain
+alias kc='keychain --eval --agents ssh -Q --quiet ~/.ssh/*_rsa'
+
 # Start tmux session for coding
 function to {
     if (( $# == 1 ))
