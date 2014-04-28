@@ -36,6 +36,7 @@ fi
 if [ -f ~/.zsh_modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     . ~/.zsh_modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+fpath=($HOME/.zsh_modules/zsh-completions/src $fpath)
 
 # Execute .bash_local
 if [ -f ~/bash_local ]; then

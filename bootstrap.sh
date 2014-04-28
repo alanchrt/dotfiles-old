@@ -26,6 +26,16 @@ copy_file() {
     cp `pwd`/$1 $HOME/$2
 }
 
+clone_or_pull_repo() {
+    if [ ! -f $HOME/$2/README.md ]; then
+        git clone https://github.com/$1.git $HOME/$2
+    else
+        pushd $HOME/$2
+        git pull
+        popd
+    fi
+}
+
 install_virtualenvwrapper() {
     echo "Installing virtualenvwrapper..."
     curl -s https://raw.githubusercontent.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | exclude_profile=1 $SHELL || true
@@ -54,7 +64,9 @@ configure_zsh() {
     link_file .zshrc .zshrc
     link_directory .zsh_scripts .zsh_scripts
     mkdir -p ~/.zsh_modules
-    if [ ! -f $HOME/.zsh_modules/zsh-syntax-highlighting/README.md ]; then git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zsh_modules/zsh-syntax-highlighting; fi
+    clone_or_pull_repo zsh-users/zsh-syntax-highlighting .zsh_modules/zsh-syntax-highlighting
+    clone_or_pull_repo zsh-users/zsh-completions .zsh_modules/zsh-completions
+    rm -f $HOME/.zcompdump
 }
 
 configure_git() {
@@ -81,7 +93,7 @@ configure_i3() {
 configure_vim() {
     echo "Configuring vim..."
     link_file .vimrc .vimrc
-    if [ ! -f $HOME/.vim/bundle/vundle/README.md ]; then git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle; fi
+    clone_or_pull_repo gmarik/vundle .vim/bundle/vundle
     echo "Installing Vim plugins. Please wait..."
     vim +PluginInstall +qall > /dev/null 2>&1
 }
@@ -128,9 +140,9 @@ update() {
         echo "Updating Vim plugins. Please wait..."
         vim +PluginInstall +qall > /dev/null 2>&1
     fi
-    pushd $HOME/.zsh_modules/zsh-syntax-highlighting
-    git pull
-    popd
+    clone_or_pull_repo zsh-users/zsh-syntax-highlighting .zsh_modules/zsh-syntax-highlighting
+    clone_or_pull_repo zsh-users/zsh-completions .zsh_modules/zsh-completions
+    rm -f $HOME/.zcompdump
 }
 
 set -e
