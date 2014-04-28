@@ -14,6 +14,9 @@ setopt prompt_subst
 # Emacs bindings
 bindkey -e
 
+# Properly set shell
+export SHELL=$(which zsh)
+
 # Include shell environment
 if [ -f ~/.shenv ]; then
     . ~/.shenv
