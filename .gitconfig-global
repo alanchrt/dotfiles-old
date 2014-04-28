@@ -2,8 +2,8 @@
 # http://alanct.com/
 
 [user]
-    name = Alan Christopher Thomas
-    email = alan@alanct.com
+    name = [[GIT_NAME]]
+    email = [[GIT_EMAIL]]
 [color]
     ui = true
 [diff]
@@ -16,3 +16,5 @@
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph
 [core]
     excludesfile = ~/.gitignore
+[push]
+	default = current

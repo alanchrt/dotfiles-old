@@ -1,0 +1,101 @@
+# .i3/config - Alan Christopher Thomas
+# http://alanct.com/
+
+# Modifier (Win)
+set $mod Mod4
+
+# Borders
+new_window 1pixel
+new_float normal
+
+# Font
+font pango:DejaVu Sans Mono 10
+
+# Software
+bindsym $mod+space exec --no-startup-id dmenu_run
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+
+# State
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+grave floating toggle
+bindsym $mod+equal border normal
+bindsym $mod+minus border 1pixel
+
+# Focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+grave focus mode_toggle
+
+# Move
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Resize
+bindsym $mod+r mode "RESIZE"
+mode "RESIZE" {
+    bindsym l resize shrink left 10 px or 10 ppt
+    bindsym Shift+H resize grow left 10 px or 10 ppt
+    bindsym k resize shrink down 10 px or 10 ppt
+    bindsym Shift+J resize grow down 10 px or 10 ppt
+    bindsym j resize shrink up 10 px or 10 ppt
+    bindsym Shift+K resize grow up 10 px or 10 ppt
+    bindsym h resize shrink right 10 px or 10 ppt
+    bindsym Shift+L resize grow right 10 px or 10 ppt
+    bindsym Escape mode "default"
+}
+
+# Layout
+bindsym $mod+s layout stacking
+bindsym $mod+d layout default
+
+# Workspaces
+bindsym $mod+comma workspace prev
+bindsym $mod+period workspace next
+bindsym $mod+Control+comma move workspace to output left
+bindsym $mod+Control+period move workspace to output right
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+bindsym $mod+Escape move scratchpad
+bindsym $mod+Tab scratchpad show
+
+# Move to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+comma move container to workspace prev, workspace prev, focus
+bindsym $mod+Shift+period move container to workspace next, workspace next, focus
+
+# i3 control
+bindsym $mod+Control+i restart
+bindsym $mod+Control+Up exec --no-startup-id i3lock -c 000000
+bindsym $mod+Control+Left exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to log out?' -b '   Log Out   ' 'i3-msg exit'"
+bindsym $mod+Control+Down exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shut down your computer?' -b '  Shut Down  ' 'sudo poweroff'"
+bindsym $mod+Control+Right exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your computer?' -b '   Reboot   ' 'sudo reboot'"
+
+# Workspace bar
+bar {
+    status_command i3status
+}
+
+# Startup scripts (in custom .i3_local)
+exec --no-startup-id /usr/bin/xsetroot -solid '#0c0c0c'
+exec --no-startup-id ~/.i3_local
