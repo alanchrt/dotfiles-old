@@ -28,7 +28,7 @@ copy_file() {
 
 install_virtualenvwrapper() {
     echo "Installing virtualenvwrapper..."
-    curl -s https://raw.github.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | exclude_profile=1 $SHELL || true
+    curl -s https://raw.githubusercontent.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | exclude_profile=1 $SHELL || true
 }
 
 configure_shell() {

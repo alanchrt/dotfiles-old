@@ -4,7 +4,7 @@
 # Readable variables
 Yellow="\[\033[38;5;227m\]"
 Red="\[\033[38;5;197m\]"
-DarkGray="\[\033[38;5;238m\]"
+DarkGray="\[\033[38;5;240m\]"
 Gray="\[\033[38;5;244m\]"
 LightGray="\[\033[38;5;248m\]"
 ColorOff="\[\033[0m\]"
