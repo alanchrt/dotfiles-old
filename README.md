@@ -1,6 +1,6 @@
 ## Overview
 
-This is a complete development configuration using git, vim, tmux, and i3. It should be installable in any *nix bash system, though the software tools themselves will need to be installed by your system's package manager.
+This is a complete development configuration using git, vim, tmux, i3, and bash or zsh. It should be installable in any *nix bash system, though the software tools themselves will need to be installed by your system's package manager.
 
 [![Demo](http://giant.gfycat.com/PlushCalmFlamingo.gif)](http://gfycat.com/PlushCalmFlamingo)
 
@@ -17,7 +17,7 @@ You can, of course, just keep this box installed and do your development in ther
 
 ### Features
 
-#### Bash aliases
+#### Shell aliases
 
 - `gst` - git status
 - `gad` - git add
@@ -77,6 +77,7 @@ Clone the repository to a permanent home (configuration files will be symlinked)
 `--git-email [email] ` - Specify the full user.email for git configuration  
 `--no-virtualenv` - Exclude virtualenvwrapper installation (using virtualenv-burrito)  
 `--no-bash` - Exclude bash configuration  
+`--no-zsh` - Exclude zsh configuration  
 `--no-git` - Exclude git configuration  
 `--no-i3` - Exclude i3 configuration  
 `--no-vim` - Exclude vim configuration  
@@ -99,7 +100,7 @@ To delete the backups:
 
 ### Ubuntu
 
-    $ sudo apt-get install git vim-nox tmux i3 ranger python python-dev python-setuptools curl
+    $ sudo apt-get install git vim-nox zsh tmux i3 ranger python python-dev python-setuptools curl
 
 ### Mac OS X
 
@@ -107,7 +108,7 @@ To delete the backups:
 
 **Homebrew:** [http://mxcl.github.io/homebrew/](http://mxcl.github.io/homebrew/)
 
-    $ brew install python git tmux ranger
+    $ brew install python git zsh tmux ranger
     $ brew install vim --with-lua
 
 **Override system Python with hombrew version if necessary:**

@@ -1,30 +1,58 @@
 #!/usr/bin/env bash
 
+backup_file() {
+    test -e $HOME/$1 && cp -Lir $HOME/$1 $HOME/$1.dotbackup && rm -rf $HOME/$1
+}
+
+backup_directory() {
+    test -d $HOME/$1.dotbackup && echo -n "~/$1.dotbackup: " && rm -rI $HOME/$1.dotbackup
+    test -d $HOME/$1 && cp -Lr $HOME/$1 $HOME/$1.dotbackup && rm -rf $HOME/$1
+}
+
+link_file() {
+    backup_file $2
+    ln -s `pwd`/$1 $HOME/$2
+}
+
+link_directory() {
+    backup_directory $2
+    ln -s `pwd`/$1 $HOME/$2
+}
+
+copy_file() {
+    backup_file $2
+    cp `pwd`/$1 $HOME/$2
+}
+
 install_virtualenvwrapper() {
     echo "Installing virtualenvwrapper..."
     curl -s https://raw.github.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | exclude_profile=1 $SHELL || true
 }
 
+configure_shell() {
+    echo "Configuring common shell environment..."
+    link_file .bash_aliases .bash_aliases
+    link_file .shenv .shenv
+    if [ "$OSTYPE" == "darwin"* ]; then
+        copy_file .bash_local-mac .bash_local
+    else
+        copy_file .bash_local-linux .bash_local
+    fi
+}
+
 configure_bash() {
     echo "Configuring bash..."
-    test -d $HOME/.bash_scripts.dotbackup && echo -n "~/.bash_scripts.dotbackup: " && rm -rI $HOME/.bash_scripts.dotbackup
-    test -d $HOME/.bash_scripts && cp -Lr $HOME/.bash_scripts $HOME/.bash_scripts.dotbackup && rm -rf $HOME/.bash_scripts
-    ln -s `pwd`/.bash_scripts $HOME/.bash_scripts
-    test -e $HOME/.bash_aliases && cp -Lir $HOME/.bash_aliases $HOME/.bash_aliases.dotbackup && rm -rf $HOME/.bash_aliases
-    ln -s `pwd`/.bash_aliases $HOME/.bash_aliases
-    test -e $HOME/.bash_profile && cp -Lir $HOME/.bash_profile $HOME/.bash_profile.dotbackup && rm -rf $HOME/.bash_profile
-    ln -s `pwd`/.bash_profile $HOME/.bash_profile
-    test -e $HOME/.bash_prompt && cp -Lir $HOME/.bash_prompt $HOME/.bash_prompt.dotbackup && rm -rf $HOME/.bash_prompt
-    ln -s `pwd`/.bash_prompt $HOME/.bash_prompt
-    test -e $HOME/.bashrc && cp -Lir $HOME/.bashrc $HOME/.bashrc.dotbackup && rm -rf $HOME/.bashrc
-    ln -s `pwd`/.bashrc $HOME/.bashrc
-    if [ "$OSTYPE" == "darwin"* ]; then
-        test -e $HOME/.bash_local && cp -Lir $HOME/.bash_local $HOME/.bash_local.dotbackup && rm -rf $HOME/.bash_local
-        cp `pwd`/.bash_local-mac $HOME/.bash_local
-    else
-        test -e $HOME/.bash_local && cp -Lir $HOME/.bash_local $HOME/.bash_local.dotbackup && rm -rf $HOME/.bash_local
-        cp `pwd`/.bash_local-linux $HOME/.bash_local
-    fi
+    link_directory .bash_scripts .bash_scripts
+    link_file .bash_profile .bash_profile
+    link_file .bashrc .bashrc
+}
+
+configure_zsh() {
+    echo "Configuring zsh..."
+    link_file .zshrc .zshrc
+    link_directory .zsh_scripts .zsh_scripts
+    mkdir -p ~/.zsh_modules
+    if [ ! -f $HOME/.zsh_modules/zsh-syntax-highlighting/README.md ]; then git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zsh_modules/zsh-syntax-highlighting; fi
 }
 
 configure_git() {
@@ -35,26 +63,22 @@ configure_git() {
     if [ -z "$GIT_EMAIL" ]; then
         read -p "Git user.email: " GIT_EMAIL
     fi
-    test -e $HOME/.gitconfig && cp -Lir $HOME/.gitconfig $HOME/.gitconfig.dotbackup && rm -rf $HOME/.gitconfig
+    backup_file .gitconfig
     sed -e 's/\[\[GIT_NAME\]\]/'"$GIT_NAME"'/g' -e 's/\[\[GIT_EMAIL\]\]/'"$GIT_EMAIL"'/g' `pwd`/.gitconfig-global > $HOME/.gitconfig
-    test -e $HOME/.gitignore && cp -Lir $HOME/.gitignore $HOME/.gitignore.dotbackup && rm -rf $HOME/.gitignore
-    cp `pwd`/.gitignore-global $HOME/.gitignore
+    copy_file .gitignore-global .gitignore
 }
 
 configure_i3() {
     echo "Configuring i3..."
-    test -d $HOME/.i3.dotbackup && echo -n "~/.i3.dotbackup: " && rm -rI $HOME/.i3.dotbackup
-    test -d $HOME/.i3 && cp -Lr $HOME/.i3 $HOME/.i3.dotbackup && rm -rf $HOME/.i3
+    backup_directory .i3
     mkdir -p $HOME/.i3
-    ln -s `pwd`/.i3/config $HOME/.i3/config
-    test -e $HOME/.i3status.conf && cp -Lir $HOME/.i3status.conf $HOME/.i3status.conf.dotbackup && rm -rf $HOME/.i3status.conf
-    ln -s `pwd`/.i3status.conf $HOME/.i3status.conf
+    link_file .i3/config .i3/config
+    link_file .i3status.conf .i3status.conf
 }
 
 configure_vim() {
     echo "Configuring vim..."
-    test -e $HOME/.vimrc && cp -Lir $HOME/.vimrc $HOME/.vimrc.dotbackup && rm -rf $HOME/.vimrc
-    ln -s `pwd`/.vimrc $HOME/.vimrc
+    link_file .vimrc .vimrc
     if [ ! -f $HOME/.vim/bundle/vundle/README.md ]; then git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle; fi
     echo "Installing Vim plugins. Please wait..."
     vim +PluginInstall +qall > /dev/null 2>&1
@@ -62,20 +86,16 @@ configure_vim() {
 
 configure_tmux() {
     echo "Configuring tmux..."
-    test -e $HOME/.tmux.conf && cp -Lir $HOME/.tmux.conf $HOME/.tmux.conf.dotbackup && rm -rf $HOME/.tmux.conf
-    ln -s `pwd`/.tmux.conf $HOME/.tmux.conf
+    link_file .tmux.conf .tmux.conf
 }
 
 configure_ipython() {
     echo "Configuring ipython..."
     if [ "$OSTYPE" == "darwin"* ]; then
-        test -d $HOME/.ipython.dotbackup && echo -n "~/.ipython.dotbackup: " && rm -rI $HOME/.ipython.dotbackup
-        test -d $HOME/.ipython && cp -Lr $HOME/.ipython $HOME/.ipython.dotbackup && rm -rf $HOME/.ipython
-        ln -s `pwd`/.ipython $HOME/.ipython
+        link_directory .ipython .ipython
     else
-        test -d $HOME/.config/ipython.dotbackup && echo -n "~/.config/ipython.dotbackup: " && rm -rI $HOME/.config/ipython.dotbackup
-        test -d $HOME/.config/ipython && cp -Lr $HOME/.config/ipython $HOME/.config/ipython.dotbackup && rm -rf $HOME/.config/ipython
-        ln -s `pwd`/.ipython $HOME/.config/ipython
+        mkdir -p $HOME/.config
+        link_directory .ipython .config/ipython
     fi
 }
 
@@ -94,7 +114,9 @@ delete_backups() {
     rm -rf $HOME/.gitconfig.dotbackup
     rm -rf $HOME/.gitignore.dotbackup
     rm -rf $HOME/.tmux.conf.dotbackup
-    rm -rf $HOME/.vimrc.dotbackup
+    rm -rf $HOME/.zshrc.dotbackup
+    rm -rf $HOME/.zsh_modules.dotbackup
+    rm -rf $HOME/.zsh_scripts.dotbackup
 }
 
 update() {
@@ -104,6 +126,9 @@ update() {
         echo "Updating Vim plugins. Please wait..."
         vim +PluginInstall +qall > /dev/null 2>&1
     fi
+    pushd $HOME/.zsh_modules/zsh-syntax-highlighting
+    git pull
+    popd
 }
 
 set -e
@@ -116,6 +141,7 @@ do
         --update) UPDATE=1; shift; ;;
         --no-virtualenv) NO_VIRTUALENVWRAPPER=1; shift; ;;
         --no-bash) NO_BASH=1; shift; ;;
+        --no-zsh) NO_ZSH=1; shift; ;;
         --no-git) NO_GIT=1; shift; ;;
         --git-name) GIT_NAME=$2; shift 2; ;;
         --git-email) GIT_EMAIL=$2; shift 2; ;;
@@ -144,8 +170,14 @@ fi
 if [ "$NO_VIRTUALENVWRAPPER" != 1 ]; then
     install_virtualenvwrapper
 fi
+if [ "$NO_BASH" != 1 ] || [ "$NO_ZSH" != 1 ]; then
+    configure_shell
+fi
 if [ "$NO_BASH" != 1 ]; then
     configure_bash
+fi
+if [ "$NO_ZSH" != 1 ]; then
+    configure_zsh
 fi
 if [ "$NO_GIT" != 1 ]; then
     configure_git

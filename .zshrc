@@ -32,7 +32,12 @@ if [ -f ~/.zsh_scripts/prompt.zsh ]; then
     . ~/.zsh_scripts/prompt.zsh
 fi
 
+# Modules
+if [ -f ~/.zsh_modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    . ~/.zsh_modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
 # Execute .bash_local
-if [ -f ~/.zsh_scripts/prompt.zsh ]; then
-    . ~/.zsh_scripts/prompt.zsh
+if [ -f ~/bash_local ]; then
+    . ~/.bash_local
 fi
