@@ -72,6 +72,7 @@ configure_zsh() {
     link_file .zshrc .zshrc
     link_file .zmodules .zmodules
     link_directory .zsh_scripts .zsh_scripts
+    backup_directory .zsh_modules
     mkdir -p ~/.zsh_modules
     load_zsh_modules
     rm -f $HOME/.zcompdump
@@ -137,6 +138,7 @@ delete_backups() {
     rm -rf $HOME/.gitignore.dotbackup
     rm -rf $HOME/.tmux.conf.dotbackup
     rm -rf $HOME/.zshrc.dotbackup
+    rm -rf $HOME/.zmodules.dotbackup
     rm -rf $HOME/.zsh_modules.dotbackup
     rm -rf $HOME/.zsh_scripts.dotbackup
 }
