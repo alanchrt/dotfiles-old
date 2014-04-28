@@ -80,6 +80,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'davidhalter/jedi-vim'
 if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
     Plugin 'Shougo/neocomplete.vim'
+else
+    Plugin 'ervandew/supertab'
 endif
 
 " Turn filetype back on
