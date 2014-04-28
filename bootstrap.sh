@@ -30,10 +30,18 @@ clone_or_pull_repo() {
     if [ ! -f $HOME/$2/README.md ]; then
         git clone https://github.com/$1.git $HOME/$2
     else
-        pushd $HOME/$2
+        pushd $HOME/$2 > /dev/null
         git pull
-        popd
+        popd > /dev/null
     fi
+}
+
+load_zsh_modules() {
+    echo "Loading zsh modules..."
+    while read l; do
+        IFS=/ read -a path <<< "$l"
+        clone_or_pull_repo "$l" ".zsh_modules/${path[1]}"
+    done < $HOME/.zmodules
 }
 
 install_virtualenvwrapper() {
@@ -62,10 +70,10 @@ configure_bash() {
 configure_zsh() {
     echo "Configuring zsh..."
     link_file .zshrc .zshrc
+    link_file .zmodules .zmodules
     link_directory .zsh_scripts .zsh_scripts
     mkdir -p ~/.zsh_modules
-    clone_or_pull_repo zsh-users/zsh-syntax-highlighting .zsh_modules/zsh-syntax-highlighting
-    clone_or_pull_repo zsh-users/zsh-completions .zsh_modules/zsh-completions
+    load_zsh_modules
     rm -f $HOME/.zcompdump
 }
 
@@ -140,8 +148,7 @@ update() {
         echo "Updating Vim plugins. Please wait..."
         vim +PluginInstall +qall > /dev/null 2>&1
     fi
-    clone_or_pull_repo zsh-users/zsh-syntax-highlighting .zsh_modules/zsh-syntax-highlighting
-    clone_or_pull_repo zsh-users/zsh-completions .zsh_modules/zsh-completions
+    load_zsh_modules
     rm -f $HOME/.zcompdump
 }
 
