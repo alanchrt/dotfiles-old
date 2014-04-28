@@ -19,4 +19,5 @@ pushd /home/vagrant/.config/dotfiles
 sudo -u vagrant -H ./bootstrap.sh --no-i3 --git-name "Vagrant User" --git-email vagrant@example.com
 sudo -u vagrant -H ./bootstrap.sh --delete-backups
 popd
+hostname demo
 usermod -s /usr/bin/zsh vagrant
