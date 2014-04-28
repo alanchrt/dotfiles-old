@@ -135,7 +135,9 @@ delete_backups() {
     rm -rf $HOME/.bashrc.dotbackup
     rm -rf $HOME/.gitconfig.dotbackup
     rm -rf $HOME/.gitignore.dotbackup
+    rm -rf $HOME/.shenv.dotbackup
     rm -rf $HOME/.tmux.conf.dotbackup
+    rm -rf $HOME/.vimrc.dotbackup
     rm -rf $HOME/.zshrc.dotbackup
     rm -rf $HOME/.zmodules.dotbackup
     rm -rf $HOME/.zsh_modules.dotbackup
