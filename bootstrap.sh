@@ -123,7 +123,6 @@ configure_ipython() {
 }
 
 delete_backups() {
-    echo "Deleting backups..."
     rm -rf $HOME/.bash_scripts.dotbackup
     rm -rf $HOME/.i3.dotbackup
     rm -rf $HOME/.i3status.conf.dotbackup
@@ -180,7 +179,7 @@ done
 
 if [ "$DELETE_BACKUPS" == 1 ]; then
     delete_backups
-    echo "Done."
+    echo "Backups deleted."
     exit 0
 fi
 
