@@ -2,8 +2,8 @@
 # http://alanct.com/
 
 # Keep 1000 lines in history
-export HISTSIZE=1000
-export HISTFILESIZE=1000
+HISTSIZE=1000
+HISTFILESIZE=1000
 
 # Remove default Ctrl-S behavior
 if [ -t 0 ]; then

@@ -16,6 +16,8 @@ setopt APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_NO_STORE
+SAVEHIST=1000
+HISTFILE=$HOME/.zhistory
 
 # Emacs bindings
 bindkey -e
