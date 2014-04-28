@@ -45,6 +45,11 @@ if [ -f ~/.zsh_modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; th
     . ~/.zsh_modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 fpath=($HOME/.zsh_modules/zsh-completions/src $fpath)
+if [ -f ~/.zsh_modules/zsh-history-substring-search/zsh-history-substring-search.zsh ]; then
+    . ~/.zsh_modules/zsh-history-substring-search/zsh-history-substring-search.zsh
+fi
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
 
 # Execute .bash_local
 if [ -f ~/bash_local ]; then
