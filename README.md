@@ -38,6 +38,7 @@ You can, of course, just keep this box installed and do your development in ther
 - `ipy` - ipython
 - `fl` - flake8
 - `rn` - ranger
+- `xf` - extract various archive file types
 
 #### Vim plugins
 
