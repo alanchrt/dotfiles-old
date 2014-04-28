@@ -11,6 +11,12 @@ setopt menu_complete
 autoload -U colors && colors
 setopt prompt_subst
 
+# History settings
+setopt APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_NO_STORE
+
 # Emacs bindings
 bindkey -e
 

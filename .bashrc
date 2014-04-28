@@ -1,20 +1,11 @@
 # .bashrc - Alan Christopher Thomas
 # http://alanct.com/
 
-# Disallow duplicates in history
+# Disallow history duplicates and forget commands prefixed by spaces
 HISTCONTROL=ignoredups:ignorespace
-
-# Keep 1000 lines in history
-export HISTSIZE=1000
-export HISTFILESIZE=1000
 
 # Individually append lines to history and set window title
 shopt -s histappend
-
-# Remove default Ctrl-S behavior
-if [ -t 0 ]; then
-    stty -ixon -ixoff
-fi
 
 # Include shell environment
 if [ -f ~/.shenv ]; then
