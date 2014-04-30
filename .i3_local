@@ -1,0 +1,8 @@
+#!/bin/bash
+
+/usr/bin/gnome-settings-daemon &
+/usr/bin/nm-applet &
+/usr/local/bin/pa-applet &  # https://github.com/fernandotcl/pa-applet/blob/master/INSTALL
+/usr/bin/padevchooser &  # sudo apt-get install padevchooser
+/usr/bin/SpiderOak &
+/usr/bin/keepassx &

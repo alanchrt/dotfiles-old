@@ -96,6 +96,9 @@ bar {
     status_command i3status
 }
 
+# Keep KeePassx on the scratchpad
+for_window [class="Keepassx"] move scratchpad
+
 # Startup scripts (in custom .i3_local)
 exec --no-startup-id /usr/bin/xsetroot -solid '#0c0c0c'
 exec --no-startup-id ~/.i3_local
