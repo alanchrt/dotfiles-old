@@ -134,6 +134,9 @@ let g:airline_right_sep=''
 " Set airline theme
 let g:airline_theme='powerlineish'
 
+" Show json quotes
+let g:vim_json_syntax_conceal = 0
+
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ============= Custom Key Bindings ==============
