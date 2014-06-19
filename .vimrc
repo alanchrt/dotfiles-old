@@ -81,6 +81,7 @@ Plugin 'tmhedberg/matchit'
 Plugin 'voithos/vim-python-matchit'
 Plugin 'justinmk/vim-sneak'
 Plugin 'mattn/emmet-vim'
+Plugin 'elzr/vim-json'
 Plugin 'davidhalter/jedi-vim'
 if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
     Plugin 'Shougo/neocomplete.vim'
