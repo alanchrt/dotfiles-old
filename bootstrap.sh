@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 backup_file() {
-    test -e $HOME/$1 && cp -Lir $HOME/$1 $HOME/$1.dotbackup && rm -rf $HOME/$1
+    test -e $HOME/$1 && cp -LiR $HOME/$1 $HOME/$1.dotbackup && rm -rf $HOME/$1
     true
 }
 
 backup_directory() {
     test -d $HOME/$1.dotbackup && echo -n "~/$1.dotbackup: " && rm -rI $HOME/$1.dotbackup
-    test -d $HOME/$1 && cp -Lr $HOME/$1 $HOME/$1.dotbackup && rm -rf $HOME/$1
+    test -d $HOME/$1 && cp -LR $HOME/$1 $HOME/$1.dotbackup && rm -rf $HOME/$1
     true
 }
 

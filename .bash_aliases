@@ -2,7 +2,7 @@
 # http://alanct.com/
 
 # ls aliases
-alias ls='ls -G --color=auto'
+alias ls='ls -G'
 alias ll='ls -al'
 alias la='ls -A'
 
@@ -29,7 +29,7 @@ fi
 
 # Truncated pwd
 _pwd_short() {
-    echo ${PWD/#$HOME/\~}|sed -re "s!([^/.|^/])[^/]+/!\1/!g"
+    echo ${PWD/#$HOME/\~} | sed -E 's!([^/.|^/])[^/]+/!\1/!g'
 }
 
 # Current virtualenv
