@@ -8,6 +8,10 @@
 " vIM
 set nocompatible
 
+" Allow per-directory vimrc
+set exrc
+set secure
+
 " Automatically expand tabs into spaces
 set expandtab
 
@@ -164,11 +168,8 @@ map <Leader>f :CtrlP<CR>
 
 " Use syntax highlighting and color scheme
 syntax enable
-silent! colorscheme lodestone
+silent! colorscheme jellybeans
 
 " Use 256 colors in color schemes
 set t_Co=256
 set term=screen-256color
-
-" Use slightly dimmer text for the normal group
-highlight Normal ctermfg=254 ctermbg=0
