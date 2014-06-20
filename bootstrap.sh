@@ -149,7 +149,7 @@ update() {
     git pull origin master
     if [ "$NO_VIM" != 1 ]; then
         echo "Updating Vim plugins. Please wait..."
-        vim +PluginInstall +qall > /dev/null 2>&1
+        vim +PluginUpdate +qall > /dev/null 2>&1
     fi
     load_zsh_modules
     rm -f $HOME/.zcompdump
