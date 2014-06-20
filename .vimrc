@@ -70,6 +70,7 @@ Plugin 'klen/python-mode'
 Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'bling/vim-airline'
+Plugin 'alanctkc/vim-airline-powerbeans'
 Plugin 'sophacles/vim-bundle-mako'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'tpope/vim-fugitive'
@@ -132,7 +133,7 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 
 " Set airline theme
-let g:airline_theme='powerlineish'
+let g:airline_theme='powerbeans'
 
 " Show json quotes
 let g:vim_json_syntax_conceal = 0
