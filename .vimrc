@@ -49,6 +49,9 @@ set nosmartindent
 " Turn off automatic line breaking in html and css
 au BufRead,BufNewFile *.html,*.css set textwidth=0
 
+" Use two-space tabs for javascrit
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
+
 " Ignore compiled python
 set wildignore+=*.pyc
 
@@ -83,6 +86,7 @@ Plugin 'voithos/vim-python-matchit'
 Plugin 'justinmk/vim-sneak'
 Plugin 'mattn/emmet-vim'
 Plugin 'elzr/vim-json'
+Plugin 'pangloss/vim-javascript'
 Plugin 'davidhalter/jedi-vim'
 if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
     Plugin 'Shougo/neocomplete.vim'
