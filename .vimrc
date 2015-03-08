@@ -88,6 +88,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'elzr/vim-json'
 Plugin 'pangloss/vim-javascript'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'scrooloose/nerdtree'
 if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
     Plugin 'Shougo/neocomplete.vim'
 else
@@ -175,6 +176,9 @@ set pastetoggle=<Leader>p
 
 " Ctrl-P rebinding
 map <Leader>f :CtrlP<CR>
+
+" NERDTree toggle
+map <leader>nt :NERDTreeToggle<CR> 
 
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
