@@ -89,6 +89,7 @@ Plugin 'elzr/vim-json'
 Plugin 'pangloss/vim-javascript'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'kevinw/pyflakes-vim'
 if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
     Plugin 'Shougo/neocomplete.vim'
 else
@@ -146,6 +147,8 @@ let g:airline_theme='powerbeans'
 " Show json quotes
 let g:vim_json_syntax_conceal = 0
 
+" Disable quickfix support in pyflakes
+let g:pyflakes_use_quickfix = 0
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ============= Custom Key Bindings ==============
