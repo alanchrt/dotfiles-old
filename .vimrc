@@ -69,7 +69,7 @@ Plugin 'gmarik/vundle'
 Plugin 'kien/ctrlp.vim'
 Plugin 'nono/vim-handlebars'
 Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'klen/python-mode'
+Plugin 'TFenby/python-mode'
 Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'bling/vim-airline'
@@ -87,12 +87,17 @@ Plugin 'justinmk/vim-sneak'
 Plugin 'mattn/emmet-vim'
 Plugin 'elzr/vim-json'
 Plugin 'pangloss/vim-javascript'
-Plugin 'davidhalter/jedi-vim'
-if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
-    Plugin 'Shougo/neocomplete.vim'
-else
-    Plugin 'ervandew/supertab'
-endif
+" Plugin 'davidhalter/jedi-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kevinw/pyflakes-vim'
+Plugin 'ervandew/supertab'
+
+" if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
+"   Plugin 'Shougo/neocomplete.vim'
+" else
+"    Plugin 'ervandew/supertab'
+" endif
+
 
 " Turn filetype back on
 filetype plugin indent on
@@ -132,6 +137,9 @@ let g:pymode_folding = 0
 " Disable default pymode python options
 let g:pymode_options = 0
 
+" Disable pymode rope
+let g:pymode_rope=0
+
 " Show status line for single windows
 set laststatus=2
 
@@ -145,6 +153,11 @@ let g:airline_theme='powerbeans'
 " Show json quotes
 let g:vim_json_syntax_conceal = 0
 
+" Disable quickfix support in pyflakes
+let g:pyflakes_use_quickfix = 0
+
+" Ignore filetypes in NERDTree
+let NERDTreeIgnore = ['\.pyc$']
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ============= Custom Key Bindings ==============
@@ -175,6 +188,9 @@ set pastetoggle=<Leader>p
 
 " Ctrl-P rebinding
 map <Leader>f :CtrlP<CR>
+
+" NERDTree toggle
+map <leader>nt :NERDTreeToggle<CR> 
 
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
