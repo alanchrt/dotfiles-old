@@ -113,6 +113,9 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 " Always populate loclists with syntastic
 let g:syntastic_always_populate_loc_list = 1
 
+" Use syntastic for jscs and jshint
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+
 " Use syntastic for flake8
 let g:syntastic_check_on_open=1
 let g:syntastic_python_checkers=['flake8']
