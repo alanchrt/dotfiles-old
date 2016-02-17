@@ -14,8 +14,8 @@ easy_install pip
 easy_install ipython
 easy_install flake8
 
-sudo -u vagrant -H git clone https://github.com/alanctkc/dotfiles.git /home/vagrant/.config/dotfiles
-pushd /home/vagrant/.config/dotfiles
+sudo -u vagrant -H git clone https://github.com/alanctkc/dotfiles-old /home/vagrant/.config/dotfiles-old
+pushd /home/vagrant/.config/dotfiles-old
 sudo -u vagrant -H ./bootstrap.sh --no-i3 --git-name "Vagrant User" --git-email vagrant@example.com
 sudo -u vagrant -H ./bootstrap.sh --delete-backups
 popd

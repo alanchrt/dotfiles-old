@@ -8,8 +8,8 @@ This is a complete development configuration using git, vim, tmux, i3, and bash 
 
 To test drive the environment (minus i3) before committing, install [Vagrant](http://www.vagrantup.com/), build an image with this repo pre-installed, and ssh in:
 
-    $ git clone https://github.com/alanctkc/dotfiles.git
-    $ cd dotfiles
+    $ git clone https://github.com/alanctkc/dotfiles-old.git
+    $ cd dotfiles-old
     $ vagrant up
     $ vagrant ssh
 
@@ -68,8 +68,8 @@ You can, of course, just keep this box installed and do your development in ther
 
 Clone the repository to a permanent home (configuration files will be symlinked):
 
-    $ git clone https://github.com/alanctkc/dotfiles.git
-    $ cd dotfiles
+    $ git clone https://github.com/alanctkc/dotfiles-old.git
+    $ cd dotfiles-old
     $ ./bootstrap.sh
 
 ### Options

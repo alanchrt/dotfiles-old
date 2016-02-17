@@ -160,7 +160,7 @@ set -e
 while :
 do
     case $1 in
-        -h | --help | -\?) echo "See https://github.com/alanctkc/dotfiles/blob/master/README.md"; exit 0; ;;
+        -h | --help | -\?) echo "See https://github.com/alanctkc/dotfiles-old/blob/master/README.md"; exit 0; ;;
         --delete-backups) DELETE_BACKUPS=1; shift; ;;
         --update) UPDATE=1; shift; ;;
         --no-virtualenv) NO_VIRTUALENVWRAPPER=1; shift; ;;
