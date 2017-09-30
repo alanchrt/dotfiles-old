@@ -13,6 +13,8 @@ To test drive the environment (minus i3) before committing, install [Vagrant](ht
     $ vagrant up
     $ vagrant ssh
 
+If you want to try i3, just logout and click on the icon to the right of the vagrant username and select i3, then login using the password 'vagrant'.
+
 You can, of course, just keep this box installed and do your development in there. You'll just want to change your git name and email in `~/.gitconfig` to your own first.
 
 ### Features
@@ -101,7 +103,7 @@ To delete the backups:
 
 ### Ubuntu
 
-    $ sudo apt-get install git vim-nox zsh tmux i3 ranger python python-dev python-setuptools curl
+    $ sudo apt-get install git vim-nox zsh tmux i3 ranger python python-dev python-pip curl
 
 ### Mac OS X
 
@@ -122,6 +124,5 @@ To delete the backups:
 
 IPython is a fantastic python interactive shell, and flake8 lets vim show you where you're not adhering to python syntax or coding style.
 
-    $ sudo easy_install pip
-    $ sudo easy_install ipython
-    $ sudo easy_install flake8
+    $ sudo pip3 install ipython
+    $ sudo pip3 install flake8
