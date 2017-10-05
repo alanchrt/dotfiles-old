@@ -8,6 +8,10 @@
 " vIM
 set nocompatible
 
+" Allow per-directory vimrc
+set exrc
+set secure
+
 " Automatically expand tabs into spaces
 set expandtab
 
@@ -45,6 +49,9 @@ set nosmartindent
 " Turn off automatic line breaking in html and css
 au BufRead,BufNewFile *.html,*.css set textwidth=0
 
+" Use two-space tabs for javascrit
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
+
 " Ignore compiled python
 set wildignore+=*.pyc
 
@@ -66,8 +73,9 @@ Plugin 'klen/python-mode'
 Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'bling/vim-airline'
+Plugin 'alanctkc/vim-airline-powerbeans'
 Plugin 'sophacles/vim-bundle-mako'
-Plugin 'flazz/vim-colorschemes'
+Plugin 'nanotech/jellybeans.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'groenewege/vim-less'
@@ -77,6 +85,8 @@ Plugin 'tmhedberg/matchit'
 Plugin 'voithos/vim-python-matchit'
 Plugin 'justinmk/vim-sneak'
 Plugin 'mattn/emmet-vim'
+Plugin 'elzr/vim-json'
+Plugin 'pangloss/vim-javascript'
 Plugin 'davidhalter/jedi-vim'
 if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
     Plugin 'Shougo/neocomplete.vim'
@@ -97,8 +107,14 @@ let g:jedi#auto_vim_configuration = 0
 let g:jedi#completions_enabled = 0
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
+" Ignore gitignored files in CtrlP
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
 " Always populate loclists with syntastic
 let g:syntastic_always_populate_loc_list = 1
+
+" Use syntastic for jscs and jshint
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
 
 " Use syntastic for flake8
 let g:syntastic_check_on_open=1
@@ -127,7 +143,10 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 
 " Set airline theme
-let g:airline_theme='powerlineish'
+let g:airline_theme='powerbeans'
+
+" Show json quotes
+let g:vim_json_syntax_conceal = 0
 
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
@@ -166,11 +185,8 @@ map <Leader>f :CtrlP<CR>
 
 " Use syntax highlighting and color scheme
 syntax enable
-silent! colorscheme lodestone
+silent! colorscheme jellybeans
 
 " Use 256 colors in color schemes
 set t_Co=256
 set term=screen-256color
-
-" Use slightly dimmer text for the normal group
-highlight Normal ctermfg=254 ctermbg=0

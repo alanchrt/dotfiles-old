@@ -66,6 +66,9 @@ if type complete > /dev/null 2>&1; then
     complete -o default -o nospace -F _virtualenvs wo
 fi
 
+# Django manage.py
+alias may='python manage.py'
+
 # Tree colorization
 alias tree='tree -C'
 
@@ -86,6 +89,25 @@ function to {
         else
             echo "to takes only one argument: to [sessionname]"
     fi
+}
+
+# Rebase branch against master, push, and delete branch
+function shipit {
+    if [[ $1 == "master" ]]; then
+        echo "Can't ship master."
+        return
+    fi
+    echo "Shipping $1..."
+    git checkout master &&
+    git pull --rebase origin master &&
+    git checkout $1 &&
+    git rebase master &&
+    git push -f origin $1 &&
+    git checkout master &&
+    git merge $1 &&
+    git push origin master &&
+    git branch -d $1 &&
+    git push origin :$1
 }
 
 # Remotely add authorized ssh key
